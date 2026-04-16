@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cd336c9656edfd44d92281eeca0139ab
+timeCreated: 1475579479
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74510
+  packageName: Covered cars free
+  packageVersion: 0.9
+  assetPath: Assets/Ruby/Props/Covered_cars/prefabs/Audi_snow.prefab
+  uploadId: 143184

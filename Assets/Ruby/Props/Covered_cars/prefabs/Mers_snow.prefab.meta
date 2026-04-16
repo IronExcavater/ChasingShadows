@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: acc0fe715495a6048be221622831e2b7
+timeCreated: 1475580027
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74510
+  packageName: Covered cars free
+  packageVersion: 0.9
+  assetPath: Assets/Ruby/Props/Covered_cars/prefabs/Mers_snow.prefab
+  uploadId: 143184
