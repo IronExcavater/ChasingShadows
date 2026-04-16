@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 497d387831e37af46ae595ba99e88cba
+timeCreated: 1507634776
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102853
+  packageName: Park Photo Scanned Assets
+  packageVersion: 2.1.1
+  assetPath: Assets/NatureManufacture Assets/Park Photo Scanned Assets/Architecture/Prefabs/Prefab_Park_bench.prefab
+  uploadId: 751944
