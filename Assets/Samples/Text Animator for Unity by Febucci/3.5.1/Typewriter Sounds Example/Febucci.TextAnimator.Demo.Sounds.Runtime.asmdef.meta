@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b9f1cafbe8334ae4b66e89fd79c7d4fd
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 341308
+  packageName: Text Animator for Unity | UI Toolkit and Text Mesh Pro
+  packageVersion: 3.11.1
+  assetPath: Assets/Samples/Text Animator for Unity by Febucci/3.5.1/Typewriter Sounds
+    Example/Febucci.TextAnimator.Demo.Sounds.Runtime.asmdef
+  uploadId: 899494

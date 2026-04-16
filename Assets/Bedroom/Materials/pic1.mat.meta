@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 33dcc50cb32b9d04593b4a33e9a3277b
+labels:
+- MC_Converted
+- MC_Source_33dcc50cb32b9d04593b4a33e9a3277b
+- MC_Target_URPLit
+AssetOrigin:
+  serializedVersion: 1
+  productId: 9337
+  packageName: Bedroom 2.0
+  packageVersion: 2.01
+  assetPath: Assets/Bedroom/Materials/pic1.mat
+  uploadId: 382655
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

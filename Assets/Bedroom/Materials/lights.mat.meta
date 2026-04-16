@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: bc07e1b315f2d934dab935e7649d3e3a
+labels:
+- MC_Converted
+- MC_Source_bc07e1b315f2d934dab935e7649d3e3a
+- MC_Target_URPLit
+AssetOrigin:
+  serializedVersion: 1
+  productId: 9337
+  packageName: Bedroom 2.0
+  packageVersion: 2.01
+  assetPath: Assets/Bedroom/Materials/lights.mat
+  uploadId: 382655
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

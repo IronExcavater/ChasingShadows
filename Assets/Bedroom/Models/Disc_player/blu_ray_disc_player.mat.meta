@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 137c51bd0e77c14479c8891f56401953
+labels:
+- MC_Converted
+- MC_Source_137c51bd0e77c14479c8891f56401953
+- MC_Target_URPLit
+AssetOrigin:
+  serializedVersion: 1
+  productId: 9337
+  packageName: Bedroom 2.0
+  packageVersion: 2.01
+  assetPath: Assets/Bedroom/Models/Disc_player/blu_ray_disc_player.mat
+  uploadId: 382655
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

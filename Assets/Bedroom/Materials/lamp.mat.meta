@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 46de55c542d6fba49b69a97fda3760de
+labels:
+- MC_Converted
+- MC_Source_46de55c542d6fba49b69a97fda3760de
+- MC_Target_URPLit
+AssetOrigin:
+  serializedVersion: 1
+  productId: 9337
+  packageName: Bedroom 2.0
+  packageVersion: 2.01
+  assetPath: Assets/Bedroom/Materials/lamp.mat
+  uploadId: 382655
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

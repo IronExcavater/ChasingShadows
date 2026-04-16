@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: b9a71204ddddce6458eae1e1c9667f34
+labels:
+- MC_Converted
+- MC_Source_b9a71204ddddce6458eae1e1c9667f34
+- MC_Target_URPLit
+AssetOrigin:
+  serializedVersion: 1
+  productId: 9337
+  packageName: Bedroom 2.0
+  packageVersion: 2.01
+  assetPath: Assets/Bedroom/Materials/wall.mat
+  uploadId: 382655
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

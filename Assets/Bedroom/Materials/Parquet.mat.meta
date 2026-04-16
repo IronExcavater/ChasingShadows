@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 46d815d44c966354dac29a3c8d8c7955
+labels:
+- MC_Converted
+- MC_Source_46d815d44c966354dac29a3c8d8c7955
+- MC_Target_URPLit
+AssetOrigin:
+  serializedVersion: 1
+  productId: 9337
+  packageName: Bedroom 2.0
+  packageVersion: 2.01
+  assetPath: Assets/Bedroom/Materials/Parquet.mat
+  uploadId: 382655
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

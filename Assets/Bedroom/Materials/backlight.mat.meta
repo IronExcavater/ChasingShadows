@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 3089ced3fa8093944849a298b039e804
+labels:
+- MC_Converted
+- MC_Source_3089ced3fa8093944849a298b039e804
+- MC_Target_URPLit
+AssetOrigin:
+  serializedVersion: 1
+  productId: 9337
+  packageName: Bedroom 2.0
+  packageVersion: 2.01
+  assetPath: Assets/Bedroom/Materials/backlight.mat
+  uploadId: 382655
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

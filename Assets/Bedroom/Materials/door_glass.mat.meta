@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: fb2913d6301e5d642b253211e676d86b
+labels:
+- MC_Converted
+- MC_Source_fb2913d6301e5d642b253211e676d86b
+- MC_Target_URPLit
+AssetOrigin:
+  serializedVersion: 1
+  productId: 9337
+  packageName: Bedroom 2.0
+  packageVersion: 2.01
+  assetPath: Assets/Bedroom/Materials/door_glass.mat
+  uploadId: 382655
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

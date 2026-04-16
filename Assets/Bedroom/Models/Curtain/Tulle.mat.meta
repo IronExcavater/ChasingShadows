@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: ae2260dd404be324aa4416798918c8dc
+labels:
+- MC_Converted
+- MC_Source_ae2260dd404be324aa4416798918c8dc
+- MC_Target_URPLit
+AssetOrigin:
+  serializedVersion: 1
+  productId: 9337
+  packageName: Bedroom 2.0
+  packageVersion: 2.01
+  assetPath: Assets/Bedroom/Models/Curtain/Tulle.mat
+  uploadId: 382655
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
