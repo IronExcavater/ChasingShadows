@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 88e05d1d051dbe14da3257013071561a
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102853
+  packageName: Park Photo Scanned Assets
+  packageVersion: 2.1.1
+  assetPath: Assets/NatureManufacture Assets/Foliage Shaders/Tree_Bark_Metalic.shader
+  uploadId: 751944

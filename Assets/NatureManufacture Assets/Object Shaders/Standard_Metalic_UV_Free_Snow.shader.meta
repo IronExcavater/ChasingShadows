@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d9c8d69326d4ad945aa1bb0a25abbecb
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102853
+  packageName: Park Photo Scanned Assets
+  packageVersion: 2.1.1
+  assetPath: Assets/NatureManufacture Assets/Object Shaders/Standard_Metalic_UV_Free_Snow.shader
+  uploadId: 751944
