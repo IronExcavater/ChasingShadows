@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 3fd2b8c2380b97244be0e708f122e9a1
+timeCreated: 1512463927
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/Ultimate VFX/Prefabs/Loop/pf_vfx-ult_demo_psys_loop_weaponEffectElectricSwordPreTutorial.prefab
+  uploadId: 308562

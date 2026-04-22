@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 822f7152c24be0e459bf4f8f0f49aaea
+timeCreated: 1435536369
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Editor Extensions/Utilities/Particle Playback/Editor/ParticlePlayback.cs
+  uploadId: 308562

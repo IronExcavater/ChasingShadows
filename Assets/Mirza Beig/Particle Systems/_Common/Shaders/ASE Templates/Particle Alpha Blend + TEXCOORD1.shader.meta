@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 39608c403216c2545817cb3fb95a1410
+timeCreated: 1496654572
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/_Common/Shaders/ASE Templates/Particle
+    Alpha Blend + TEXCOORD1.shader
+  uploadId: 308562

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cc8394c64a9199543ac3a9c092a70906
+timeCreated: 1437246983
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Shaders/Image Effects/Resources/Sharpen/Sharpen.shader
+  uploadId: 308562

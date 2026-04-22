@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3befa7f045d38f24194217cb5fec3ab6
+timeCreated: 1512989895
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 25800000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/Ultimate VFX/Scenes/1 - Ultimate
+    VFX (Demo)/LightingData.asset
+  uploadId: 308562

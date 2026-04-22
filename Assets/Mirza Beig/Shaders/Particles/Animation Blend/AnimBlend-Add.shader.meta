@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dad6b0236f3fc4141b1bc6ae44e0d9a6
+timeCreated: 1506199902
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Shaders/Particles/Animation Blend/AnimBlend-Add.shader
+  uploadId: 308562

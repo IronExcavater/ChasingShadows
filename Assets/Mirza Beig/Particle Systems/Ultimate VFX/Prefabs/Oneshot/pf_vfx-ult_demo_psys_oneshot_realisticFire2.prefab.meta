@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 25497b798e6bff74fbbdfdf8f3fdf244
+timeCreated: 1506389488
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/Ultimate VFX/Prefabs/Oneshot/pf_vfx-ult_demo_psys_oneshot_realisticFire2.prefab
+  uploadId: 308562

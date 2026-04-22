@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8010f8b57cca12d46a85c903d2e87140
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/Ultimate VFX/Expansions/XP - STORM/Scripts/StormVFXTerrainDemoCamera.cs
+  uploadId: 308562

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 53c71aeb560b64f4cb01469c58baef4d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/_Common/Scripts/RewindParticleSystemSimple.cs
+  uploadId: 308562

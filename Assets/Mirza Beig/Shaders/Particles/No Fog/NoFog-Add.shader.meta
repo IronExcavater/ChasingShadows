@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f790ff40d52def24697283ca2a047c5b
+timeCreated: 1461567389
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Shaders/Particles/No Fog/NoFog-Add.shader
+  uploadId: 308562

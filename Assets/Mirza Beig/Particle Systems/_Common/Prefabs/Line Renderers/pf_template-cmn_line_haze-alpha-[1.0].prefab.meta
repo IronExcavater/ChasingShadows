@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 229fc90e02f70194fa7e70242b7589a8
+timeCreated: 1483915467
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/_Common/Prefabs/Line Renderers/pf_template-cmn_line_haze-alpha-[1.0].prefab
+  uploadId: 308562

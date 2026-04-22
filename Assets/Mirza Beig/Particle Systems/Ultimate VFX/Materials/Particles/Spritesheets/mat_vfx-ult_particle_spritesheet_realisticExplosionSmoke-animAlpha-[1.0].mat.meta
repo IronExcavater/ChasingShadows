@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 975eaef5cd7725746abf4d4c29bdebd7
+timeCreated: 1506197908
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/Ultimate VFX/Materials/Particles/Spritesheets/mat_vfx-ult_particle_spritesheet_realisticExplosionSmoke-animAlpha-[1.0].mat
+  uploadId: 308562

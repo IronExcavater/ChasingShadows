@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: a459c580f4cd938498d2d9aa94d3a03b
+timeCreated: 1475038359
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/_Common/Scripts/_Demo/MouseRotateCamera.cs
+  uploadId: 308562

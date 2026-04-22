@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 250820ec8673f9549acc97449bee156c
+timeCreated: 1508398214
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Scripting/Effects/Particle Force Fields/Scripts (DEMO
+    ONLY)/ParticleForceFieldsDemo.cs
+  uploadId: 308562

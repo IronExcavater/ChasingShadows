@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d322b122d4a1c6443a31246c2fd00b77
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Shaders/Image Effects/Tests/Screen Rain.shader
+  uploadId: 308562

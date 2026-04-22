@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0168a034af78ac441a6f0c60d3347c24
+timeCreated: 1440961891
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Shaders/Particles/Distortion/Distortion-Add.shader
+  uploadId: 308562

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6be876baf96dada4d9b6c8fef2b5c667
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Shaders/Standard/Standard-Terrain Rain 2.shader
+  uploadId: 308562

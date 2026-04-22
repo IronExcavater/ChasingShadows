@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e99f19d1281f8be4da48981942d4c56f
+timeCreated: 1506390374
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/Ultimate VFX/Prefabs/Loop/pf_vfx-ult_demo_psys_loop_mouseFollowSmoke.prefab
+  uploadId: 308562

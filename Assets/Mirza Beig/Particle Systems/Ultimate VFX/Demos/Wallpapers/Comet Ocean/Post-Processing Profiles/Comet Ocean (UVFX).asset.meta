@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: caaeaf3fee8ec1d4d9171811d00ac26c
+timeCreated: 1497335779
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Particle Systems/Ultimate VFX/Demos/Wallpapers/Comet
+    Ocean/Post-Processing Profiles/Comet Ocean (UVFX).asset
+  uploadId: 308562

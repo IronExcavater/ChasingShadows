@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c73a1f0ce5066174ab2e764e034dff90
+timeCreated: 1506417688
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Shaders/Particles/Add Soft/AddSoft-Mult.shader
+  uploadId: 308562

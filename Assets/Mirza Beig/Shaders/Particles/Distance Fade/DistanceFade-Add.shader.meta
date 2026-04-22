@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7abeedc5e2ea6ae44a6455325c9a8fee
+timeCreated: 1501401544
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 26701
+  packageName: Ultimate VFX
+  packageVersion: 3.5.2
+  assetPath: Assets/Mirza Beig/Shaders/Particles/Distance Fade/DistanceFade-Add.shader
+  uploadId: 308562
