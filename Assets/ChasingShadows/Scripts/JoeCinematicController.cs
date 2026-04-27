@@ -15,7 +15,15 @@ namespace ChasingShadows.Characters
         {
             NavMesh,
             RootMotion,
-            Spline
+            Spline,
+            External
+        }
+
+        public enum NavMeshProjection
+        {
+            Disabled,
+            WhenAvailable,
+            Required
         }
 
         [Header("References")]
@@ -35,6 +43,16 @@ namespace ChasingShadows.Characters
         public bool rootMotionLocomotion = true;
         public float navMeshSampleRadius = 1.5f;
         [Range(0.05f, 2f)] public float splineSpeed = 1f;
+
+        [Header("System Ownership")]
+        public bool navMeshEnabled = true;
+        public bool rootMotionEnabled = true;
+        public bool ikEnabled = true;
+        public bool advancedLocomotionEnabled = true;
+        public bool allowRootMotionOnSpline = false;
+        public bool syncAgentEveryFrame = true;
+        public NavMeshProjection splineNavMeshProjection = NavMeshProjection.WhenAvailable;
+        public bool holdFinalSplinePose = true;
 
         [Header("Animator Parameters")]
         public string moveSpeedParameter = "MoveSpeed";
@@ -56,6 +74,10 @@ namespace ChasingShadows.Characters
         private float rootMotionSecondsRemaining;
         private float splineT;
         private Vector3 previousPosition;
+        private Vector3 currentVelocity;
+        private Vector3 lastSplinePosition;
+        private Quaternion lastSplineRotation;
+        private bool hasSplinePose;
 
         private void Reset()
         {
@@ -77,10 +99,34 @@ namespace ChasingShadows.Characters
 
             ConfigureAgent();
             previousPosition = transform.position;
+            lastSplinePosition = transform.position;
+            lastSplineRotation = transform.rotation;
         }
 
         private void OnEnable()
         {
+            ConfigureAgent();
+        }
+
+        private void OnValidate()
+        {
+            maxSpeed = Mathf.Max(0f, maxSpeed);
+            acceleration = Mathf.Max(0f, acceleration);
+            rotationSharpness = Mathf.Max(0f, rotationSharpness);
+            navMeshSampleRadius = Mathf.Max(0.01f, navMeshSampleRadius);
+            footRayHeight = Mathf.Max(0f, footRayHeight);
+            footRayDistance = Mathf.Max(0f, footRayDistance);
+
+            if (animator == null)
+            {
+                animator = GetComponent<Animator>();
+            }
+
+            if (agent == null)
+            {
+                agent = GetComponent<NavMeshAgent>();
+            }
+
             ConfigureAgent();
         }
 
@@ -97,6 +143,9 @@ namespace ChasingShadows.Characters
                 case MotionDriver.Spline:
                     TickSpline();
                     break;
+                case MotionDriver.External:
+                    currentSpeed = 0f;
+                    break;
             }
 
             UpdateAnimatorVelocity();
@@ -110,10 +159,15 @@ namespace ChasingShadows.Characters
                 return;
             }
 
-            if (driver == MotionDriver.RootMotion || (driver == MotionDriver.NavMesh && rootMotionLocomotion))
+            if (!ShouldConsumeRootMotion())
+            {
+                return;
+            }
+
+            if (driver == MotionDriver.RootMotion || driver == MotionDriver.Spline || (driver == MotionDriver.NavMesh && rootMotionLocomotion))
             {
                 var delta = animator.deltaPosition;
-                if (driver == MotionDriver.NavMesh && agent != null && agent.hasPath)
+                if (driver == MotionDriver.NavMesh && agent != null && agent.enabled && agent.hasPath)
                 {
                     var desired = agent.desiredVelocity;
                     if (desired.sqrMagnitude > 0.01f)
@@ -122,7 +176,7 @@ namespace ChasingShadows.Characters
                     }
                 }
 
-                MoveOnNavMesh(transform.position + delta);
+                MoveWithCurrentAuthority(transform.position + delta);
                 transform.rotation *= animator.deltaRotation;
                 SyncAgentToTransform();
             }
@@ -130,7 +184,7 @@ namespace ChasingShadows.Characters
 
         private void OnAnimatorIK(int layerIndex)
         {
-            if (animator == null)
+            if (animator == null || !ikEnabled)
             {
                 return;
             }
@@ -147,7 +201,7 @@ namespace ChasingShadows.Characters
             driver = MotionDriver.NavMesh;
             rootMotionSecondsRemaining = 0f;
 
-            if (agent == null || !agent.enabled)
+            if (!navMeshEnabled || agent == null || !agent.enabled)
             {
                 return;
             }
@@ -188,9 +242,85 @@ namespace ChasingShadows.Characters
         public void FollowSpline(SplineContainer spline, float startT = 0f)
         {
             trackedSpline = spline;
-            splineT = Mathf.Clamp01(startT);
+            SetSplineNormalized(startT, false);
             driver = MotionDriver.Spline;
             ClearNavPath();
+        }
+
+        public void SetSplineNormalized(float normalizedTime, bool evaluateImmediately = true)
+        {
+            splineT = Mathf.Clamp01(normalizedTime);
+            if (evaluateImmediately && trackedSpline != null)
+            {
+                EvaluateSplinePose(splineT, out lastSplinePosition, out lastSplineRotation);
+                hasSplinePose = true;
+                MoveWithSplineProjection(lastSplinePosition);
+                transform.rotation = lastSplineRotation;
+                SyncAgentToTransform();
+            }
+        }
+
+        public void SetMotionDriver(MotionDriver motionDriver)
+        {
+            driver = motionDriver;
+            if (motionDriver != MotionDriver.NavMesh)
+            {
+                ClearNavPath();
+            }
+        }
+
+        public void ConfigureSystems(bool useNavMesh, bool useRootMotion, bool useIk, bool useAdvancedLocomotion)
+        {
+            navMeshEnabled = useNavMesh;
+            rootMotionEnabled = useRootMotion;
+            ikEnabled = useIk;
+            advancedLocomotionEnabled = useAdvancedLocomotion;
+            ConfigureAgent();
+        }
+
+        public void RefreshConfiguration()
+        {
+            ConfigureAgent();
+            SyncAgentToTransform();
+        }
+
+        public void SetNavMeshEnabled(bool enabled)
+        {
+            navMeshEnabled = enabled;
+            ConfigureAgent();
+            if (enabled)
+            {
+                EnsureAgentOnNavMesh();
+                SyncAgentToTransform();
+            }
+        }
+
+        public void SetRootMotionEnabled(bool enabled)
+        {
+            rootMotionEnabled = enabled;
+        }
+
+        public void SetIkEnabled(bool enabled)
+        {
+            ikEnabled = enabled;
+        }
+
+        public void SetAdvancedLocomotionEnabled(bool enabled)
+        {
+            advancedLocomotionEnabled = enabled;
+        }
+
+        public void SetSplineProjection(NavMeshProjection projection)
+        {
+            splineNavMeshProjection = projection;
+        }
+
+        public void ApplyProfile(JoeMovementProfile profile)
+        {
+            if (profile != null)
+            {
+                profile.ApplyTo(this);
+            }
         }
 
         public void PlayRootMotionBeat(string triggerName, float durationSeconds)
@@ -227,7 +357,7 @@ namespace ChasingShadows.Characters
             transform.position = worldPosition;
             EnsureAgentOnNavMesh();
 
-            if (agent != null && agent.enabled && agent.isOnNavMesh)
+            if (navMeshEnabled && agent != null && agent.enabled && agent.isOnNavMesh)
             {
                 agent.Warp(transform.position);
             }
@@ -261,11 +391,12 @@ namespace ChasingShadows.Characters
             agent.speed = maxSpeed;
             agent.acceleration = acceleration;
             agent.angularSpeed = 720f;
+            agent.enabled = navMeshEnabled;
         }
 
         private void TickNavMesh()
         {
-            if (agent == null || !agent.enabled || !agent.isOnNavMesh)
+            if (!navMeshEnabled || agent == null || !agent.enabled || !agent.isOnNavMesh)
             {
                 return;
             }
@@ -278,9 +409,9 @@ namespace ChasingShadows.Characters
                 RotateToward(desiredVelocity);
             }
 
-            if (!rootMotionLocomotion)
+            if (!rootMotionLocomotion || !rootMotionEnabled)
             {
-                MoveOnNavMesh(transform.position + desiredVelocity * Time.deltaTime);
+                MoveWithNavMeshProjection(transform.position + desiredVelocity * Time.deltaTime);
                 SyncAgentToTransform();
             }
         }
@@ -306,33 +437,83 @@ namespace ChasingShadows.Characters
             var length = Mathf.Max(0.01f, trackedSpline.CalculateLength());
             splineT = Mathf.Clamp01(splineT + (splineSpeed / length) * Time.deltaTime);
 
-            var rawPosition = trackedSpline.EvaluatePosition(splineT);
-            var rawTangent = trackedSpline.EvaluateTangent(splineT);
-            var targetPosition = new Vector3(rawPosition.x, rawPosition.y, rawPosition.z);
-            var tangent = new Vector3(rawTangent.x, rawTangent.y, rawTangent.z);
-
-            MoveOnNavMesh(targetPosition);
-            if (tangent.sqrMagnitude > 0.001f)
-            {
-                RotateToward(tangent);
-            }
+            EvaluateSplinePose(splineT, out lastSplinePosition, out lastSplineRotation);
+            hasSplinePose = true;
+            MoveWithSplineProjection(lastSplinePosition);
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                lastSplineRotation,
+                1f - Mathf.Exp(-rotationSharpness * Time.deltaTime));
 
             SyncAgentToTransform();
             if (splineT >= 1f)
             {
-                driver = MotionDriver.NavMesh;
+                if (holdFinalSplinePose)
+                {
+                    driver = MotionDriver.External;
+                }
+                else
+                {
+                    driver = MotionDriver.NavMesh;
+                }
             }
         }
 
-        private void MoveOnNavMesh(Vector3 targetPosition)
+        private void MoveWithCurrentAuthority(Vector3 targetPosition)
         {
-            if (NavMesh.SamplePosition(targetPosition, out var hit, navMeshSampleRadius, NavMesh.AllAreas))
+            if (driver == MotionDriver.Spline)
+            {
+                MoveWithSplineProjection(targetPosition);
+                return;
+            }
+
+            MoveWithNavMeshProjection(targetPosition);
+        }
+
+        private void MoveWithNavMeshProjection(Vector3 targetPosition)
+        {
+            if (navMeshEnabled && NavMesh.SamplePosition(targetPosition, out var hit, navMeshSampleRadius, NavMesh.AllAreas))
             {
                 transform.position = hit.position;
                 return;
             }
 
             transform.position = targetPosition;
+        }
+
+        private void MoveWithSplineProjection(Vector3 targetPosition)
+        {
+            if (!navMeshEnabled || splineNavMeshProjection == NavMeshProjection.Disabled)
+            {
+                transform.position = targetPosition;
+                return;
+            }
+
+            if (NavMesh.SamplePosition(targetPosition, out var hit, navMeshSampleRadius, NavMesh.AllAreas))
+            {
+                transform.position = hit.position;
+                return;
+            }
+
+            if (splineNavMeshProjection == NavMeshProjection.Required)
+            {
+                return;
+            }
+
+            transform.position = targetPosition;
+        }
+
+        private void EvaluateSplinePose(float normalizedTime, out Vector3 position, out Quaternion rotation)
+        {
+            var rawPosition = trackedSpline.EvaluatePosition(normalizedTime);
+            var rawTangent = trackedSpline.EvaluateTangent(normalizedTime);
+            position = new Vector3(rawPosition.x, rawPosition.y, rawPosition.z);
+
+            var tangent = new Vector3(rawTangent.x, rawTangent.y, rawTangent.z);
+            tangent.y = 0f;
+            rotation = tangent.sqrMagnitude > 0.001f
+                ? Quaternion.LookRotation(tangent.normalized, Vector3.up)
+                : transform.rotation;
         }
 
         private void RotateToward(Vector3 worldDirection)
@@ -357,13 +538,14 @@ namespace ChasingShadows.Characters
                 return;
             }
 
-            var worldVelocity = Time.deltaTime > 0f ? (transform.position - previousPosition) / Time.deltaTime : Vector3.zero;
+            currentVelocity = Time.deltaTime > 0f ? (transform.position - previousPosition) / Time.deltaTime : Vector3.zero;
+            var worldVelocity = currentVelocity;
             var localVelocity = transform.InverseTransformDirection(worldVelocity);
             var planarSpeed = new Vector2(localVelocity.x, localVelocity.z).magnitude;
 
             animator.SetFloat(moveSpeedParameter, planarSpeed);
-            animator.SetFloat(moveForwardParameter, localVelocity.z);
-            animator.SetFloat(moveRightParameter, localVelocity.x);
+            animator.SetFloat(moveForwardParameter, advancedLocomotionEnabled ? localVelocity.z : planarSpeed);
+            animator.SetFloat(moveRightParameter, advancedLocomotionEnabled ? localVelocity.x : 0f);
             animator.SetFloat(turnSpeedParameter, Vector3.SignedAngle(transform.forward, worldVelocity.normalized, Vector3.up));
             animator.SetBool(groundedParameter, IsGrounded());
         }
@@ -426,7 +608,7 @@ namespace ChasingShadows.Characters
 
         private void ClearNavPath()
         {
-            if (agent != null && agent.enabled && agent.isOnNavMesh)
+            if (navMeshEnabled && agent != null && agent.enabled && agent.isOnNavMesh)
             {
                 agent.ResetPath();
             }
@@ -434,7 +616,12 @@ namespace ChasingShadows.Characters
 
         private void SyncAgentToTransform()
         {
-            if (agent != null && agent.enabled && agent.isOnNavMesh)
+            if (!syncAgentEveryFrame)
+            {
+                return;
+            }
+
+            if (navMeshEnabled && agent != null && agent.enabled && agent.isOnNavMesh)
             {
                 agent.nextPosition = transform.position;
             }
@@ -442,7 +629,7 @@ namespace ChasingShadows.Characters
 
         private void EnsureAgentOnNavMesh()
         {
-            if (agent == null || !agent.enabled || agent.isOnNavMesh)
+            if (!navMeshEnabled || agent == null || !agent.enabled || agent.isOnNavMesh)
             {
                 return;
             }
@@ -451,6 +638,33 @@ namespace ChasingShadows.Characters
             {
                 agent.Warp(hit.position);
             }
+        }
+
+        private bool ShouldConsumeRootMotion()
+        {
+            if (!rootMotionEnabled || animator == null || !animator.applyRootMotion)
+            {
+                return false;
+            }
+
+            if (driver == MotionDriver.Spline)
+            {
+                return allowRootMotionOnSpline;
+            }
+
+            return driver == MotionDriver.RootMotion || (driver == MotionDriver.NavMesh && rootMotionLocomotion);
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (!hasSplinePose)
+            {
+                return;
+            }
+
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(lastSplinePosition, 0.18f);
+            Gizmos.DrawLine(lastSplinePosition, lastSplinePosition + (lastSplineRotation * Vector3.forward));
         }
     }
 }

@@ -176,6 +176,14 @@ MonoBehaviour:
   rootMotionLocomotion: 1
   navMeshSampleRadius: 1.5
   splineSpeed: 1
+  navMeshEnabled: 1
+  rootMotionEnabled: 1
+  ikEnabled: 1
+  advancedLocomotionEnabled: 1
+  allowRootMotionOnSpline: 1
+  syncAgentEveryFrame: 1
+  splineNavMeshProjection: 1
+  holdFinalSplinePose: 1
   moveSpeedParameter: MoveSpeed
   moveForwardParameter: MoveForward
   moveRightParameter: MoveRight
