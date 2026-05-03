@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4624862257694692972}
   - component: {fileID: 8447667472993046028}
   m_Layer: 0
-  m_Name: Joe_Base
+  m_Name: Joe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 720
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.12
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -169,35 +169,44 @@ MonoBehaviour:
   rightHandTarget: {fileID: 1772375554281274653}
   cameraTarget: {fileID: 2439998144835187153}
   trackedSpline: {fileID: 0}
+  bipedIk: {fileID: 0}
+  lookAtIk: {fileID: 0}
+  grounder: {fileID: 0}
   driver: 0
   maxSpeed: 2.8
   acceleration: 8
+  deceleration: 5
   rotationSharpness: 12
-  rootMotionLocomotion: 1
-  navMeshSampleRadius: 1.5
+  stoppingDistance: 0.12
   splineSpeed: 1
-  navMeshEnabled: 1
-  rootMotionEnabled: 1
-  ikEnabled: 1
-  advancedLocomotionEnabled: 1
-  allowRootMotionOnSpline: 1
-  syncAgentEveryFrame: 1
+  projectToNavMesh: 1
   splineNavMeshProjection: 1
+  navMeshSampleRadius: 1.5
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  groundRayHeight: 1.4
+  groundRayDistance: 3
+  rootHeightOffset: 0
   holdFinalSplinePose: 1
   moveSpeedParameter: MoveSpeed
   moveForwardParameter: MoveForward
   moveRightParameter: MoveRight
   turnSpeedParameter: TurnSpeed
   groundedParameter: Grounded
+  leanForwardParameter: LeanForward
+  leanRightParameter: LeanRight
+  animatorDampTime: 0.16
+  leanForwardScale: 0.08
+  leanRightScale: 0.035
+  leanSharpness: 8
+  finalIkEnabled: 1
   lookWeight: 0.75
   handIkWeight: 0
   footIkWeight: 0.75
-  footIkMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  footRayHeight: 0.55
-  footRayDistance: 1.2
-  footOffset: 0.03
+  ikWeightSharpness: 8
+  grounderMaxStep: 0.5
+  grounderHeightOffset: 0.02
 --- !u!1 &529526943073713412
 GameObject:
   m_ObjectHideFlags: 0

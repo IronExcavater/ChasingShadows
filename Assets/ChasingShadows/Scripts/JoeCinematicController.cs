@@ -222,6 +222,13 @@ namespace ChasingShadows.Characters
             handIkWeight = Mathf.Clamp01(weight);
         }
 
+        public void SetIkWeights(float look, float hands, float feet)
+        {
+            lookWeight = Mathf.Clamp01(look);
+            handIkWeight = Mathf.Clamp01(hands);
+            footIkWeight = Mathf.Clamp01(feet);
+        }
+
         public void FollowSpline(SplineContainer spline, float startT = 0f)
         {
             trackedSpline = spline;
@@ -319,6 +326,11 @@ namespace ChasingShadows.Characters
             driver = MotionDriver.RootMotion;
             hasDestination = false;
             rootMotionSecondsRemaining = Mathf.Max(0.01f, durationSeconds);
+            FireTrigger(triggerName);
+        }
+
+        public void PlayActionTrigger(string triggerName)
+        {
             FireTrigger(triggerName);
         }
 
@@ -796,7 +808,8 @@ namespace ChasingShadows.Characters
 
         private void FireTrigger(string triggerName)
         {
-            if (animator == null || string.IsNullOrWhiteSpace(triggerName))
+            if (animator == null || string.IsNullOrWhiteSpace(triggerName) ||
+                !HasAnimatorParameter(triggerName, AnimatorControllerParameterType.Trigger))
             {
                 return;
             }
@@ -807,7 +820,8 @@ namespace ChasingShadows.Characters
 
         private void SetAnimatorFloat(string parameterName, float value)
         {
-            if (!string.IsNullOrWhiteSpace(parameterName))
+            if (!string.IsNullOrWhiteSpace(parameterName) &&
+                HasAnimatorParameter(parameterName, AnimatorControllerParameterType.Float))
             {
                 animator.SetFloat(parameterName, value, animatorDampTime, Time.deltaTime);
             }
@@ -815,10 +829,29 @@ namespace ChasingShadows.Characters
 
         private void SetAnimatorBool(string parameterName, bool value)
         {
-            if (!string.IsNullOrWhiteSpace(parameterName))
+            if (!string.IsNullOrWhiteSpace(parameterName) &&
+                HasAnimatorParameter(parameterName, AnimatorControllerParameterType.Bool))
             {
                 animator.SetBool(parameterName, value);
             }
+        }
+
+        private bool HasAnimatorParameter(string parameterName, AnimatorControllerParameterType type)
+        {
+            if (animator == null || animator.runtimeAnimatorController == null)
+            {
+                return false;
+            }
+
+            foreach (var parameter in animator.parameters)
+            {
+                if (parameter.type == type && parameter.name == parameterName)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void OnDrawGizmosSelected()
