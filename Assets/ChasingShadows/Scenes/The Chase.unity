@@ -36246,7 +36246,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 682284495}
-  - component: {fileID: 682284494}
   m_Layer: 0
   m_Name: Chase_Sequence
   m_TagString: Untagged
@@ -36254,84 +36253,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &682284494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682284493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aa5bb2a7af24f82b93f2f6f83bc827e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeChaseSequence
-  joe: {fileID: 1497427275}
-  authoredRootClip: {fileID: 7400000, guid: ce874f1656192cc4095f59a241bef1f1, type: 2}
-  shadowJoe: {fileID: 748637465}
-  lookTarget: {fileID: 611327677}
-  leftHandTarget: {fileID: 240658446}
-  rightHandTarget: {fileID: 1747962000}
-  events:
-  - time: 0.05
-    animatorTrigger: RunStart
-    lookWeight: 0.75
-    handWeight: 0
-    footWeight: 0.9
-  - time: 1.2
-    animatorTrigger: HardTurn
-    lookWeight: 1
-    handWeight: 0
-    footWeight: 0.9
-  - time: 2.25
-    animatorTrigger: Jump
-    lookWeight: 0.75
-    handWeight: 0
-    footWeight: 0.2
-  - time: 3.25
-    animatorTrigger: Vault
-    lookWeight: 0.75
-    handWeight: 0.95
-    footWeight: 0.25
-  - time: 4.45
-    animatorTrigger: Climb
-    lookWeight: 0.65
-    handWeight: 1
-    footWeight: 0.35
-  - time: 5.85
-    animatorTrigger: Drop
-    lookWeight: 0.75
-    handWeight: 0
-    footWeight: 0.15
-  - time: 6.35
-    animatorTrigger: Stumble
-    lookWeight: 0.85
-    handWeight: 0.4
-    footWeight: 0.7
-  - time: 7.15
-    animatorTrigger: RunStart
-    lookWeight: 0.55
-    handWeight: 0
-    footWeight: 0.9
-  - time: 8.85
-    animatorTrigger: RunStop
-    lookWeight: 0.2
-    handWeight: 0
-    footWeight: 0.9
-  playOnStart: 0
-  loop: 0
-  duration: 9.2
-  playbackSpeed: 1
-  moveSpeedParameter: MoveSpeed
-  moveForwardParameter: MoveForward
-  moveRightParameter: MoveRight
-  turnSpeedParameter: TurnSpeed
-  groundedParameter: Grounded
-  leanForwardParameter: LeanForward
-  leanRightParameter: LeanRight
-  animatorDampTime: 0.12
-  playing: 0
-  time: 0
 --- !u!4 &682284495
 Transform:
   m_ObjectHideFlags: 0
