@@ -17,33 +17,8 @@ public class Door : MonoBehaviour
         openRot = new Vector3(defaulRot.x, defaulRot.y + DoorOpenAngle, defaulRot.z);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (open)//открыть
-        {
-            transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRot, Time.deltaTime * smooth);
-        }
-        else//закрыть
-        {
-            transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaulRot, Time.deltaTime * smooth);
-        }
-        if (Input.GetKeyDown(KeyCode.E) && trig)
-        {
-            open = !open;
-        }
-        if (trig)
-        {
-            if (open)
-            {
-                txt.text = "Close E";
-            }
-            else
-            {
-                txt.text = "Open E";
-            }
-        }
-    }
+    // Update disabled — interactive door not used in cinematic build.
+    void Update() { }
     private void OnTriggerEnter(Collider coll)//вход и выход в\из  триггера 
     {
         if (coll.tag == "Player")

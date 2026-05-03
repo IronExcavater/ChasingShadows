@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "unityMCP": {
+      "command": "C:\\Users\\nicla\\.local\\bin\\uvx.exe",
+      "args": [
+        "--offline",
+        "--prerelease",
+        "explicit",
+        "--from",
+        "mcpforunityserver>=0.0.0a0",
+        "mcp-for-unity",
+        "--transport",
+        "stdio"
+      ],
+      "type": "stdio"
+    }
+  }
+}
