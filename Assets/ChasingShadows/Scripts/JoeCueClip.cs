@@ -13,6 +13,9 @@ namespace ChasingShadows.Characters
         [Range(0f, 1f)] public float lookWeight;
         [Range(0f, 1f)] public float handWeight;
         [Range(0f, 1f)] public float footWeight = 0.85f;
+        public bool setRootMotion;
+        public bool rootMotionEnabled;
+        public bool clearRootMotionOnExit = true;
         public bool clearHandsOnExit = true;
 
         public ClipCaps clipCaps => ClipCaps.Blending | ClipCaps.Extrapolation;
@@ -29,6 +32,9 @@ namespace ChasingShadows.Characters
             behaviour.lookWeight = lookWeight;
             behaviour.handWeight = handWeight;
             behaviour.footWeight = footWeight;
+            behaviour.setRootMotion = setRootMotion;
+            behaviour.rootMotionEnabled = rootMotionEnabled;
+            behaviour.clearRootMotionOnExit = clearRootMotionOnExit;
             behaviour.clearHandsOnExit = clearHandsOnExit;
             return playable;
         }
@@ -43,6 +49,9 @@ namespace ChasingShadows.Characters
         public float lookWeight;
         public float handWeight;
         public float footWeight;
+        public bool setRootMotion;
+        public bool rootMotionEnabled;
+        public bool clearRootMotionOnExit;
         public bool clearHandsOnExit;
 
         private JoeCinematicController controller;
@@ -67,6 +76,11 @@ namespace ChasingShadows.Characters
                 triggerFired = true;
             }
 
+            if (setRootMotion)
+            {
+                controller.SetRootMotionEnabled(rootMotionEnabled);
+            }
+
             controller.SetLookTarget(lookTarget, lookWeight);
             controller.SetHandTargets(leftHandTarget, rightHandTarget, handWeight);
             controller.SetIkWeights(lookWeight, handWeight, footWeight);
@@ -77,6 +91,11 @@ namespace ChasingShadows.Characters
             if (clearHandsOnExit && controller != null)
             {
                 controller.SetHandTargets(null, null, 0f);
+            }
+
+            if (clearRootMotionOnExit && controller != null)
+            {
+                controller.SetRootMotionEnabled(false);
             }
         }
     }

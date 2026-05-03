@@ -5,17 +5,25 @@ using UnityEngine.Timeline;
 
 namespace ChasingShadows.Characters
 {
+    public enum JoeTimelineMotionMode
+    {
+        Hold,
+        MoveTo,
+        Spline
+    }
+
     public sealed class JoeMovementTimelineClip : PlayableAsset, ITimelineClipAsset
     {
         public ExposedReference<JoeCinematicController> controller;
+        public JoeTimelineMotionMode mode = JoeTimelineMotionMode.MoveTo;
+        public ExposedReference<Transform> start;
+        public ExposedReference<Transform> end;
         public ExposedReference<SplineContainer> spline;
-        public ExposedReference<Transform> navDestination;
-        public JoeMovementProfile profile;
-        public JoeCinematicController.MotionDriver driver = JoeCinematicController.MotionDriver.NavMesh;
-        public bool useClipTimeForSpline = true;
         [Range(0f, 1f)] public float startSplineT = 0f;
         [Range(0f, 1f)] public float endSplineT = 1f;
-        public bool restoreNavMeshDriverOnExit = true;
+        public bool faceMotion = true;
+        public bool projectToGround = true;
+        public bool smoothStep = true;
 
         public ClipCaps clipCaps => ClipCaps.Blending | ClipCaps.Extrapolation | ClipCaps.SpeedMultiplier;
 
@@ -23,15 +31,17 @@ namespace ChasingShadows.Characters
         {
             var playable = ScriptPlayable<JoeMovementTimelineBehaviour>.Create(graph);
             var behaviour = playable.GetBehaviour();
-            behaviour.controller = controller.Resolve(graph.GetResolver());
-            behaviour.spline = spline.Resolve(graph.GetResolver());
-            behaviour.navDestination = navDestination.Resolve(graph.GetResolver());
-            behaviour.profile = profile;
-            behaviour.driver = driver;
-            behaviour.useClipTimeForSpline = useClipTimeForSpline;
+            var resolver = graph.GetResolver();
+            behaviour.controller = controller.Resolve(resolver);
+            behaviour.mode = mode;
+            behaviour.start = start.Resolve(resolver);
+            behaviour.end = end.Resolve(resolver);
+            behaviour.spline = spline.Resolve(resolver);
             behaviour.startSplineT = startSplineT;
             behaviour.endSplineT = endSplineT;
-            behaviour.restoreNavMeshDriverOnExit = restoreNavMeshDriverOnExit;
+            behaviour.faceMotion = faceMotion;
+            behaviour.projectToGround = projectToGround;
+            behaviour.smoothStep = smoothStep;
             return playable;
         }
     }
@@ -39,30 +49,29 @@ namespace ChasingShadows.Characters
     public sealed class JoeMovementTimelineBehaviour : PlayableBehaviour
     {
         public JoeCinematicController controller;
+        public JoeTimelineMotionMode mode;
+        public Transform start;
+        public Transform end;
         public SplineContainer spline;
-        public Transform navDestination;
-        public JoeMovementProfile profile;
-        public JoeCinematicController.MotionDriver driver;
-        public bool useClipTimeForSpline = true;
         public float startSplineT;
         public float endSplineT = 1f;
-        public bool restoreNavMeshDriverOnExit = true;
+        public bool faceMotion = true;
+        public bool projectToGround = true;
+        public bool smoothStep = true;
 
         private bool initialized;
+        private Vector3 fallbackStartPosition;
+        private Quaternion fallbackStartRotation;
+        private Vector3 previousPosition;
 
         public override void OnBehaviourPlay(Playable playable, FrameData info)
         {
             initialized = false;
-            ApplyInitialState();
         }
 
         public override void ProcessFrame(Playable playable, FrameData info, object playerData)
         {
-            if (controller == null)
-            {
-                controller = playerData as JoeCinematicController;
-            }
-
+            controller ??= playerData as JoeCinematicController;
             if (controller == null)
             {
                 return;
@@ -70,57 +79,67 @@ namespace ChasingShadows.Characters
 
             if (!initialized)
             {
-                ApplyInitialState();
+                fallbackStartPosition = start != null ? start.position : controller.transform.position;
+                fallbackStartRotation = start != null ? start.rotation : controller.transform.rotation;
+                previousPosition = fallbackStartPosition;
+                initialized = true;
             }
 
-            if (driver != JoeCinematicController.MotionDriver.Spline || spline == null || !useClipTimeForSpline)
+            if (mode == JoeTimelineMotionMode.Hold)
             {
                 return;
             }
 
             var duration = playable.GetDuration();
-            var normalized = duration > 0.0001d ? Mathf.Clamp01((float)(playable.GetTime() / duration)) : 1f;
-            controller.SetSplineNormalized(Mathf.Lerp(startSplineT, endSplineT, normalized));
+            var t = duration > 0.0001d ? Mathf.Clamp01((float)(playable.GetTime() / duration)) : 1f;
+            if (smoothStep)
+            {
+                t = t * t * (3f - (2f * t));
+            }
+
+            var position = fallbackStartPosition;
+            var rotation = fallbackStartRotation;
+            var useRotation = false;
+
+            if (mode == JoeTimelineMotionMode.MoveTo)
+            {
+                var from = start != null ? start.position : fallbackStartPosition;
+                var to = end != null ? end.position : fallbackStartPosition;
+                position = Vector3.LerpUnclamped(from, to, t);
+                rotation = ResolveMotionRotation(position, previousPosition, start != null ? start.rotation : fallbackStartRotation);
+                useRotation = faceMotion;
+            }
+            else if (mode == JoeTimelineMotionMode.Spline && spline != null)
+            {
+                var splineT = Mathf.Lerp(startSplineT, endSplineT, t);
+                EvaluateSplinePose(spline, splineT, out position, out rotation);
+                useRotation = faceMotion;
+            }
+
+            controller.SetTimelinePose(position, rotation, useRotation, projectToGround);
+            previousPosition = position;
         }
 
-        public override void OnBehaviourPause(Playable playable, FrameData info)
+        private static Quaternion ResolveMotionRotation(Vector3 position, Vector3 previousPosition, Quaternion fallback)
         {
-            if (restoreNavMeshDriverOnExit && controller != null && driver != JoeCinematicController.MotionDriver.NavMesh)
-            {
-                controller.SetMotionDriver(JoeCinematicController.MotionDriver.NavMesh);
-            }
+            var direction = position - previousPosition;
+            direction.y = 0f;
+            return direction.sqrMagnitude > 0.0001f
+                ? Quaternion.LookRotation(direction.normalized, Vector3.up)
+                : fallback;
         }
 
-        private void ApplyInitialState()
+        private static void EvaluateSplinePose(SplineContainer spline, float normalizedTime, out Vector3 position, out Quaternion rotation)
         {
-            if (controller == null)
-            {
-                return;
-            }
+            var rawPosition = spline.EvaluatePosition(normalizedTime);
+            var rawTangent = spline.EvaluateTangent(normalizedTime);
+            position = new Vector3(rawPosition.x, rawPosition.y, rawPosition.z);
 
-            controller.ApplyProfile(profile);
-
-            if (driver == JoeCinematicController.MotionDriver.Spline && spline != null)
-            {
-                controller.trackedSpline = spline;
-                // When clip time drives the spline, use External so TickSpline never
-                // auto-advances splineT and fights ProcessFrame's SetSplineNormalized.
-                var effectiveDriver = useClipTimeForSpline
-                    ? JoeCinematicController.MotionDriver.External
-                    : JoeCinematicController.MotionDriver.Spline;
-                controller.SetMotionDriver(effectiveDriver);
-                controller.SetSplineNormalized(startSplineT);
-            }
-            else
-            {
-                controller.SetMotionDriver(driver);
-                if (driver == JoeCinematicController.MotionDriver.NavMesh && navDestination != null)
-                {
-                    controller.SetNavDestination(navDestination);
-                }
-            }
-
-            initialized = true;
+            var tangent = new Vector3(rawTangent.x, rawTangent.y, rawTangent.z);
+            tangent.y = 0f;
+            rotation = tangent.sqrMagnitude > 0.001f
+                ? Quaternion.LookRotation(tangent.normalized, Vector3.up)
+                : Quaternion.identity;
         }
     }
 }

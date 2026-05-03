@@ -3,7 +3,6 @@ using Unity.Cinemachine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.Playables;
 using UnityEngine.Rendering;
 using UnityEngine.Timeline;
@@ -16,6 +15,7 @@ namespace ChasingShadows.Editor
         private const string TimelineFolder = "Assets/ChasingShadows/Timelines";
         private const string TimelinePath = TimelineFolder + "/Joe_Chase_Timeline.playable";
         private const string JoePrefabPath = "Assets/ChasingShadows/Prefabs/Joe.prefab";
+        private const string ShadowPrefabPath = "Assets/ChasingShadows/Prefabs/Shadow.prefab";
 
         [MenuItem("Chasing Shadows/Create Joe Timeline Setup")]
         public static void CreateJoeTimelineSetup()
@@ -24,21 +24,19 @@ namespace ChasingShadows.Editor
 
             var root = RecreateRoot();
             var joe = FindOrCreateJoe(root.transform);
-            var shadow = joe != null ? CreateShadow(root.transform, joe) : null;
-            CreateTargets(root.transform);
+            var shadow = joe != null ? CreateShadow(joe) : null;
+            var targets = CreateTargets(root.transform);
 
             var camera = CreateCamera(root.transform);
             var director = CreateDirector(root.transform);
-            var timeline = CreateTimelineAsset();
+            var timeline = CreateTimelineAsset(targets);
 
             director.playableAsset = timeline;
             BindTimeline(director, timeline, joe, shadow, camera);
 
             if (joe != null)
             {
-                joe.SetMotionDriver(JoeCinematicController.MotionDriver.External);
-                joe.SetLookTarget(null, 0f);
-                joe.SetHandTargets(null, null, 0f);
+                joe.Stop();
             }
 
             Selection.activeGameObject = root;
@@ -88,14 +86,33 @@ namespace ChasingShadows.Editor
             return instance.GetComponent<JoeCinematicController>() ?? instance.AddComponent<JoeCinematicController>();
         }
 
-        private static GameObject CreateShadow(Transform parent, JoeCinematicController joe)
+        private static GameObject CreateShadow(JoeCinematicController joe)
         {
-            var shadow = Object.Instantiate(joe.gameObject, parent);
-            shadow.name = "Joe_Shadow";
-            shadow.transform.SetPositionAndRotation(joe.transform.position, joe.transform.rotation);
-            shadow.transform.localScale = joe.transform.localScale;
+            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(ShadowPrefabPath);
+            if (prefab == null)
+            {
+                Debug.LogWarning($"Shadow prefab not found at {ShadowPrefabPath}. Add the prefab, then run the setup again.");
+                return null;
+            }
 
-            foreach (var renderer in joe.GetComponentsInChildren<Renderer>(true))
+            var joeRenderers = joe.GetComponentsInChildren<Renderer>(true);
+            var shadow = PrefabUtility.InstantiatePrefab(prefab, joe.transform) as GameObject;
+            if (shadow == null)
+            {
+                return null;
+            }
+
+            shadow.name = "Joe_Shadow";
+            shadow.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+            shadow.transform.localScale = Vector3.one;
+
+            var shadowAnimator = shadow.GetComponent<Animator>();
+            if (shadowAnimator != null)
+            {
+                shadowAnimator.applyRootMotion = false;
+            }
+
+            foreach (var renderer in joeRenderers)
             {
                 renderer.shadowCastingMode = ShadowCastingMode.Off;
             }
@@ -106,19 +123,20 @@ namespace ChasingShadows.Editor
                 renderer.receiveShadows = false;
             }
 
-            RemoveComponents<JoeCinematicController>(shadow);
-            RemoveComponents<NavMeshAgent>(shadow);
-            RemoveComponents<Collider>(shadow);
-            RemoveComponents<Light>(shadow);
             return shadow;
         }
 
-        private static void CreateTargets(Transform parent)
+        private static TimelineTargets CreateTargets(Transform parent)
         {
             var targets = CreateChild(parent, "IK Targets");
-            CreateMarker(targets.transform, "Look_Target", new Vector3(0f, 1.5f, 3f));
-            CreateMarker(targets.transform, "LeftHand_Target", new Vector3(-0.35f, 1.1f, 2f));
-            CreateMarker(targets.transform, "RightHand_Target", new Vector3(0.35f, 1.1f, 2f));
+            return new TimelineTargets
+            {
+                look = CreateMarker(targets.transform, "Look_Target", new Vector3(0f, 1.5f, 3f)),
+                leftHand = CreateMarker(targets.transform, "LeftHand_Target", new Vector3(-0.35f, 1.1f, 2f)),
+                rightHand = CreateMarker(targets.transform, "RightHand_Target", new Vector3(0.35f, 1.1f, 2f)),
+                moveStart = CreateMarker(targets.transform, "Move_Start", Vector3.zero),
+                moveEnd = CreateMarker(targets.transform, "Move_End", new Vector3(0f, 0f, 4f))
+            };
         }
 
         private static CinemachineCamera CreateCamera(Transform parent)
@@ -142,7 +160,7 @@ namespace ChasingShadows.Editor
             return director;
         }
 
-        private static TimelineAsset CreateTimelineAsset()
+        private static TimelineAsset CreateTimelineAsset(TimelineTargets targets)
         {
             DeleteAssetIfExists(TimelinePath);
 
@@ -157,12 +175,15 @@ namespace ChasingShadows.Editor
             joeAnimation.trackOffset = TrackOffset.Auto;
             AddAnimationClip(joeAnimation, "Replace with Joe chase clips", 0d, 8d);
 
+            var joeMovement = timeline.CreateTrack<JoeMovementTrack>(null, "Joe Timeline Movement");
+            AddMovementClip(joeMovement, "A-to-B or spline movement", 0d, 8d, targets);
+
             var shadowAnimation = timeline.CreateTrack<AnimationTrack>(null, "Shadow Animation");
             shadowAnimation.trackOffset = TrackOffset.Auto;
             AddAnimationClip(shadowAnimation, "Replace with shadow clips", 0d, 8d);
 
-            var cueTrack = timeline.CreateTrack<JoeCueTrack>(null, "Joe IK Cues");
-            AddCue(cueTrack, "Look / hands cue example", 1d, 1d);
+            var cueTrack = timeline.CreateTrack<JoeCueTrack>(null, "Joe Cues");
+            AddCue(cueTrack, "IK / root motion cue example", 1d, 1d, targets);
 
             var shadowTrack = timeline.CreateTrack<ActivationTrack>(null, "Shadow Active");
             var activeClip = shadowTrack.CreateDefaultClip();
@@ -187,10 +208,13 @@ namespace ChasingShadows.Editor
                     case "Joe Animation":
                         director.SetGenericBinding(track, joe != null ? joe.GetComponent<Animator>() : null);
                         break;
+                    case "Joe Timeline Movement":
+                        director.SetGenericBinding(track, joe);
+                        break;
                     case "Shadow Animation":
                         director.SetGenericBinding(track, shadow != null ? shadow.GetComponent<Animator>() : null);
                         break;
-                    case "Joe IK Cues":
+                    case "Joe Cues":
                         director.SetGenericBinding(track, joe);
                         break;
                     case "Shadow Active":
@@ -233,7 +257,24 @@ namespace ChasingShadows.Editor
             }
         }
 
-        private static void AddCue(JoeCueTrack track, string name, double start, double duration)
+        private static void AddMovementClip(JoeMovementTrack track, string name, double start, double duration, TimelineTargets targets)
+        {
+            var clip = track.CreateClip<JoeMovementTimelineClip>();
+            clip.displayName = name;
+            clip.start = start;
+            clip.duration = duration;
+
+            if (clip.asset is JoeMovementTimelineClip movement)
+            {
+                movement.mode = JoeTimelineMotionMode.MoveTo;
+                movement.start.defaultValue = targets.moveStart;
+                movement.end.defaultValue = targets.moveEnd;
+                movement.projectToGround = true;
+                movement.faceMotion = true;
+            }
+        }
+
+        private static void AddCue(JoeCueTrack track, string name, double start, double duration, TimelineTargets targets)
         {
             var clip = track.CreateClip<JoeCueClip>();
             clip.displayName = name;
@@ -242,6 +283,9 @@ namespace ChasingShadows.Editor
 
             if (clip.asset is JoeCueClip cue)
             {
+                cue.lookTarget.defaultValue = targets.look;
+                cue.leftHandTarget.defaultValue = targets.leftHand;
+                cue.rightHandTarget.defaultValue = targets.rightHand;
                 cue.lookWeight = 0.5f;
                 cue.handWeight = 0f;
                 cue.footWeight = 0.85f;
@@ -285,14 +329,6 @@ namespace ChasingShadows.Editor
             }
         }
 
-        private static void RemoveComponents<T>(GameObject root) where T : Component
-        {
-            foreach (var component in root.GetComponentsInChildren<T>(true))
-            {
-                Object.DestroyImmediate(component);
-            }
-        }
-
         private static void DeleteAssetIfExists(string path)
         {
             if (AssetDatabase.LoadMainAssetAtPath(path) != null)
@@ -320,6 +356,15 @@ namespace ChasingShadows.Editor
 
                 current = next;
             }
+        }
+
+        private struct TimelineTargets
+        {
+            public Transform look;
+            public Transform leftHand;
+            public Transform rightHand;
+            public Transform moveStart;
+            public Transform moveEnd;
         }
     }
 }
