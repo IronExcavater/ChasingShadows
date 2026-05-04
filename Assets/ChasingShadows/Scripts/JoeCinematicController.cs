@@ -687,7 +687,6 @@ namespace ChasingShadows.Characters
             animator.enabled = true;
             animator.Rebind();
             animator.Update(0f);
-            animator.enabled = false;
             editPoseApplied = true;
         }
 
