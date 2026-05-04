@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 908eef03dade9d84bb3cb377262ea41a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74311
+  packageName: Office and Police Station Pack (Modular)
+  packageVersion: 2.0.0
+  assetPath: Assets/OfficeAndPoliceStation/Animations/Door_cell.controller
+  uploadId: 696778

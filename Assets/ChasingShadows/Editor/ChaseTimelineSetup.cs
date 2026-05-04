@@ -109,6 +109,14 @@ namespace ChasingShadows.Editor
             var shadowAnimator = shadow.GetComponent<Animator>();
             if (shadowAnimator != null)
             {
+                var joeAnimator = joe.GetComponent<Animator>();
+                if (joeAnimator != null)
+                {
+                    shadowAnimator.avatar = joeAnimator.avatar;
+                    shadowAnimator.runtimeAnimatorController = joeAnimator.runtimeAnimatorController;
+                    shadowAnimator.enabled = true;
+                }
+
                 shadowAnimator.applyRootMotion = false;
             }
 

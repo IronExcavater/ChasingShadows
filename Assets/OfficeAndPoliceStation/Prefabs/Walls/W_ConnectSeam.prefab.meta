@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f6e5b5faeaeed954bb23ecc26376a282
+timeCreated: 1476017090
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74311
+  packageName: Office and Police Station Pack (Modular)
+  packageVersion: 2.0.0
+  assetPath: Assets/OfficeAndPoliceStation/Prefabs/Walls/W_ConnectSeam.prefab
+  uploadId: 696778

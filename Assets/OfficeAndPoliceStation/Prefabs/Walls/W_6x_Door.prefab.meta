@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2f5681904b673404c85ae827215e6858
+timeCreated: 1476016383
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74311
+  packageName: Office and Police Station Pack (Modular)
+  packageVersion: 2.0.0
+  assetPath: Assets/OfficeAndPoliceStation/Prefabs/Walls/W_6x_Door.prefab
+  uploadId: 696778

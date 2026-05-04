@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c6c1b37569120124cbe5cca800bcb9fe
+timeCreated: 1476015856
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74311
+  packageName: Office and Police Station Pack (Modular)
+  packageVersion: 2.0.0
+  assetPath: Assets/OfficeAndPoliceStation/Prefabs/Walls/W_2x_glass_Door.prefab
+  uploadId: 696778

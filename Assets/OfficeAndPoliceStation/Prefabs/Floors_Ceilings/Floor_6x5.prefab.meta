@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3f9b9cdae94d024429ffd84991ff4687
+timeCreated: 1541421212
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74311
+  packageName: Office and Police Station Pack (Modular)
+  packageVersion: 2.0.0
+  assetPath: Assets/OfficeAndPoliceStation/Prefabs/Floors_Ceilings/Floor_6x5.prefab
+  uploadId: 696778

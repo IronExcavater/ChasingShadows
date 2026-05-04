@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6e62262c95f9a0a4cac2f11531b4049a
+timeCreated: 1464246727
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74311
+  packageName: Office and Police Station Pack (Modular)
+  packageVersion: 2.0.0
+  assetPath: Assets/OfficeAndPoliceStation/Scripts/Editor/AutoSnap.cs
+  uploadId: 696778
