@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf77f60eb8d64d149babed390d272161
+timeCreated: 1479323713
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74311
+  packageName: Office and Police Station Pack (Modular)
+  packageVersion: 2.0.0
+  assetPath: Assets/OfficeAndPoliceStation/Prefabs/Walls/W_1x.prefab
+  uploadId: 696778

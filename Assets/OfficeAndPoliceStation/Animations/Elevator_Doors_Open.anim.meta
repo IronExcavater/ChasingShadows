@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7a9ec990aaca49344917f2d1198f8569
+timeCreated: 1541418173
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74311
+  packageName: Office and Police Station Pack (Modular)
+  packageVersion: 2.0.0
+  assetPath: Assets/OfficeAndPoliceStation/Animations/Elevator_Doors_Open.anim
+  uploadId: 696778
