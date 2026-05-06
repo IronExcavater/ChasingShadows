@@ -54,7 +54,7 @@ namespace ChasingShadows.Characters
         public string groundedParameter = "Grounded";
         public string leanForwardParameter = "LeanForward";
         public string leanRightParameter = "LeanRight";
-        [Range(0.01f, 0.5f)] public float animatorDampTime = 0.16f;
+        [Range(0.01f, 0.5f)] public float animatorDampTime = 0.1f;
 
         [Header("Lean")]
         public float leanForwardScale = 0.08f;
@@ -292,10 +292,12 @@ namespace ChasingShadows.Characters
             var planarSpeed = new Vector2(rawRight, rawForward).magnitude;
             var accelerationVector = Time.deltaTime > 0f ? (velocity - previousVelocity) / Time.deltaTime : Vector3.zero;
             var localAcceleration = transform.InverseTransformDirection(accelerationVector);
-            var damp = 1f - Mathf.Exp(-Mathf.Max(0.01f, 1f / animatorDampTime) * Time.deltaTime);
+            var blendDamp = 1f - Mathf.Exp(-Mathf.Max(0.01f, 1f / animatorDampTime) * Time.deltaTime);
+            // Lean uses a separate (slower) sharpness to avoid jitter
+            var damp = blendDamp;
 
-            smoothedForward = Mathf.Lerp(smoothedForward, rawForward, damp);
-            smoothedRight = Mathf.Lerp(smoothedRight, rawRight, damp);
+            smoothedForward = Mathf.Lerp(smoothedForward, rawForward, blendDamp);
+            smoothedRight = Mathf.Lerp(smoothedRight, rawRight, blendDamp);
             var yawSpeed = Mathf.Abs(currentYawSpeed) > 0.001f ? currentYawSpeed : GetExternalYawSpeed();
             smoothedTurn = Mathf.Lerp(smoothedTurn, yawSpeed, damp);
 
@@ -305,10 +307,12 @@ namespace ChasingShadows.Characters
             leanForward = Mathf.Lerp(leanForward, targetLeanForward, leanBlend);
             leanRight = Mathf.Lerp(leanRight, targetLeanRight, leanBlend);
 
+            // Feed blend tree with single-smoothed values (smoothedForward/Right are explicit lerps)
+            // Using Unity's built-in damp on top would double-filter and cause sluggish blend response
             SetAnimatorFloat(moveSpeedParameter, planarSpeed);
-            SetAnimatorFloat(moveForwardParameter, smoothedForward);
-            SetAnimatorFloat(moveRightParameter, smoothedRight);
-            SetAnimatorFloat(turnSpeedParameter, smoothedTurn);
+            SetAnimatorFloatDirect(moveForwardParameter, smoothedForward);
+            SetAnimatorFloatDirect(moveRightParameter, smoothedRight);
+            SetAnimatorFloatDirect(turnSpeedParameter, smoothedTurn);
             SetAnimatorFloat(leanForwardParameter, leanForward);
             SetAnimatorFloat(leanRightParameter, leanRight);
             SetAnimatorBool(groundedParameter, IsGrounded());
@@ -806,6 +810,15 @@ namespace ChasingShadows.Characters
                 HasAnimatorParameter(parameterName, AnimatorControllerParameterType.Float))
             {
                 animator.SetFloat(parameterName, value, animatorDampTime, Time.deltaTime);
+            }
+        }
+
+        private void SetAnimatorFloatDirect(string parameterName, float value)
+        {
+            if (!string.IsNullOrWhiteSpace(parameterName) &&
+                HasAnimatorParameter(parameterName, AnimatorControllerParameterType.Float))
+            {
+                animator.SetFloat(parameterName, value);
             }
         }
 
