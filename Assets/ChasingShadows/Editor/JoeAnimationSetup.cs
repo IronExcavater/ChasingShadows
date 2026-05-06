@@ -218,6 +218,26 @@ namespace ChasingShadows.Editor
                         clipAnimations[i].loopPose = shouldLoop;
                         changed = true;
                     }
+
+                    // Bake root motion into pose so all animations are truly in-place.
+                    // JoeMovementTrack owns all positional/rotational changes during cinematics.
+                    if (!clipAnimations[i].lockRootPositionXZ)
+                    {
+                        clipAnimations[i].lockRootPositionXZ = true;
+                        changed = true;
+                    }
+
+                    if (!clipAnimations[i].lockRootHeightY)
+                    {
+                        clipAnimations[i].lockRootHeightY = true;
+                        changed = true;
+                    }
+
+                    if (!clipAnimations[i].lockRootRotation)
+                    {
+                        clipAnimations[i].lockRootRotation = true;
+                        changed = true;
+                    }
                 }
 
                 if (changed)
@@ -442,13 +462,18 @@ namespace ChasingShadows.Editor
                 "Assets/ChasingShadows/Animations/Joe/Walking Forwards.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Steady Walk.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Adventure Walk.fbx");
+            // Intermediate jog node bridges the large gap between walk (1.35) and full run (5.1)
+            AddBlendChild(tree, 0f, 2.8f,
+                "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Adventure Run.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx");
             AddBlendChild(tree, 0f, 5.1f,
                 "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Adventure Run.fbx");
             AddBlendChild(tree, 0f, -1.35f,
                 "Assets/ChasingShadows/Animations/Joe/Walking Backwards.fbx");
-            AddBlendChild(tree, 0f, -3f,
+            AddBlendChild(tree, 0f, -2.5f,
                 "Assets/ChasingShadows/Animations/Joe/Running Backwards.fbx");
             AddBlendChild(tree, -1.35f, 0f,
                 "Assets/ChasingShadows/Animations/Joe/Left Strafe Walk.fbx",
@@ -499,14 +524,14 @@ namespace ChasingShadows.Editor
 
             var enter = stateMachine.AddAnyStateTransition(state);
             enter.hasExitTime = false;
-            enter.duration = 0.08f;
+            enter.duration = 0.15f;
             enter.canTransitionToSelf = false;
             enter.AddCondition(AnimatorConditionMode.If, 0f, triggerName);
 
             var exit = state.AddTransition(locomotionState);
             exit.hasExitTime = true;
-            exit.exitTime = 0.92f;
-            exit.duration = 0.12f;
+            exit.exitTime = 0.82f;
+            exit.duration = 0.22f;
             exit.hasFixedDuration = true;
 
             EditorUtility.SetDirty(state);

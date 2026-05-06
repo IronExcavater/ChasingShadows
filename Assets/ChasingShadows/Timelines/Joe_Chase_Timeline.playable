@@ -1,334 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9160482093652667593
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
-  DisplayName: 
-  VirtualCamera:
-    exposedName: ChaseCamera_Knockout
-    defaultValue: {fileID: 0}
---- !u!114 &-9057654809058711975
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Hanging Wall Ascend
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 4ca93df0ad2ebde459ca35114e52d0ce, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-8884089488688069986
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Run Forward Arc Right
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 5f9d7ed7ce12e0d43aa1e1fa5a1fe310, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-8787032536466909189
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Vault Stumble
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 75675884e57e18c45abc147bb26eba69, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-8781785505448837033
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Run To Stop At Wall
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 02ea3370dfeac5c42be1a9784b93dbeb, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-8525350380124752932
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Idle To Sprint
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 709aa12654087cf419839e5de6b0682d, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-8486627160445640185
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Run To Stop At Wall
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 02ea3370dfeac5c42be1a9784b93dbeb, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-7764388229734010587
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
-  DisplayName: 
-  VirtualCamera:
-    exposedName: ChaseCamera_Wall_climb
-    defaultValue: {fileID: 0}
---- !u!114 &-7737046161284439105
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
-  DisplayName: 
-  VirtualCamera:
-    exposedName: ChaseCamera_Side_weave
-    defaultValue: {fileID: 0}
---- !u!114 &-7408935246447345109
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Sleep Idle
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: d0fa9472b235be34babd28b79703ccd2, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-7218171504544415175
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_Jump_Gap_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_Jump_Gap_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 1
-  smoothStep: 1
---- !u!114 &-7074066994032343104
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Running Forwards
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 11bf01aeb8a8bd04f8849a64f269be71, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-6949623828875532733
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Vault Over Box
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: b8462982ce7cea64ea802df79628c15c, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-6908726227142493696
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Hard Landing
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 8e676115902dc4d49a7c2243917de9ce, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-6727248567640143487
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_Wall_Climb_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_Wall_Climb_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 0
-  smoothStep: 1
---- !u!114 &-6578087695283759500
+--- !u!114 &-9139357684187718317
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,7 +13,7 @@ MonoBehaviour:
   m_Name: JoeCueClip
   m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
   lookTarget:
-    exposedName: Chase_Edge_Slip_Look
+    exposedName: Chase_Look_Back_Look
     defaultValue: {fileID: 0}
   leftHandTarget:
     exposedName: 
@@ -349,391 +21,15 @@ MonoBehaviour:
   rightHandTarget:
     exposedName: 
     defaultValue: {fileID: 0}
-  animatorTrigger: EdgeSlip
-  lookWeight: 0.55
-  handWeight: 0
-  footWeight: 0.75
-  setRootMotion: 0
-  rootMotionEnabled: 0
-  clearRootMotionOnExit: 1
-  clearHandsOnExit: 1
---- !u!114 &-6522973029967457182
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Running Forwards
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 11bf01aeb8a8bd04f8849a64f269be71, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-6497072214374413340
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_Trip_Roll_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_Trip_Roll_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 1
-  smoothStep: 1
---- !u!114 &-6296132724364330631
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_Catch_Wall_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_Catch_Wall_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 0
-  smoothStep: 1
---- !u!114 &-5873113460586262877
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Edge Slip
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: b4d954ed02391a84eb37d65d2c01bddd, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-5864588037323359924
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Running Trip Roll Onto Side
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 88ed9a4fd7b35224b900b37480b59a7b, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-5713575154730101713
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_About_Face_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_About_Face_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 1
-  smoothStep: 1
---- !u!114 &-5477610980660306711
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Sleep Idle
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: d0fa9472b235be34babd28b79703ccd2, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-5467061387976223029
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
-  m_Name: JoeCueClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
-  lookTarget:
-    exposedName: Chase_Land_Look
-    defaultValue: {fileID: 0}
-  leftHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  rightHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  animatorTrigger: Land
-  lookWeight: 0.45
+  animatorTrigger: LookBack
+  lookWeight: 0.8
   handWeight: 0
   footWeight: 0.85
   setRootMotion: 0
   rootMotionEnabled: 0
   clearRootMotionOnExit: 1
   clearHandsOnExit: 1
---- !u!114 &-5070633448296287357
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Chase Jump
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 76962c752923f414b976583758baedc4, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-4874501104917537439
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Hanging Wall Ascend
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 4ca93df0ad2ebde459ca35114e52d0ce, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-4593022416949067790
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Edge Slip
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: b4d954ed02391a84eb37d65d2c01bddd, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-4317412070992706421
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Jump To Climb Wall
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: cd7e4328ec86abe4c97ff05450541618, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-4243583268843902759
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Vault Over Box
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: b8462982ce7cea64ea802df79628c15c, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-3975243532925199665
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_Vault_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_Vault_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 1
-  smoothStep: 1
---- !u!114 &-3932766890202691549
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
-  m_Name: JoeCueClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
-  lookTarget:
-    exposedName: Chase_Knockout_Look
-    defaultValue: {fileID: 0}
-  leftHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  rightHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  animatorTrigger: Knockout
-  lookWeight: 0.45
-  handWeight: 0
-  footWeight: 0.35
-  setRootMotion: 0
-  rootMotionEnabled: 0
-  clearRootMotionOnExit: 1
-  clearHandsOnExit: 1
---- !u!114 &-3811709126368430949
+--- !u!114 &-9104686633082434509
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -749,29 +45,7 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: ChaseCamera_Turn_wall
     defaultValue: {fileID: 0}
---- !u!114 &-3511502048999282411
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Hard Landing
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 8e676115902dc4d49a7c2243917de9ce, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-3365738881835110533
+--- !u!114 &-9017420484039028278
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -788,10 +62,10 @@ MonoBehaviour:
     defaultValue: {fileID: 0}
   mode: 1
   start:
-    exposedName: Chase_Arc_Left_Start
+    exposedName: Chase_Recovery_Sprint_Start
     defaultValue: {fileID: 0}
   end:
-    exposedName: Chase_Arc_Left_End
+    exposedName: Chase_Recovery_Sprint_End
     defaultValue: {fileID: 0}
   spline:
     exposedName: 
@@ -801,7 +75,88 @@ MonoBehaviour:
   faceMotion: 1
   projectToGround: 1
   smoothStep: 1
---- !u!114 &-3091045116448274717
+--- !u!114 &-9001025892448994472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Drop_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Drop_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 0
+  smoothStep: 1
+--- !u!114 &-8955862542349500724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Vault Over Box
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: b8462982ce7cea64ea802df79628c15c, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-8889568069952915667
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
+  m_Name: JoeCueClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
+  lookTarget:
+    exposedName: Chase_Stop_At_Wall_Look
+    defaultValue: {fileID: 0}
+  leftHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  rightHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  animatorTrigger: StopAtWall
+  lookWeight: 0.45
+  handWeight: 0
+  footWeight: 0.85
+  setRootMotion: 0
+  rootMotionEnabled: 0
+  clearRootMotionOnExit: 1
+  clearHandsOnExit: 1
+--- !u!114 &-8847174871344623598
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -818,7 +173,7 @@ MonoBehaviour:
     defaultValue: {fileID: 0}
   mode: 0
   start:
-    exposedName: Chase_Knockout_Hold_Start
+    exposedName: Chase_Intro_Hold_Start
     defaultValue: {fileID: 0}
   end:
     exposedName: 
@@ -831,7 +186,7 @@ MonoBehaviour:
   faceMotion: 0
   projectToGround: 1
   smoothStep: 1
---- !u!114 &-2969405551443945006
+--- !u!114 &-8847096547103336270
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -840,9 +195,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb1c92f9a1245cf9d7bca8238c46e11, type: 3}
-  m_Name: Joe Cues
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueTrack
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Hard Landing
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 8e676115902dc4d49a7c2243917de9ce, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-8761070617559456576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05acc715f855ced458d76ee6f8ac6c61, type: 3}
+  m_Name: Camera
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineTrack
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
@@ -855,10 +232,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 5488944251438682249}
+    m_Asset: {fileID: 2692187319023197242}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -8761070617559456576}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -920,14 +297,1175 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Run Start
+    m_DisplayName: Intro wide
+  - m_Version: 1
+    m_Start: 0.9
+    m_ClipIn: 0
+    m_Asset: {fileID: 6928581248085686564}
+    m_Duration: 2.3
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -8761070617559456576}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Follow run
+  - m_Version: 1
+    m_Start: 3.2
+    m_ClipIn: 0
+    m_Asset: {fileID: 6037975378224906225}
+    m_Duration: 2
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -8761070617559456576}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Side weave
+  - m_Version: 1
+    m_Start: 5.2
+    m_ClipIn: 0
+    m_Asset: {fileID: 7291925481984074619}
+    m_Duration: 1
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -8761070617559456576}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Jump gap
+  - m_Version: 1
+    m_Start: 6.2
+    m_ClipIn: 0
+    m_Asset: {fileID: -9104686633082434509}
+    m_Duration: 1.8
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -8761070617559456576}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Turn wall
+  - m_Version: 1
+    m_Start: 8
+    m_ClipIn: 0
+    m_Asset: {fileID: 4621245588193079317}
+    m_Duration: 4.1
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -8761070617559456576}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Wall climb
+  - m_Version: 1
+    m_Start: 12.1
+    m_ClipIn: 0
+    m_Asset: {fileID: 1998108523797277441}
+    m_Duration: 8
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -8761070617559456576}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Impact chain
+  - m_Version: 1
+    m_Start: 20.1
+    m_ClipIn: 0
+    m_Asset: {fileID: -8653779988021658847}
+    m_Duration: 2.9
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -8761070617559456576}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Knockout
+  m_Markers:
+    m_Objects: []
+  TrackPriority: 0
+--- !u!114 &-8653779988021658847
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
+  DisplayName: 
+  VirtualCamera:
+    exposedName: ChaseCamera_Knockout
+    defaultValue: {fileID: 0}
+--- !u!114 &-8259580951446096198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 0
+  start:
+    exposedName: Chase_Land_Hold_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 0
+  projectToGround: 1
+  smoothStep: 1
+--- !u!114 &-7939315343444312726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde0d25a170598d46a0b9dc16b4527a5, type: 3}
+  m_Name: ActivationPlayableAsset
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.ActivationPlayableAsset
+--- !u!114 &-7691439899833668151
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Alley_Run_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Alley_Run_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 1
+  smoothStep: 1
+--- !u!114 &-7599293562005144737
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Run To Stop At Wall
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 02ea3370dfeac5c42be1a9784b93dbeb, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-7255286483971653095
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Final_Sprint_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Final_Sprint_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 1
+  smoothStep: 1
+--- !u!114 &-7186744841103851558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Falling Roll
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: fd3bb24146f1dd349b805819332e8c45, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-7047319738454612130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
+  m_Name: JoeCueClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
+  lookTarget:
+    exposedName: Chase_Knockout_Look
+    defaultValue: {fileID: 0}
+  leftHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  rightHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  animatorTrigger: Knockout
+  lookWeight: 0.45
+  handWeight: 0
+  footWeight: 0.35
+  setRootMotion: 0
+  rootMotionEnabled: 0
+  clearRootMotionOnExit: 1
+  clearHandsOnExit: 1
+--- !u!114 &-6966234915472670685
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Wall_Climb_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Wall_Climb_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 0
+  smoothStep: 1
+--- !u!114 &-6568535841938425748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Trip_Roll_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Trip_Roll_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 1
+  smoothStep: 1
+--- !u!114 &-6303172263429757945
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Running Forwards
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 11bf01aeb8a8bd04f8849a64f269be71, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-6272821113155755334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Arc_Left_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Arc_Left_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 1
+  smoothStep: 1
+--- !u!114 &-6106597210691459936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
+  m_Name: JoeCueClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
+  lookTarget:
+    exposedName: Chase_Drop_Look
+    defaultValue: {fileID: 0}
+  leftHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  rightHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  animatorTrigger: Drop
+  lookWeight: 0.45
+  handWeight: 0
+  footWeight: 0.35
+  setRootMotion: 0
+  rootMotionEnabled: 0
+  clearRootMotionOnExit: 1
+  clearHandsOnExit: 1
+--- !u!114 &-5800138525699714498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Look_Back_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Look_Back_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 1
+  smoothStep: 1
+--- !u!114 &-5338947835393970352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Hanging Wall Ascend
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 4ca93df0ad2ebde459ca35114e52d0ce, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-5316114709096498186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Chase Jump
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 76962c752923f414b976583758baedc4, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-5256154295398196874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Sprint Climb Ascend
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 8bd3f796a7f0c1d49930ab5e5ba69cac, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-5108090723459294210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Run Forward Arc Right
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 5f9d7ed7ce12e0d43aa1e1fa5a1fe310, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-4836020266058222167
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Running Jump Up
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 31e2344b52f8e7c40be6c6d2f018ea89, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-4149465322936098685
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Running About Face
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 47dc3423afefebc4ca54e209e3c9d713, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-4075537214322807778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Falling Flat Impact
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 9c2c3f9f607743545b4a6546320c9705, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-3776195375738394085
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2cf113221e4e5ba345b93b68ca580d, type: 3}
+  m_Name: Joe Timeline Movement
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTrack
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 0
+    m_ClipIn: 0
+    m_Asset: {fileID: -8847174871344623598}
+    m_Duration: 0.9
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3776195375738394085}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Intro Hold
+  - m_Version: 1
+    m_Start: 0.9
+    m_ClipIn: 0
+    m_Asset: {fileID: -7691439899833668151}
+    m_Duration: 1.5
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3776195375738394085}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Alley Run
   - m_Version: 1
     m_Start: 2.4
     m_ClipIn: 0
-    m_Asset: {fileID: -1779412493001474255}
+    m_Asset: {fileID: -5800138525699714498}
     m_Duration: 0.8
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -991,12 +1529,12 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Look Back
   - m_Version: 1
-    m_Start: 5.2
+    m_Start: 3.2
     m_ClipIn: 0
-    m_Asset: {fileID: -2962820176206469204}
+    m_Asset: {fileID: -6272821113155755334}
     m_Duration: 1
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -1058,14 +1596,152 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Jump
+    m_DisplayName: Arc Left
+  - m_Version: 1
+    m_Start: 4.2
+    m_ClipIn: 0
+    m_Asset: {fileID: -2455756457764548177}
+    m_Duration: 1
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3776195375738394085}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Arc Right
+  - m_Version: 1
+    m_Start: 5.2
+    m_ClipIn: 0
+    m_Asset: {fileID: 904067994673871826}
+    m_Duration: 1
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3776195375738394085}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Jump Gap
   - m_Version: 1
     m_Start: 6.2
     m_ClipIn: 0
-    m_Asset: {fileID: 3519080990692598074}
+    m_Asset: {fileID: 8982672301327472495}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -1113,10 +1789,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 7.1
     m_ClipIn: 0
-    m_Asset: {fileID: 1056265674312538298}
+    m_Asset: {fileID: 6142225997698451406}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0.0000000000000008881784197001252
@@ -1164,10 +1840,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 8
     m_ClipIn: 0
-    m_Asset: {fileID: 2054734600830726235}
-    m_Duration: 3.3
+    m_Asset: {fileID: 4920234930068187511}
+    m_Duration: 1.2
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -1229,14 +1905,83 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Climb
+    m_DisplayName: Catch Wall
+  - m_Version: 1
+    m_Start: 9.2
+    m_ClipIn: 0
+    m_Asset: {fileID: -6966234915472670685}
+    m_Duration: 2.1
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3776195375738394085}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Wall Climb
   - m_Version: 1
     m_Start: 11.3
     m_ClipIn: 0
-    m_Asset: {fileID: 6005017909876858116}
+    m_Asset: {fileID: -9001025892448994472}
     m_Duration: 0.8
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -1284,10 +2029,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 12.1
     m_ClipIn: 0
-    m_Asset: {fileID: -5467061387976223029}
+    m_Asset: {fileID: -8259580951446096198}
     m_Duration: 0.7
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0.0000000000000017763568394002505
@@ -1331,18 +2076,18 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Land
+    m_DisplayName: Land Hold
   - m_Version: 1
-    m_Start: 14.1
+    m_Start: 12.8
     m_ClipIn: 0
-    m_Asset: {fileID: -1649680359809521126}
-    m_Duration: 0.9
+    m_Asset: {fileID: -7255286483971653095}
+    m_Duration: 1.3
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: -1
+    m_BlendOutDuration: 0.0000000000000017763568394002505
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -1364,6 +2109,39 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Final Sprint
+  - m_Version: 1
+    m_Start: 14.1
+    m_ClipIn: 0
+    m_Asset: {fileID: -2964153247464463038}
+    m_Duration: 0.9
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3776195375738394085}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0.0000000000000017763568394002505
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1404,10 +2182,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 15
     m_ClipIn: 0
-    m_Asset: {fileID: 6838083923185760977}
+    m_Asset: {fileID: -2730406276257468792}
     m_Duration: 0.8
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -1473,10 +2251,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 15.8
     m_ClipIn: 0
-    m_Asset: {fileID: -6578087695283759500}
+    m_Asset: {fileID: 4061489706398792860}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -1540,12 +2318,12 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Edge Slip
   - m_Version: 1
-    m_Start: 18.2
+    m_Start: 16.7
     m_ClipIn: 0
-    m_Asset: {fileID: 1950918462037730431}
-    m_Duration: 1.2
+    m_Asset: {fileID: -9017420484039028278}
+    m_Duration: 1.5
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -1607,14 +2385,83 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Stumble
+    m_DisplayName: Recovery Sprint
+  - m_Version: 1
+    m_Start: 18.2
+    m_ClipIn: 0
+    m_Asset: {fileID: -6568535841938425748}
+    m_Duration: 1.2
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3776195375738394085}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Trip Roll
   - m_Version: 1
     m_Start: 19.4
     m_ClipIn: 0
-    m_Asset: {fileID: 5536211362525855797}
+    m_Asset: {fileID: -3465110185913731012}
     m_Duration: 0.7
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -1676,14 +2523,14 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Fall Impact
+    m_DisplayName: Impact Settle
   - m_Version: 1
     m_Start: 20.1
     m_ClipIn: 0
-    m_Asset: {fileID: -3932766890202691549}
+    m_Asset: {fileID: 7130690793128427495}
     m_Duration: 2.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2969405551443945006}
+    m_ParentTrack: {fileID: -3776195375738394085}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -1745,69 +2592,10 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Knockout
+    m_DisplayName: Knockout Hold
   m_Markers:
     m_Objects: []
---- !u!114 &-2962820176206469204
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
-  m_Name: JoeCueClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
-  lookTarget:
-    exposedName: Chase_Jump_Look
-    defaultValue: {fileID: 0}
-  leftHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  rightHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  animatorTrigger: Jump
-  lookWeight: 0.45
-  handWeight: 0
-  footWeight: 0.85
-  setRootMotion: 0
-  rootMotionEnabled: 0
-  clearRootMotionOnExit: 1
-  clearHandsOnExit: 1
---- !u!114 &-2582341787644622692
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_Arc_Right_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_Arc_Right_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 1
-  smoothStep: 1
---- !u!114 &-2544669280979086632
+--- !u!114 &-3758585035410958350
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1817,9 +2605,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Run Forward Arc Right
+  m_Name: AnimationPlayableAsset of Jogging Stumble
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 5f9d7ed7ce12e0d43aa1e1fa5a1fe310, type: 3}
+  m_Clip: {fileID: -203655887218126122, guid: 0b720a2e312c32a4b86b18a07f889209, type: 3}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -1829,247 +2617,7 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-2515630540162932033
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Falling Flat Impact
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 9c2c3f9f607743545b4a6546320c9705, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-2495023646380814649
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Jump To Climb Wall
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: cd7e4328ec86abe4c97ff05450541618, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-2189714182305906521
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Run Forward Arc Left
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 14930a4c5a8fad34c9bccbe64c95e2af, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-2008137452388261336
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 0
-  start:
-    exposedName: Chase_Intro_Hold_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 0
-  projectToGround: 1
-  smoothStep: 1
---- !u!114 &-1853375444786309165
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Running About Face
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 47dc3423afefebc4ca54e209e3c9d713, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-1779412493001474255
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
-  m_Name: JoeCueClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
-  lookTarget:
-    exposedName: Chase_Look_Back_Look
-    defaultValue: {fileID: 0}
-  leftHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  rightHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  animatorTrigger: LookBack
-  lookWeight: 0.8
-  handWeight: 0
-  footWeight: 0.85
-  setRootMotion: 0
-  rootMotionEnabled: 0
-  clearRootMotionOnExit: 1
-  clearHandsOnExit: 1
---- !u!114 &-1649680359809521126
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
-  m_Name: JoeCueClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
-  lookTarget:
-    exposedName: Chase_Vault_Look
-    defaultValue: {fileID: 0}
-  leftHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  rightHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  animatorTrigger: Vault
-  lookWeight: 0.45
-  handWeight: 0
-  footWeight: 0.85
-  setRootMotion: 0
-  rootMotionEnabled: 0
-  clearRootMotionOnExit: 1
-  clearHandsOnExit: 1
---- !u!114 &-1267372561544647487
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fde0d25a170598d46a0b9dc16b4527a5, type: 3}
-  m_Name: ActivationPlayableAsset
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.ActivationPlayableAsset
---- !u!114 &-1253733279603102835
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Dismount Jump From Wall
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: aca825172df53b44d9439530c93b62b8, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-1010559945842559148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_Alley_Run_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_Alley_Run_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 1
-  smoothStep: 1
---- !u!114 &-554397830397522100
+--- !u!114 &-3465110185913731012
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2099,7 +2647,29 @@ MonoBehaviour:
   faceMotion: 1
   projectToGround: 1
   smoothStep: 1
---- !u!114 &-287797674448841168
+--- !u!114 &-3403804827667585553
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Run Forward Arc Right
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 5f9d7ed7ce12e0d43aa1e1fa5a1fe310, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-3370927179402305855
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2121,33 +2691,81 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &11400000
+--- !u!114 &-3234150751588097265
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-  m_Name: Joe_Chase_Timeline
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.TimelineAsset
-  m_Version: 0
-  m_Tracks:
-  - {fileID: 5513705249955088698}
-  - {fileID: 6453804506757604692}
-  - {fileID: 7906486630020240717}
-  - {fileID: 2424282222669840969}
-  - {fileID: -2969405551443945006}
-  - {fileID: 5603201816604664410}
-  m_FixedDuration: 0
-  m_EditorSettings:
-    m_Framerate: 24
-    m_ScenePreview: 1
-  m_DurationMode: 0
-  m_MarkerTrack: {fileID: 0}
---- !u!114 &31749038092350857
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Climbing Up Wall
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 348ef84bd345b0c499af4c398962f682, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-3037023287383358148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Running Forwards
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 11bf01aeb8a8bd04f8849a64f269be71, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-2964153247464463038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Vault_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Vault_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 1
+  smoothStep: 1
+--- !u!114 &-2730406276257468792
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2177,29 +2795,7 @@ MonoBehaviour:
   faceMotion: 1
   projectToGround: 1
   smoothStep: 1
---- !u!114 &318784120990211937
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Run Look Back
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: ceab7b76ace5bf946acc4bf820f3a755, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &1056265674312538298
+--- !u!114 &-2642303312205884887
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2212,7 +2808,7 @@ MonoBehaviour:
   m_Name: JoeCueClip
   m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
   lookTarget:
-    exposedName: Chase_Stop_At_Wall_Look
+    exposedName: Chase_Vault_Look
     defaultValue: {fileID: 0}
   leftHandTarget:
     exposedName: 
@@ -2220,7 +2816,7 @@ MonoBehaviour:
   rightHandTarget:
     exposedName: 
     defaultValue: {fileID: 0}
-  animatorTrigger: StopAtWall
+  animatorTrigger: Vault
   lookWeight: 0.45
   handWeight: 0
   footWeight: 0.85
@@ -2228,7 +2824,37 @@ MonoBehaviour:
   rootMotionEnabled: 0
   clearRootMotionOnExit: 1
   clearHandsOnExit: 1
---- !u!114 &1794909848591484945
+--- !u!114 &-2455756457764548177
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Arc_Right_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Arc_Right_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 1
+  smoothStep: 1
+--- !u!114 &-2455431161692897884
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2238,9 +2864,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Jogging Stumble
+  m_Name: AnimationPlayableAsset of Jump To Climb Wall
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 0b720a2e312c32a4b86b18a07f889209, type: 3}
+  m_Clip: {fileID: -203655887218126122, guid: cd7e4328ec86abe4c97ff05450541618, type: 3}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -2250,7 +2876,100 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &1950918462037730431
+--- !u!114 &-2298886750940081504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bf7f712d84d26478ebe6a299f21738, type: 3}
+  m_Name: Shadow Active
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.ActivationTrack
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 0
+    m_ClipIn: 0
+    m_Asset: {fileID: -7939315343444312726}
+    m_Duration: 23
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -2298886750940081504}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Shadow on
+  m_Markers:
+    m_Objects: []
+  m_PostPlaybackState: 3
+--- !u!114 &-2031913714257578598
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2263,7 +2982,7 @@ MonoBehaviour:
   m_Name: JoeCueClip
   m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
   lookTarget:
-    exposedName: Chase_Stumble_Look
+    exposedName: Chase_Edge_Slip_Look
     defaultValue: {fileID: 0}
   leftHandTarget:
     exposedName: 
@@ -2271,15 +2990,88 @@ MonoBehaviour:
   rightHandTarget:
     exposedName: 
     defaultValue: {fileID: 0}
-  animatorTrigger: Stumble
-  lookWeight: 0.65
+  animatorTrigger: EdgeSlip
+  lookWeight: 0.55
   handWeight: 0
-  footWeight: 0.65
+  footWeight: 0.75
   setRootMotion: 0
   rootMotionEnabled: 0
   clearRootMotionOnExit: 1
   clearHandsOnExit: 1
---- !u!114 &2054734600830726235
+--- !u!114 &-1590523180372612846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Dismount Jump From Wall
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: aca825172df53b44d9439530c93b62b8, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-1473780867176819963
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Right Sharp Turn
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 10a4c63dfad145249879f69bc8a3ab6f, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-1405925860105640282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
+  m_Name: JoeCueClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
+  lookTarget:
+    exposedName: Chase_Run_Start_Look
+    defaultValue: {fileID: 0}
+  leftHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  rightHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  animatorTrigger: RunStart
+  lookWeight: 0.35
+  handWeight: 0
+  footWeight: 0.85
+  setRootMotion: 0
+  rootMotionEnabled: 0
+  clearRootMotionOnExit: 1
+  clearHandsOnExit: 1
+--- !u!114 &-1096583772587047439
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2308,7 +3100,80 @@ MonoBehaviour:
   rootMotionEnabled: 0
   clearRootMotionOnExit: 1
   clearHandsOnExit: 1
---- !u!114 &2424282222669840969
+--- !u!114 &-816797498538874546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Idle To Sprint
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 709aa12654087cf419839e5de6b0682d, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-733766114065613083
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
+  m_Name: JoeCueClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
+  lookTarget:
+    exposedName: Chase_Jump_Look
+    defaultValue: {fileID: 0}
+  leftHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  rightHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  animatorTrigger: Jump
+  lookWeight: 0.45
+  handWeight: 0
+  footWeight: 0.85
+  setRootMotion: 0
+  rootMotionEnabled: 0
+  clearRootMotionOnExit: 1
+  clearHandsOnExit: 1
+--- !u!114 &-303565009468209938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Run Look Back
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: ceab7b76ace5bf946acc4bf820f3a755, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-36518469547306604
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2332,12 +3197,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 6152444172866111159}
+    m_Asset: {fileID: 4459428208036188756}
     m_Duration: 0.9
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.15
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -2401,12 +3266,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0.9
     m_ClipIn: 0
-    m_Asset: {fileID: -7074066994032343104}
+    m_Asset: {fileID: 2731158295197243566}
     m_Duration: 1.5
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.15
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -2470,12 +3335,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 2.4
     m_ClipIn: 0
-    m_Asset: {fileID: 6147537515655267540}
+    m_Asset: {fileID: 2829262938674335064}
     m_Duration: 0.8
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 3.2104166895151134
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -2539,12 +3404,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 3.2
     m_ClipIn: 0
-    m_Asset: {fileID: 3413135472584916257}
+    m_Asset: {fileID: 7542426703977244868}
     m_Duration: 1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.15
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -2608,12 +3473,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 4.2
     m_ClipIn: 0
-    m_Asset: {fileID: 6725141068996994371}
+    m_Asset: {fileID: -1473780867176819963}
     m_Duration: 1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.15
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -2677,12 +3542,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 5.2
     m_ClipIn: 0
-    m_Asset: {fileID: -5070633448296287357}
+    m_Asset: {fileID: -4836020266058222167}
     m_Duration: 1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.4916667580604552
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -2746,12 +3611,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 6.2
     m_ClipIn: 0
-    m_Asset: {fileID: 8524234252549173608}
+    m_Asset: {fileID: 8145540782413576924}
     m_Duration: 0.9
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.768518620067172
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: 0.0000000000000008881784197001252
     m_MixInCurve:
@@ -2797,12 +3662,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 7.1
     m_ClipIn: 0
-    m_Asset: {fileID: -8486627160445640185}
+    m_Asset: {fileID: 6187586117530170245}
     m_Duration: 0.9
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.896296580632528
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: 0.0000000000000008881784197001252
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -2848,12 +3713,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 8
     m_ClipIn: 0
-    m_Asset: {fileID: -4317412070992706421}
+    m_Asset: {fileID: -5256154295398196874}
     m_Duration: 1.2
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.7250000685453413
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -2917,12 +3782,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 9.2
     m_ClipIn: 0
-    m_Asset: {fileID: -4874501104917537439}
+    m_Asset: {fileID: -3234150751588097265}
     m_Duration: 2.1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.15
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -2986,12 +3851,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 11.3
     m_ClipIn: 0
-    m_Asset: {fileID: 8349341100648104011}
+    m_Asset: {fileID: 6301303195501611502}
     m_Duration: 0.8
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 4.647917032241821
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: 0.0000000000000017763568394002505
     m_MixInCurve:
@@ -3037,12 +3902,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 12.1
     m_ClipIn: 0
-    m_Asset: {fileID: -6908726227142493696}
+    m_Asset: {fileID: 337737985266858755}
     m_Duration: 0.7
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.752381043774741
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: 0.0000000000000017763568394002505
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -3088,12 +3953,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 12.8
     m_ClipIn: 0
-    m_Asset: {fileID: -8884089488688069986}
+    m_Asset: {fileID: -5108090723459294210}
     m_Duration: 1.3
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.15
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: 0.0000000000000017763568394002505
     m_MixInCurve:
@@ -3139,12 +4004,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 14.1
     m_ClipIn: 0
-    m_Asset: {fileID: -6949623828875532733}
+    m_Asset: {fileID: 4500449016731381831}
     m_Duration: 0.9
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 4.514815078841315
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: 0.0000000000000017763568394002505
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -3190,12 +4055,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 15
     m_ClipIn: 0
-    m_Asset: {fileID: -8787032536466909189}
+    m_Asset: {fileID: 3492454296357534690}
     m_Duration: 0.8
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.7791667580604553
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -3259,12 +4124,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 15.8
     m_ClipIn: 0
-    m_Asset: {fileID: -4593022416949067790}
+    m_Asset: {fileID: 296898873098044689}
     m_Duration: 0.9
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 3.151851892471313
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -3328,12 +4193,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 16.7
     m_ClipIn: 0
-    m_Asset: {fileID: 2574452201379033529}
+    m_Asset: {fileID: -3037023287383358148}
     m_Duration: 1.5
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.15
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -3397,12 +4262,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 18.2
     m_ClipIn: 0
-    m_Asset: {fileID: -5864588037323359924}
+    m_Asset: {fileID: -7186744841103851558}
     m_Duration: 1.2
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.7250000685453413
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -3466,12 +4331,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 19.4
     m_ClipIn: 0
-    m_Asset: {fileID: -2515630540162932033}
+    m_Asset: {fileID: 2698327314448858928}
     m_Duration: 0.7
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.5738096152033125
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -3535,12 +4400,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 20.1
     m_ClipIn: 0
-    m_Asset: {fileID: -5477610980660306711}
+    m_Asset: {fileID: 5807133609066327562}
     m_Duration: 2.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 2424282222669840969}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_ParentTrack: {fileID: -36518469547306604}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -3621,7 +4486,7 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
---- !u!114 &2574452201379033529
+--- !u!114 &-20303132658011473
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3631,9 +4496,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Jogging Stumble
+  m_Name: AnimationPlayableAsset of Edge Slip
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 0b720a2e312c32a4b86b18a07f889209, type: 3}
+  m_Clip: {fileID: -203655887218126122, guid: b4d954ed02391a84eb37d65d2c01bddd, type: 3}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -3643,7 +4508,190 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &3413135472584916257
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
+  m_Name: Joe_Chase_Timeline
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.TimelineAsset
+  m_Version: 0
+  m_Tracks:
+  - {fileID: -8761070617559456576}
+  - {fileID: 6386077127746833651}
+  - {fileID: -3776195375738394085}
+  - {fileID: -36518469547306604}
+  - {fileID: 6747346041133392391}
+  - {fileID: -2298886750940081504}
+  m_FixedDuration: 0
+  m_EditorSettings:
+    m_Framerate: 24
+    m_ScenePreview: 1
+  m_DurationMode: 0
+  m_MarkerTrack: {fileID: 0}
+--- !u!114 &296898873098044689
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Edge Slip
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: b4d954ed02391a84eb37d65d2c01bddd, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &337737985266858755
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Falling To Landing
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 83506edddd1f6e345b7d85c70e11beb5, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &904067994673871826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Jump_Gap_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Jump_Gap_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 1
+  smoothStep: 1
+--- !u!114 &1946346020138383359
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
+  m_Name: JoeCueClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
+  lookTarget:
+    exposedName: Chase_Vault_Stumble_Look
+    defaultValue: {fileID: 0}
+  leftHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  rightHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  animatorTrigger: VaultStumble
+  lookWeight: 0.55
+  handWeight: 0
+  footWeight: 0.75
+  setRootMotion: 0
+  rootMotionEnabled: 0
+  clearRootMotionOnExit: 1
+  clearHandsOnExit: 1
+--- !u!114 &1998108523797277441
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
+  DisplayName: 
+  VirtualCamera:
+    exposedName: ChaseCamera_Impact_chain
+    defaultValue: {fileID: 0}
+--- !u!114 &2692187319023197242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
+  DisplayName: 
+  VirtualCamera:
+    exposedName: ChaseCamera_Intro_wide
+    defaultValue: {fileID: 0}
+--- !u!114 &2698327314448858928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Falling Flat Impact
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 9c2c3f9f607743545b4a6546320c9705, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &2731158295197243566
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3665,7 +4713,7 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &3519080990692598074
+--- !u!114 &2829262938674335064
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3674,27 +4722,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
-  m_Name: JoeCueClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
-  lookTarget:
-    exposedName: Chase_About_Face_Look
-    defaultValue: {fileID: 0}
-  leftHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  rightHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  animatorTrigger: AboutFace
-  lookWeight: 0.45
-  handWeight: 0
-  footWeight: 0.85
-  setRootMotion: 0
-  rootMotionEnabled: 0
-  clearRootMotionOnExit: 1
-  clearHandsOnExit: 1
---- !u!114 &3577457996761537957
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Run Look Back
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: ceab7b76ace5bf946acc4bf820f3a755, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &2913691557799070416
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3703,28 +4744,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_Look_Back_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_Look_Back_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 1
-  smoothStep: 1
---- !u!114 &3872158956110483791
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Running Trip Roll Onto Side
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 88ed9a4fd7b35224b900b37480b59a7b, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &3492454296357534690
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3733,14 +4766,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
-  DisplayName: 
-  VirtualCamera:
-    exposedName: ChaseCamera_Jump_gap
-    defaultValue: {fileID: 0}
---- !u!114 &4811173387385678867
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Vault Stumble
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 75675884e57e18c45abc147bb26eba69, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &4061489706398792860
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3770,7 +4809,222 @@ MonoBehaviour:
   faceMotion: 1
   projectToGround: 1
   smoothStep: 1
---- !u!114 &5363842540574165652
+--- !u!114 &4427885855297311545
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
+  m_Name: JoeCueClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
+  lookTarget:
+    exposedName: Chase_About_Face_Look
+    defaultValue: {fileID: 0}
+  leftHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  rightHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  animatorTrigger: AboutFace
+  lookWeight: 0.45
+  handWeight: 0
+  footWeight: 0.85
+  setRootMotion: 0
+  rootMotionEnabled: 0
+  clearRootMotionOnExit: 1
+  clearHandsOnExit: 1
+--- !u!114 &4459428208036188756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Idle To Sprint
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 709aa12654087cf419839e5de6b0682d, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &4500449016731381831
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Vault Over Box
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: b8462982ce7cea64ea802df79628c15c, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &4621245588193079317
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
+  DisplayName: 
+  VirtualCamera:
+    exposedName: ChaseCamera_Wall_climb
+    defaultValue: {fileID: 0}
+--- !u!114 &4670925952973019098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
+  m_Name: JoeCueClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
+  lookTarget:
+    exposedName: Chase_Land_Look
+    defaultValue: {fileID: 0}
+  leftHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  rightHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  animatorTrigger: Land
+  lookWeight: 0.45
+  handWeight: 0
+  footWeight: 0.85
+  setRootMotion: 0
+  rootMotionEnabled: 0
+  clearRootMotionOnExit: 1
+  clearHandsOnExit: 1
+--- !u!114 &4920234930068187511
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 1
+  start:
+    exposedName: Chase_Catch_Wall_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: Chase_Catch_Wall_End
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 1
+  projectToGround: 0
+  smoothStep: 1
+--- !u!114 &5807133609066327562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Sleep Idle
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: d0fa9472b235be34babd28b79703ccd2, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &6037975378224906225
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
+  DisplayName: 
+  VirtualCamera:
+    exposedName: ChaseCamera_Side_weave
+    defaultValue: {fileID: 0}
+--- !u!114 &6074411479917142302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
+  m_Name: JoeCueClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
+  lookTarget:
+    exposedName: Chase_Stumble_Look
+    defaultValue: {fileID: 0}
+  leftHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  rightHandTarget:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  animatorTrigger: Stumble
+  lookWeight: 0.65
+  handWeight: 0
+  footWeight: 0.65
+  setRootMotion: 0
+  rootMotionEnabled: 0
+  clearRootMotionOnExit: 1
+  clearHandsOnExit: 1
+--- !u!114 &6142225997698451406
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3800,7 +5054,7 @@ MonoBehaviour:
   faceMotion: 1
   projectToGround: 1
   smoothStep: 1
---- !u!114 &5488944251438682249
+--- !u!114 &6187586117530170245
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3809,603 +5063,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
-  m_Name: JoeCueClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
-  lookTarget:
-    exposedName: Chase_Run_Start_Look
-    defaultValue: {fileID: 0}
-  leftHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  rightHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  animatorTrigger: RunStart
-  lookWeight: 0.35
-  handWeight: 0
-  footWeight: 0.85
-  setRootMotion: 0
-  rootMotionEnabled: 0
-  clearRootMotionOnExit: 1
-  clearHandsOnExit: 1
---- !u!114 &5513705249955088698
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05acc715f855ced458d76ee6f8ac6c61, type: 3}
-  m_Name: Camera
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineTrack
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips:
-  - m_Version: 1
-    m_Start: 0
-    m_ClipIn: 0
-    m_Asset: {fileID: 5868610836767214683}
-    m_Duration: 0.9
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 5513705249955088698}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Intro wide
-  - m_Version: 1
-    m_Start: 0.9
-    m_ClipIn: 0
-    m_Asset: {fileID: 8655211019147459510}
-    m_Duration: 2.3
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 5513705249955088698}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Follow run
-  - m_Version: 1
-    m_Start: 3.2
-    m_ClipIn: 0
-    m_Asset: {fileID: -7737046161284439105}
-    m_Duration: 2
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 5513705249955088698}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Side weave
-  - m_Version: 1
-    m_Start: 5.2
-    m_ClipIn: 0
-    m_Asset: {fileID: 3872158956110483791}
-    m_Duration: 1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 5513705249955088698}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Jump gap
-  - m_Version: 1
-    m_Start: 6.2
-    m_ClipIn: 0
-    m_Asset: {fileID: -3811709126368430949}
-    m_Duration: 1.8
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 5513705249955088698}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Turn wall
-  - m_Version: 1
-    m_Start: 8
-    m_ClipIn: 0
-    m_Asset: {fileID: -7764388229734010587}
-    m_Duration: 4.1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 5513705249955088698}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Wall climb
-  - m_Version: 1
-    m_Start: 12.1
-    m_ClipIn: 0
-    m_Asset: {fileID: 8816129062421246525}
-    m_Duration: 8
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 5513705249955088698}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Impact chain
-  - m_Version: 1
-    m_Start: 20.1
-    m_ClipIn: 0
-    m_Asset: {fileID: -9160482093652667593}
-    m_Duration: 2.9
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 5513705249955088698}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Knockout
-  m_Markers:
-    m_Objects: []
-  TrackPriority: 0
---- !u!114 &5536211362525855797
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Running Turn To Idle
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: d73f0e7c133ed4242a39f52551e79183, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &6190587285452219619
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4434,145 +5105,7 @@ MonoBehaviour:
   rootMotionEnabled: 0
   clearRootMotionOnExit: 1
   clearHandsOnExit: 1
---- !u!114 &5603201816604664410
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21bf7f712d84d26478ebe6a299f21738, type: 3}
-  m_Name: Shadow Active
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.ActivationTrack
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips:
-  - m_Version: 1
-    m_Start: 0
-    m_ClipIn: 0
-    m_Asset: {fileID: -1267372561544647487}
-    m_Duration: 23
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 5603201816604664410}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Shadow on
-  m_Markers:
-    m_Objects: []
-  m_PostPlaybackState: 3
---- !u!114 &5868610836767214683
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
-  DisplayName: 
-  VirtualCamera:
-    exposedName: ChaseCamera_Intro_wide
-    defaultValue: {fileID: 0}
---- !u!114 &6005017909876858116
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
-  m_Name: JoeCueClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
-  lookTarget:
-    exposedName: Chase_Drop_Look
-    defaultValue: {fileID: 0}
-  leftHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  rightHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  animatorTrigger: Drop
-  lookWeight: 0.45
-  handWeight: 0
-  footWeight: 0.35
-  setRootMotion: 0
-  rootMotionEnabled: 0
-  clearRootMotionOnExit: 1
-  clearHandsOnExit: 1
---- !u!114 &6147537515655267540
+--- !u!114 &6301303195501611502
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4582,9 +5115,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Run Look Back
+  m_Name: AnimationPlayableAsset of Anxious Jump Down
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: ceab7b76ace5bf946acc4bf820f3a755, type: 3}
+  m_Clip: {fileID: -203655887218126122, guid: 6ee9ab1380314e34ab02b749f552f31b, type: 3}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -4594,29 +5127,7 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &6152444172866111159
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Idle To Sprint
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 709aa12654087cf419839e5de6b0682d, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &6453804506757604692
+--- !u!114 &6386077127746833651
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4640,12 +5151,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: -8525350380124752932}
+    m_Asset: {fileID: -816797498538874546}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -4709,12 +5220,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0.9
     m_ClipIn: 0
-    m_Asset: {fileID: -6522973029967457182}
+    m_Asset: {fileID: -6303172263429757945}
     m_Duration: 1.5
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -4778,12 +5289,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 2.4
     m_ClipIn: 0
-    m_Asset: {fileID: 318784120990211937}
+    m_Asset: {fileID: -303565009468209938}
     m_Duration: 0.8
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.7916666865348816
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -4847,12 +5358,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 3.2
     m_ClipIn: 0
-    m_Asset: {fileID: -2189714182305906521}
+    m_Asset: {fileID: 9196385173778508181}
     m_Duration: 1
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -4916,12 +5427,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 4.2
     m_ClipIn: 0
-    m_Asset: {fileID: 9017788357669324860}
+    m_Asset: {fileID: 9182773967800224982}
     m_Duration: 1
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -4985,12 +5496,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 5.2
     m_ClipIn: 0
-    m_Asset: {fileID: 6491165532104469639}
+    m_Asset: {fileID: -5316114709096498186}
     m_Duration: 1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.1666667461395264
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5054,12 +5565,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 6.2
     m_ClipIn: 0
-    m_Asset: {fileID: -1853375444786309165}
+    m_Asset: {fileID: -4149465322936098685}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: 0.0000000000000008881784197001252
     m_MixInCurve:
@@ -5105,12 +5616,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 7.1
     m_ClipIn: 0
-    m_Asset: {fileID: -8781785505448837033}
+    m_Asset: {fileID: -7599293562005144737}
     m_Duration: 0.9
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.00000007947286
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: 0.0000000000000008881784197001252
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5156,12 +5667,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 8
     m_ClipIn: 0
-    m_Asset: {fileID: -2495023646380814649}
+    m_Asset: {fileID: -2455431161692897884}
     m_Duration: 1.2
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.2500000993410747
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5225,12 +5736,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 9.2
     m_ClipIn: 0
-    m_Asset: {fileID: -9057654809058711975}
+    m_Asset: {fileID: -5338947835393970352}
     m_Duration: 2.1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.825396901085263
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5294,12 +5805,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 11.3
     m_ClipIn: 0
-    m_Asset: {fileID: -1253733279603102835}
+    m_Asset: {fileID: -1590523180372612846}
     m_Duration: 0.8
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.5833334624767303
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: 0.0000000000000017763568394002505
     m_MixInCurve:
@@ -5345,12 +5856,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 12.1
     m_ClipIn: 0
-    m_Asset: {fileID: -3511502048999282411}
+    m_Asset: {fileID: -8847096547103336270}
     m_Duration: 0.7
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 3.571428912026542
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: 0.0000000000000017763568394002505
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5396,12 +5907,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 12.8
     m_ClipIn: 0
-    m_Asset: {fileID: -2544669280979086632}
+    m_Asset: {fileID: -3403804827667585553}
     m_Duration: 1.3
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: 0.0000000000000017763568394002505
     m_MixInCurve:
@@ -5447,12 +5958,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 14.1
     m_ClipIn: 0
-    m_Asset: {fileID: -4243583268843902759}
+    m_Asset: {fileID: -8955862542349500724}
     m_Duration: 0.9
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 3.9259261555141873
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: 0.0000000000000017763568394002505
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5498,12 +6009,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 15
     m_ClipIn: 0
-    m_Asset: {fileID: -287797674448841168}
+    m_Asset: {fileID: -3370927179402305855}
     m_Duration: 0.8
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.4166667461395264
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5567,12 +6078,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 15.8
     m_ClipIn: 0
-    m_Asset: {fileID: -5873113460586262877}
+    m_Asset: {fileID: -20303132658011473}
     m_Duration: 0.9
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.7407407760620117
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5636,12 +6147,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 16.7
     m_ClipIn: 0
-    m_Asset: {fileID: 1794909848591484945}
+    m_Asset: {fileID: -3758585035410958350}
     m_Duration: 1.5
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5705,12 +6216,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 18.2
     m_ClipIn: 0
-    m_Asset: {fileID: 6929210716555157004}
+    m_Asset: {fileID: 2913691557799070416}
     m_Duration: 1.2
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 1.333333452542623
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5774,12 +6285,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 19.4
     m_ClipIn: 0
-    m_Asset: {fileID: 9003662405806678879}
+    m_Asset: {fileID: -4075537214322807778}
     m_Duration: 0.7
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_TimeScale: 2.238095317568098
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5843,12 +6354,12 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 20.1
     m_ClipIn: 0
-    m_Asset: {fileID: -7408935246447345109}
+    m_Asset: {fileID: 7742235327652641612}
     m_Duration: 2.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 6453804506757604692}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_ParentTrack: {fileID: 6386077127746833651}
+    m_EaseInDuration: 0.12
+    m_EaseOutDuration: 0.12
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -5929,7 +6440,7 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
---- !u!114 &6491165532104469639
+--- !u!114 &6747346041133392391
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5938,104 +6449,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Chase Jump
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 76962c752923f414b976583758baedc4, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &6725141068996994371
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Run Forward Arc Right
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 5f9d7ed7ce12e0d43aa1e1fa5a1fe310, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &6838083923185760977
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442344f75ea244a5b2e98e3cd89bc0a1, type: 3}
-  m_Name: JoeCueClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueClip
-  lookTarget:
-    exposedName: Chase_Vault_Stumble_Look
-    defaultValue: {fileID: 0}
-  leftHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  rightHandTarget:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  animatorTrigger: VaultStumble
-  lookWeight: 0.55
-  handWeight: 0
-  footWeight: 0.75
-  setRootMotion: 0
-  rootMotionEnabled: 0
-  clearRootMotionOnExit: 1
-  clearHandsOnExit: 1
---- !u!114 &6929210716555157004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Running Trip Roll Onto Side
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 88ed9a4fd7b35224b900b37480b59a7b, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &7906486630020240717
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c2cf113221e4e5ba345b93b68ca580d, type: 3}
-  m_Name: Joe Timeline Movement
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTrack
+  m_Script: {fileID: 11500000, guid: 0bb1c92f9a1245cf9d7bca8238c46e11, type: 3}
+  m_Name: Joe Cues
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeCueTrack
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
@@ -6048,10 +6464,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: -2008137452388261336}
+    m_Asset: {fileID: -1405925860105640282}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -6113,83 +6529,14 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Intro Hold
-  - m_Version: 1
-    m_Start: 0.9
-    m_ClipIn: 0
-    m_Asset: {fileID: -1010559945842559148}
-    m_Duration: 1.5
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Alley Run
+    m_DisplayName: Run Start
   - m_Version: 1
     m_Start: 2.4
     m_ClipIn: 0
-    m_Asset: {fileID: 3577457996761537957}
+    m_Asset: {fileID: -9139357684187718317}
     m_Duration: 0.8
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -6253,150 +6600,12 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Look Back
   - m_Version: 1
-    m_Start: 3.2
-    m_ClipIn: 0
-    m_Asset: {fileID: -3365738881835110533}
-    m_Duration: 1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Arc Left
-  - m_Version: 1
-    m_Start: 4.2
-    m_ClipIn: 0
-    m_Asset: {fileID: -2582341787644622692}
-    m_Duration: 1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Arc Right
-  - m_Version: 1
     m_Start: 5.2
     m_ClipIn: 0
-    m_Asset: {fileID: -7218171504544415175}
+    m_Asset: {fileID: -733766114065613083}
     m_Duration: 1
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -6458,14 +6667,14 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Jump Gap
+    m_DisplayName: Jump
   - m_Version: 1
     m_Start: 6.2
     m_ClipIn: 0
-    m_Asset: {fileID: -5713575154730101713}
+    m_Asset: {fileID: 4427885855297311545}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -6513,10 +6722,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 7.1
     m_ClipIn: 0
-    m_Asset: {fileID: 5363842540574165652}
+    m_Asset: {fileID: -8889568069952915667}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0.0000000000000008881784197001252
@@ -6564,10 +6773,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 8
     m_ClipIn: 0
-    m_Asset: {fileID: -6296132724364330631}
-    m_Duration: 1.2
+    m_Asset: {fileID: -1096583772587047439}
+    m_Duration: 3.3
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -6629,83 +6838,14 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Catch Wall
-  - m_Version: 1
-    m_Start: 9.2
-    m_ClipIn: 0
-    m_Asset: {fileID: -6727248567640143487}
-    m_Duration: 2.1
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Wall Climb
+    m_DisplayName: Climb
   - m_Version: 1
     m_Start: 11.3
     m_ClipIn: 0
-    m_Asset: {fileID: 8479825581430028464}
+    m_Asset: {fileID: -6106597210691459936}
     m_Duration: 0.8
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -6753,10 +6893,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 12.1
     m_ClipIn: 0
-    m_Asset: {fileID: 9165144654136370162}
+    m_Asset: {fileID: 4670925952973019098}
     m_Duration: 0.7
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0.0000000000000017763568394002505
@@ -6800,72 +6940,39 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Land Hold
-  - m_Version: 1
-    m_Start: 12.8
-    m_ClipIn: 0
-    m_Asset: {fileID: 9118465912818750140}
-    m_Duration: 1.3
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: 0.0000000000000017763568394002505
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Final Sprint
+    m_DisplayName: Land
   - m_Version: 1
     m_Start: 14.1
     m_ClipIn: 0
-    m_Asset: {fileID: -3975243532925199665}
+    m_Asset: {fileID: -2642303312205884887}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.0000000000000017763568394002505
+    m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -6906,10 +7013,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 15
     m_ClipIn: 0
-    m_Asset: {fileID: 31749038092350857}
+    m_Asset: {fileID: 1946346020138383359}
     m_Duration: 0.8
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -6975,10 +7082,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 15.8
     m_ClipIn: 0
-    m_Asset: {fileID: 4811173387385678867}
+    m_Asset: {fileID: -2031913714257578598}
     m_Duration: 0.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -7042,81 +7149,12 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Edge Slip
   - m_Version: 1
-    m_Start: 16.7
-    m_ClipIn: 0
-    m_Asset: {fileID: 8887725981413553973}
-    m_Duration: 1.5
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Recovery Sprint
-  - m_Version: 1
     m_Start: 18.2
     m_ClipIn: 0
-    m_Asset: {fileID: -6497072214374413340}
+    m_Asset: {fileID: 6074411479917142302}
     m_Duration: 1.2
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -7178,14 +7216,14 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Trip Roll
+    m_DisplayName: Stumble
   - m_Version: 1
     m_Start: 19.4
     m_ClipIn: 0
-    m_Asset: {fileID: -554397830397522100}
+    m_Asset: {fileID: 6190587285452219619}
     m_Duration: 0.7
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -7247,14 +7285,14 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Impact Settle
+    m_DisplayName: Fall Impact
   - m_Version: 1
     m_Start: 20.1
     m_ClipIn: 0
-    m_Asset: {fileID: -3091045116448274717}
+    m_Asset: {fileID: -7047319738454612130}
     m_Duration: 2.9
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 7906486630020240717}
+    m_ParentTrack: {fileID: 6747346041133392391}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -7316,84 +7354,10 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Knockout Hold
+    m_DisplayName: Knockout
   m_Markers:
     m_Objects: []
---- !u!114 &8349341100648104011
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Dismount Jump From Wall
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: aca825172df53b44d9439530c93b62b8, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &8479825581430028464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_Drop_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_Drop_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 0
-  smoothStep: 1
---- !u!114 &8524234252549173608
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Running About Face
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 47dc3423afefebc4ca54e209e3c9d713, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &8655211019147459510
+--- !u!114 &6928581248085686564
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7409,7 +7373,37 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: ChaseCamera_Follow_run
     defaultValue: {fileID: 0}
---- !u!114 &8816129062421246525
+--- !u!114 &7130690793128427495
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
+  m_Name: JoeMovementTimelineClip
+  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
+  controller:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  mode: 0
+  start:
+    exposedName: Chase_Knockout_Hold_Start
+    defaultValue: {fileID: 0}
+  end:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  spline:
+    exposedName: 
+    defaultValue: {fileID: 0}
+  startSplineT: 0
+  endSplineT: 1
+  faceMotion: 0
+  projectToGround: 1
+  smoothStep: 1
+--- !u!114 &7291925481984074619
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7423,9 +7417,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
   DisplayName: 
   VirtualCamera:
-    exposedName: ChaseCamera_Impact_chain
+    exposedName: ChaseCamera_Jump_gap
     defaultValue: {fileID: 0}
---- !u!114 &8887725981413553973
+--- !u!114 &7542426703977244868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Left Sharp Turn
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: e735a09f8c5659747870a7647d2928bd, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &7742235327652641612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Sleep Idle
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: d0fa9472b235be34babd28b79703ccd2, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &8145540782413576924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Long Running About Face
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: f6cd66e07cdf31b41adfc3e98ff8353c, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &8982672301327472495
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7442,10 +7502,10 @@ MonoBehaviour:
     defaultValue: {fileID: 0}
   mode: 1
   start:
-    exposedName: Chase_Recovery_Sprint_Start
+    exposedName: Chase_About_Face_Start
     defaultValue: {fileID: 0}
   end:
-    exposedName: Chase_Recovery_Sprint_End
+    exposedName: Chase_About_Face_End
     defaultValue: {fileID: 0}
   spline:
     exposedName: 
@@ -7455,29 +7515,7 @@ MonoBehaviour:
   faceMotion: 1
   projectToGround: 1
   smoothStep: 1
---- !u!114 &9003662405806678879
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: AnimationPlayableAsset of Falling Flat Impact
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
-  m_Clip: {fileID: -203655887218126122, guid: 9c2c3f9f607743545b4a6546320c9705, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &9017788357669324860
+--- !u!114 &9182773967800224982
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7499,7 +7537,7 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &9118465912818750140
+--- !u!114 &9196385173778508181
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7508,54 +7546,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 1
-  start:
-    exposedName: Chase_Final_Sprint_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: Chase_Final_Sprint_End
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 1
-  projectToGround: 1
-  smoothStep: 1
---- !u!114 &9165144654136370162
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538e469f2ce59b849bee0527a2da3964, type: 3}
-  m_Name: JoeMovementTimelineClip
-  m_EditorClassIdentifier: Assembly-CSharp::ChasingShadows.Characters.JoeMovementTimelineClip
-  controller:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  mode: 0
-  start:
-    exposedName: Chase_Land_Hold_Start
-    defaultValue: {fileID: 0}
-  end:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  spline:
-    exposedName: 
-    defaultValue: {fileID: 0}
-  startSplineT: 0
-  endSplineT: 1
-  faceMotion: 0
-  projectToGround: 1
-  smoothStep: 1
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: AnimationPlayableAsset of Run Forward Arc Left
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
+  m_Clip: {fileID: -203655887218126122, guid: 14930a4c5a8fad34c9bccbe64c95e2af, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}

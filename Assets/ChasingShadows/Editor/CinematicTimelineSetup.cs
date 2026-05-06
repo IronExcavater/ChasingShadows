@@ -378,7 +378,7 @@ namespace ChasingShadows.Editor
 
             var shadowAnimation = timeline.CreateTrack<AnimationTrack>(null, "Shadow Animation");
             shadowAnimation.trackOffset = TrackOffset.Auto;
-            AddChaseAnimationBeatClips(shadowAnimation, "Shadow");
+            AddShadowChaseAnimationBeatClips(shadowAnimation);
 
             var cueTrack = timeline.CreateTrack<JoeCueTrack>(null, "Joe Cues");
             AddCue(director, cueTrack, "Run Start", 0d, 0.9d, "RunStart", references.GetMarker("Look_Target"), null, null, 0.35f, 0f, 0.85f, "Chase");
@@ -484,6 +484,108 @@ namespace ChasingShadows.Editor
                 "Assets/ChasingShadows/Animations/Joe/Sleeping Mild Cough.fbx"));
         }
 
+        // Shadow animation beats: more athletic/parkour alternatives to Joe's clips.
+        // Clips play at 1.15x speed and use sharper variants to reinforce the "agile shadow leading Joe" feel.
+        private static void AddShadowChaseAnimationBeatClips(AnimationTrack track)
+        {
+            const double speed = 1.15;
+
+            AddAnimationClipScaled(track, "Shadow Run Start", 0d, 0.9d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Idle To Sprint.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Adventure Run.fbx"));
+            AddAnimationClipScaled(track, "Shadow Alley Run", 0.9d, 1.5d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Left.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx"));
+            AddAnimationClipScaled(track, "Shadow Look Back", 2.4d, 0.8d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Run Look Back.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx"));
+            AddAnimationClipScaled(track, "Shadow Arc Left", 3.2d, 1d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Left Sharp Turn.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Left.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx"));
+            AddAnimationClipScaled(track, "Shadow Arc Right", 4.2d, 1d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Right Sharp Turn.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Right.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx"));
+            AddAnimationClipScaled(track, "Shadow Jump Gap", 5.2d, 1d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Running Jump Up.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Chase Jump.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Jumping Up.fbx"));
+            AddAnimationClipScaled(track, "Shadow About Face", 6.2d, 0.9d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Long Running About Face.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Running About Face.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Left Sharp Turn.fbx"));
+            AddAnimationClipScaled(track, "Shadow Stop At Wall", 7.1d, 0.9d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Running Turn To Idle.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Run To Stop At Wall.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Run To Stop.fbx"));
+            AddAnimationClipScaled(track, "Shadow Catch Wall", 8d, 1.2d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Sprint Climb Ascend.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Jump To Climb Wall.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Jump To Hang.fbx"));
+            AddAnimationClipScaled(track, "Shadow Wall Climb", 9.2d, 2.1d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Climbing Up Wall.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Sprint Climb Ascend.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Run Climb Ascend.fbx"));
+            AddAnimationClipScaled(track, "Shadow Drop", 11.3d, 0.8d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Anxious Jump Down.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Dismount Jump From Wall.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Jumping Down.fbx"));
+            AddAnimationClipScaled(track, "Shadow Land", 12.1d, 0.7d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Falling To Landing.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Hard Landing.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Heavy Hard Landing.fbx"));
+            AddAnimationClipScaled(track, "Shadow Final Sprint", 12.8d, 1.3d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Right.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx"));
+            AddAnimationClipScaled(track, "Shadow Vault", 14.1d, 0.9d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Vault Over Box.fbx"));
+            AddAnimationClipScaled(track, "Shadow Vault Stumble", 15d, 0.8d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Vault Stumble.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Jogging Stumble.fbx"));
+            AddAnimationClipScaled(track, "Shadow Edge Slip", 15.8d, 0.9d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Edge Slip.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Jogging Stumble.fbx"));
+            AddAnimationClipScaled(track, "Shadow Recovery Sprint", 16.7d, 1.5d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx"));
+            AddAnimationClipScaled(track, "Shadow Trip Roll", 18.2d, 1.2d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Falling Roll.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Running Trip Roll Onto Side.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Walking Trip Onto Side.fbx"));
+            AddAnimationClipScaled(track, "Shadow Impact", 19.4d, 0.7d, speed, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Falling Flat Impact.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Walking Trip Fall Flat.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Falling To Landing.fbx"));
+            AddAnimationClipScaled(track, "Shadow Knocked Out Hold", 20.1d, 2.9d, 1d, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Sleep Idle.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Sleeping Restless.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Sleeping Mild Cough.fbx"));
+        }
+
+        private static void AddAnimationClipScaled(AnimationTrack track, string name, double start, double duration, double timeScale, AnimationClip animationClip)
+        {
+            var clip = track.CreateClip<AnimationPlayableAsset>();
+            clip.displayName = name;
+            clip.start = start;
+            clip.duration = duration;
+            // Fit animation to window first, then apply the intended speed multiplier on top.
+            var fitScale = animationClip != null && animationClip.length > (float)duration + 0.05f
+                ? animationClip.length / duration
+                : 1.0;
+            clip.timeScale = fitScale * timeScale;
+            clip.easeInDuration = System.Math.Min(0.12, duration * 0.4);
+            clip.easeOutDuration = System.Math.Min(0.12, duration * 0.4);
+
+            if (clip.asset is AnimationPlayableAsset asset)
+            {
+                asset.clip = animationClip != null ? animationClip : LoadPlaceholderClip();
+                EditorUtility.SetDirty(asset);
+            }
+        }
+
         private static void BindTimeline(PlayableDirector director, TimelineAsset timeline, TimelineReferences references)
         {
             foreach (var track in timeline.GetOutputTracks())
@@ -528,12 +630,21 @@ namespace ChasingShadows.Editor
             }
         }
 
-        private static void AddAnimationClip(AnimationTrack track, string name, double start, double duration, AnimationClip animationClip)
+        private static void AddAnimationClip(AnimationTrack track, string name, double start, double duration, AnimationClip animationClip, double easeIn = 0.12, double easeOut = 0.12)
         {
             var clip = track.CreateClip<AnimationPlayableAsset>();
             clip.displayName = name;
             clip.start = start;
             clip.duration = duration;
+            // Cap ease durations so they never exceed 40% of clip length
+            clip.easeInDuration = System.Math.Min(easeIn, duration * 0.4);
+            clip.easeOutDuration = System.Math.Min(easeOut, duration * 0.4);
+            // Compress animations longer than the beat window so they complete fully within the slot.
+            // Locomotion clips shorter than the window play at 1x and loop naturally via loopTime.
+            if (animationClip != null && animationClip.length > (float)duration + 0.05f)
+            {
+                clip.timeScale = animationClip.length / duration;
+            }
 
             if (clip.asset is AnimationPlayableAsset asset)
             {
@@ -633,8 +744,10 @@ namespace ChasingShadows.Editor
             var joeAnimator = joe.GetComponent<Animator>();
             if (joeAnimator != null)
             {
-                joeAnimator.runtimeAnimatorController =
-                    AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(JoeAnimationSetup.ControllerPath);
+                // Null the controller so the AnimationTrack is the sole animation driver in cinematic.
+                // Having the controller active while an AnimationTrack is bound causes the blend tree
+                // to compete with the timeline clips, producing wrong animations.
+                joeAnimator.runtimeAnimatorController = null;
                 joeAnimator.enabled = true;
                 joeAnimator.applyRootMotion = false;
             }
@@ -645,7 +758,9 @@ namespace ChasingShadows.Editor
             }
 
             shadow.name = "Joe_Shadow";
-            shadow.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+            // Place shadow 2.5m ahead of Joe in local space — it's parented to Joe so this
+            // keeps it consistently in front regardless of Joe's world position or rotation.
+            shadow.transform.SetLocalPositionAndRotation(new Vector3(0f, 0f, 2.5f), Quaternion.identity);
             shadow.transform.localScale = Vector3.one;
 
             foreach (var controller in shadow.GetComponentsInChildren<JoeCinematicController>(true))
@@ -657,7 +772,8 @@ namespace ChasingShadows.Editor
             if (shadowAnimator != null && joeAnimator != null)
             {
                 shadowAnimator.avatar = joeAnimator.avatar;
-                shadowAnimator.runtimeAnimatorController = joeAnimator.runtimeAnimatorController;
+                // Shadow is also driven purely by its AnimationTrack — no controller needed.
+                shadowAnimator.runtimeAnimatorController = null;
                 shadowAnimator.applyRootMotion = false;
                 shadowAnimator.enabled = true;
             }
