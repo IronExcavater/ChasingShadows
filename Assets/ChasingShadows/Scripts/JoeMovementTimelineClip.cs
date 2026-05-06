@@ -87,6 +87,7 @@ namespace ChasingShadows.Characters
 
             if (mode == JoeTimelineMotionMode.Hold)
             {
+                controller.SetTimelinePose(fallbackStartPosition, fallbackStartRotation, false, projectToGround);
                 return;
             }
 
