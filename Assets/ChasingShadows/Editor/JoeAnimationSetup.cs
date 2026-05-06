@@ -219,8 +219,6 @@ namespace ChasingShadows.Editor
                         changed = true;
                     }
 
-                    // Bake root motion into pose so all animations are truly in-place.
-                    // JoeMovementTrack owns all positional/rotational changes during cinematics.
                     if (!clipAnimations[i].lockRootPositionXZ)
                     {
                         clipAnimations[i].lockRootPositionXZ = true;

@@ -23,19 +23,38 @@ namespace ChasingShadows.Editor
 
         private const string JoePrefabPath = "Assets/ChasingShadows/Prefabs/Joe.prefab";
         private const string ShadowPrefabPath = "Assets/ChasingShadows/Prefabs/Shadow.prefab";
+        private const double AnimationBlendDuration = 0.18d;
 
         private const string BasePrefabFolder = "Assets/ChasingShadows/Prefabs/Cinematic";
         private const string BaseRootPrefabPath = BasePrefabFolder + "/CinematicSequenceRoot.prefab";
         private const string BaseJoeRigPrefabPath = BasePrefabFolder + "/JoeCinematicRig.prefab";
-        private const string BaseCameraRigPrefabPath = BasePrefabFolder + "/CinematicCameraRig.prefab";
+        private const string BaseCameraPrefabFolder = BasePrefabFolder + "/Cameras";
+        private const string LegacyCameraRigPrefabPath = BasePrefabFolder + "/CinematicCameraRig.prefab";
         private const string BaseMarkerSetPrefabPath = BasePrefabFolder + "/CinematicMarkerSet.prefab";
 
         private static readonly string[] RequiredBasePrefabs =
         {
             BaseRootPrefabPath,
             BaseJoeRigPrefabPath,
-            BaseCameraRigPrefabPath,
             BaseMarkerSetPrefabPath
+        };
+
+        private static readonly CameraPrefabSpec[] BasicCameraPrefabs =
+        {
+            new("CM_Basic_IntroWide", new Vector3(-3.5f, 2f, -3f), new Vector3(12f, 35f, 0f), 42f),
+            new("CM_Basic_Follow", new Vector3(-2.2f, 1.6f, 1.4f), new Vector3(8f, 18f, 0f), 38f),
+            new("CM_Basic_Close", new Vector3(-1.4f, 1.25f, 4.5f), new Vector3(7f, 28f, 0f), 34f)
+        };
+
+        private static readonly CameraPrefabSpec[] ChaseCameraPrefabs =
+        {
+            new("CM_Chase_IntroWide", new Vector3(-4f, 2.2f, -3f), new Vector3(14f, 38f, 0f), 42f),
+            new("CM_Chase_Follow", new Vector3(-2.4f, 1.6f, 1.2f), new Vector3(8f, 18f, 0f), 38f),
+            new("CM_Chase_SideProfile", new Vector3(-4f, 1.5f, 8.5f), new Vector3(4f, 78f, 0f), 40f),
+            new("CM_Chase_Jump", new Vector3(-2.2f, 1.4f, 6.8f), new Vector3(8f, 45f, 0f), 36f),
+            new("CM_Chase_Climb", new Vector3(-2.2f, 2.8f, 11.2f), new Vector3(18f, 58f, 0f), 34f),
+            new("CM_Chase_Impact", new Vector3(-2.8f, 1.1f, 18.8f), new Vector3(6f, 70f, 0f), 32f),
+            new("CM_Chase_Knockout", new Vector3(0.2f, 0.65f, 21.9f), new Vector3(10f, 180f, 0f), 30f)
         };
 
         private static readonly string[] PrefabAuthoringRootNames =
@@ -51,6 +70,8 @@ namespace ChasingShadows.Editor
             LegacyGenericTimelinePath,
             BasePrefabFolder + "/CinematicObstacleMarkers.prefab",
             BasePrefabFolder + "/CinematicObstacleMarkers.prefab.meta",
+            LegacyCameraRigPrefabPath,
+            LegacyCameraRigPrefabPath + ".meta",
             BasePrefabFolder + "/Basic",
             BasePrefabFolder + "/Basic.meta",
             BasePrefabFolder + "/Chase",
@@ -62,10 +83,12 @@ namespace ChasingShadows.Editor
         {
             DeleteExistingSetupRoots(PrefabAuthoringRootNames);
             EnsureFolder(BasePrefabFolder);
+            EnsureFolder(BaseCameraPrefabFolder);
             SaveSequenceRootPrefab(BaseRootPrefabPath, "CinematicSequenceRoot");
             SaveJoeRigPrefab(BaseJoeRigPrefabPath, "JoeCinematicRig");
             SaveBaseMarkerSetPrefab();
-            SaveBaseCameraRigPrefab();
+            SaveCameraPrefabs(BasicCameraPrefabs);
+            SaveCameraPrefabs(ChaseCameraPrefabs);
             DeleteDuplicateGeneratedAssets();
             DeleteExistingSetupRoots(PrefabAuthoringRootNames);
             AssetDatabase.SaveAssets();
@@ -88,7 +111,7 @@ namespace ChasingShadows.Editor
                 "Joe_Cinematic_Setup");
             var joeRig = InstantiateChildPrefab(BaseJoeRigPrefabPath, FindOrCreateChild(root.transform, "Joe Rig"));
             var markerSet = InstantiateChildPrefab(BaseMarkerSetPrefabPath, FindOrCreateChild(root.transform, "Marker Set"));
-            var cameraRig = InstantiateChildPrefab(BaseCameraRigPrefabPath, FindOrCreateChild(root.transform, "Camera Rig"));
+            var cameraRig = CreateCameraRigFromPrefabs(FindOrCreateChild(root.transform, "Camera Rig"), BasicCameraPrefabs);
             var director = root.GetComponentInChildren<PlayableDirector>(true) ?? CreateDirector(root.transform);
 
             var references = BuildTimelineReferences(joeRig, markerSet, cameraRig);
@@ -117,7 +140,7 @@ namespace ChasingShadows.Editor
                     .ToArray());
             var joeRig = InstantiateChildPrefab(BaseJoeRigPrefabPath, FindOrCreateChild(root.transform, "Joe Rig"));
             var markerSet = CreateChaseMarkerSet(FindOrCreateChild(root.transform, "Marker Set"));
-            var cameraRig = CreateChaseCameraRig(FindOrCreateChild(root.transform, "Camera Rig"));
+            var cameraRig = CreateCameraRigFromPrefabs(FindOrCreateChild(root.transform, "Camera Rig"), ChaseCameraPrefabs);
             var director = root.GetComponentInChildren<PlayableDirector>(true) ?? CreateDirector(root.transform);
 
             var references = BuildTimelineReferences(joeRig, markerSet, cameraRig);
@@ -153,27 +176,36 @@ namespace ChasingShadows.Editor
                 return;
             }
 
-            var joeObject = PrefabUtility.InstantiatePrefab(joePrefab, root.transform) as GameObject;
+            var joeRoot = CreateChild(root.transform, "Joe Root");
+            var shadowRoot = CreateChild(root.transform, "Shadow Root");
+            shadowRoot.transform.SetLocalPositionAndRotation(new Vector3(0f, 0f, 2.5f), Quaternion.identity);
+            var joeObject = PrefabUtility.InstantiatePrefab(joePrefab, joeRoot.transform) as GameObject;
             if (joeObject != null)
             {
                 joeObject.name = "Joe";
                 joeObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
                 joeObject.transform.localScale = Vector3.one;
+            }
 
-                if (shadowPrefab != null)
+            if (shadowPrefab != null)
+            {
+                var shadowObject = PrefabUtility.InstantiatePrefab(shadowPrefab, shadowRoot.transform) as GameObject;
+                if (shadowObject != null)
                 {
-                    var shadowObject = PrefabUtility.InstantiatePrefab(shadowPrefab, joeObject.transform) as GameObject;
-                    if (shadowObject != null)
-                    {
-                        shadowObject.name = "Joe_Shadow";
-                        shadowObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-                        shadowObject.transform.localScale = Vector3.one;
-                    }
+                    shadowObject.name = "Shadow";
+                    shadowObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+                    shadowObject.transform.localScale = Vector3.one;
                 }
             }
 
-            var joe = root.GetComponentInChildren<JoeCinematicController>(true);
-            var shadow = FindDeepChild(root.transform, "Joe_Shadow")?.gameObject;
+            var joe = FindDeepChild(root.transform, "Joe")?.GetComponent<JoeCinematicController>();
+            var shadowTransform = FindDeepChild(root.transform, "Shadow");
+            var shadow = shadowTransform != null ? shadowTransform.GetComponent<JoeCinematicController>() : null;
+            if (shadow == null && shadowTransform != null)
+            {
+                shadow = shadowTransform.gameObject.AddComponent<JoeCinematicController>();
+            }
+
             ConfigureJoeAndShadow(joe, shadow);
             SavePrefabAndDestroy(root, path);
         }
@@ -181,28 +213,28 @@ namespace ChasingShadows.Editor
         private static void SaveBaseMarkerSetPrefab()
         {
             var root = new GameObject("CinematicMarkerSet");
-            var path = CreateChild(root.transform, "Path Markers").transform;
-            CreateMarker(path, "Move_Start", new Vector3(0f, 0f, 0f));
-            CreateMarker(path, "Move_End", new Vector3(0f, 0f, 5f));
-
             var ik = CreateChild(root.transform, "IK Targets").transform;
             CreateMarker(ik, "Look_Target", new Vector3(0f, 1.5f, 3f));
             CreateMarker(ik, "LeftHand_Target", new Vector3(-0.35f, 1.1f, 2f));
             CreateMarker(ik, "RightHand_Target", new Vector3(0.35f, 1.1f, 2f));
-
-            var actions = CreateChild(root.transform, "Action Markers").transform;
-            CreateMarker(actions, "Action_Point", new Vector3(0f, 0f, 2.5f));
-            CreateMarker(actions, "End_Point", new Vector3(0f, 0f, 5f));
             SavePrefabAndDestroy(root, BaseMarkerSetPrefabPath);
         }
 
-        private static void SaveBaseCameraRigPrefab()
+        private static void SaveCameraPrefabs(IEnumerable<CameraPrefabSpec> cameras)
         {
-            var root = new GameObject("CinematicCameraRig");
-            CreateSequenceCamera(root.transform, "CM_Basic_IntroWide", new Vector3(-3.5f, 2f, -3f), new Vector3(12f, 35f, 0f), 42f);
-            CreateSequenceCamera(root.transform, "CM_Basic_Follow", new Vector3(-2.2f, 1.6f, 1.4f), new Vector3(8f, 18f, 0f), 38f);
-            CreateSequenceCamera(root.transform, "CM_Basic_Close", new Vector3(-1.4f, 1.25f, 4.5f), new Vector3(7f, 28f, 0f), 34f);
-            SavePrefabAndDestroy(root, BaseCameraRigPrefabPath);
+            foreach (var camera in cameras)
+            {
+                SaveCameraPrefab(camera);
+            }
+        }
+
+        private static void SaveCameraPrefab(CameraPrefabSpec spec)
+        {
+            var cameraObject = new GameObject(spec.Name);
+            cameraObject.transform.SetPositionAndRotation(spec.Position, Quaternion.Euler(spec.Euler));
+            var camera = cameraObject.AddComponent<CinemachineCamera>();
+            camera.Lens.FieldOfView = spec.FieldOfView;
+            SavePrefabAndDestroy(cameraObject, CameraPrefabPath(spec.Name));
         }
 
         private static GameObject CreateChaseMarkerSet(Transform parent)
@@ -210,65 +242,25 @@ namespace ChasingShadows.Editor
             ClearChildren(parent);
 
             var root = CreateChild(parent, "ChaseMarkerSet");
-            var path = CreateChild(root.transform, "Path Markers").transform;
-            CreateMarker(path, "Move_Start", new Vector3(0f, 0f, 0f));
-            CreateMarker(path, "Alley_Run_End", new Vector3(0f, 0f, 4.5f));
-            CreateMarker(path, "Look_Back_End", new Vector3(-0.1f, 0f, 5.6f));
-            CreateMarker(path, "Arc_Left_End", new Vector3(-1f, 0f, 7f));
-            CreateMarker(path, "Arc_Right_End", new Vector3(0.5f, 0f, 8.4f));
-            CreateMarker(path, "Jump_End", new Vector3(0.8f, 0f, 10.2f));
-            CreateMarker(path, "Turn_End", new Vector3(1.8f, 0f, 11.1f));
-            CreateMarker(path, "Wall_Base", new Vector3(1.8f, 0f, 12.3f));
-            CreateMarker(path, "Wall_Hang", new Vector3(1.8f, 1.1f, 12.7f));
-            CreateMarker(path, "Climb_Top", new Vector3(1.8f, 2.4f, 13.5f));
-            CreateMarker(path, "Drop_Land", new Vector3(1.8f, 0f, 15f));
-            CreateMarker(path, "Vault_Start", new Vector3(1.8f, 0f, 17f));
-            CreateMarker(path, "Vault_End", new Vector3(2.3f, 0f, 18.2f));
-            CreateMarker(path, "Stumble_End", new Vector3(2.6f, 0f, 19f));
-            CreateMarker(path, "Slip_End", new Vector3(2.4f, 0f, 20f));
-            CreateMarker(path, "Trip_Start", new Vector3(2.4f, 0f, 21.4f));
-            CreateMarker(path, "Impact_Point", new Vector3(2.4f, 0f, 22.2f));
-            CreateMarker(path, "Knockout_Point", new Vector3(2.4f, 0f, 23f));
-
             var ik = CreateChild(root.transform, "IK Targets").transform;
             CreateMarker(ik, "Look_Target", new Vector3(0f, 1.5f, 8f));
             CreateMarker(ik, "Look_Back_Target", new Vector3(-2.4f, 1.4f, 4.6f));
-            CreateMarker(ik, "LeftHand_Target", new Vector3(-0.35f, 1.1f, 2f));
-            CreateMarker(ik, "RightHand_Target", new Vector3(0.35f, 1.1f, 2f));
             CreateMarker(ik, "Climb_LeftHand_Target", new Vector3(1.25f, 1.85f, 12.9f));
             CreateMarker(ik, "Climb_RightHand_Target", new Vector3(2.15f, 2.05f, 13.05f));
             CreateMarker(ik, "Knockout_Look_Target", new Vector3(2.4f, 0.35f, 23.8f));
-
-            var actions = CreateChild(root.transform, "Action Markers").transform;
-            CreateMarker(actions, "Look_Back_Action", new Vector3(0f, 0f, 5f));
-            CreateMarker(actions, "Jump_Action", new Vector3(0.5f, 0f, 9.2f));
-            CreateMarker(actions, "Turn_Action", new Vector3(1.4f, 0f, 10.6f));
-            CreateMarker(actions, "Stop_At_Wall_Action", new Vector3(1.8f, 0f, 12f));
-            CreateMarker(actions, "Climb_Action", new Vector3(1.8f, 1.1f, 12.8f));
-            CreateMarker(actions, "Drop_Action", new Vector3(1.8f, 2f, 14f));
-            CreateMarker(actions, "Land_Action", new Vector3(1.8f, 0f, 15f));
-            CreateMarker(actions, "Vault_Action", new Vector3(2f, 0f, 17.6f));
-            CreateMarker(actions, "Stumble_Action", new Vector3(2.5f, 0f, 18.6f));
-            CreateMarker(actions, "Slip_Action", new Vector3(2.5f, 0f, 19.5f));
-            CreateMarker(actions, "Trip_Action", new Vector3(2.4f, 0f, 21.6f));
-            CreateMarker(actions, "Impact_Action", new Vector3(2.4f, 0f, 22.2f));
-            CreateMarker(actions, "Knockout_Action", new Vector3(2.4f, 0f, 23f));
             return root;
         }
 
-        private static GameObject CreateChaseCameraRig(Transform parent)
+        private static GameObject CreateCameraRigFromPrefabs(Transform parent, IEnumerable<CameraPrefabSpec> cameras)
         {
             ClearChildren(parent);
 
-            var root = CreateChild(parent, "ChaseCameraRig");
-            CreateSequenceCamera(root.transform, "CM_Chase_IntroWide", new Vector3(-4f, 2.2f, -3f), new Vector3(14f, 38f, 0f), 42f);
-            CreateSequenceCamera(root.transform, "CM_Chase_Follow", new Vector3(-2.4f, 1.6f, 1.2f), new Vector3(8f, 18f, 0f), 38f);
-            CreateSequenceCamera(root.transform, "CM_Chase_SideProfile", new Vector3(-4f, 1.5f, 8.5f), new Vector3(4f, 78f, 0f), 40f);
-            CreateSequenceCamera(root.transform, "CM_Chase_Jump", new Vector3(-2.2f, 1.4f, 6.8f), new Vector3(8f, 45f, 0f), 36f);
-            CreateSequenceCamera(root.transform, "CM_Chase_Climb", new Vector3(-2.2f, 2.8f, 11.2f), new Vector3(18f, 58f, 0f), 34f);
-            CreateSequenceCamera(root.transform, "CM_Chase_Impact", new Vector3(-2.8f, 1.1f, 18.8f), new Vector3(6f, 70f, 0f), 32f);
-            CreateSequenceCamera(root.transform, "CM_Chase_Knockout", new Vector3(0.2f, 0.65f, 21.9f), new Vector3(10f, 180f, 0f), 30f);
-            return root;
+            foreach (var camera in cameras)
+            {
+                InstantiateCameraPrefab(camera, parent);
+            }
+
+            return parent.gameObject;
         }
 
         private static TimelineAsset CreateBasicTimelineAsset(TimelineReferences references, PlayableDirector director)
@@ -285,8 +277,18 @@ namespace ChasingShadows.Editor
             AddCameraShot(director, cameraTrack, "Follow", 1d, 4d, references.GetCamera("CM_Basic_Follow"), "BasicCamera");
             AddCameraShot(director, cameraTrack, "Close", 5d, 1d, references.GetCamera("CM_Basic_Close"), "BasicCamera");
 
+            var joeMotion = CreateMotionTrack(timeline, "Joe Motion");
+            AddMotionClip(joeMotion, "Joe hold", 0d, 1d, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero);
+            AddMotionClip(joeMotion, "Joe move", 1d, 4d, Vector3.zero, new Vector3(0f, 0f, 6f), Vector3.zero, Vector3.zero);
+            AddMotionClip(joeMotion, "Joe end hold", 5d, 1d, new Vector3(0f, 0f, 6f), new Vector3(0f, 0f, 6f), Vector3.zero, Vector3.zero);
+
+            var shadowMotion = CreateMotionTrack(timeline, "Shadow Motion");
+            AddMotionClip(shadowMotion, "Shadow hold", 0d, 1d, new Vector3(0f, 0f, 2.5f), new Vector3(0f, 0f, 2.5f), Vector3.zero, Vector3.zero);
+            AddMotionClip(shadowMotion, "Shadow move", 1d, 4d, new Vector3(0f, 0f, 2.5f), new Vector3(0f, 0f, 8.5f), Vector3.zero, Vector3.zero);
+            AddMotionClip(shadowMotion, "Shadow end hold", 5d, 1d, new Vector3(0f, 0f, 8.5f), new Vector3(0f, 0f, 8.5f), Vector3.zero, Vector3.zero);
+
             var joeAnimation = timeline.CreateTrack<AnimationTrack>(null, "Joe Animation");
-            joeAnimation.trackOffset = TrackOffset.Auto;
+            joeAnimation.trackOffset = TrackOffset.ApplyTransformOffsets;
             AddAnimationClip(joeAnimation, "Ready hold", 0d, 1d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Breathing Idle.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Neutral Idle.fbx",
@@ -299,13 +301,8 @@ namespace ChasingShadows.Editor
                 "Assets/ChasingShadows/Animations/Joe/Breathing Idle.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Idle.fbx"));
 
-            var joeMovement = timeline.CreateTrack<JoeMovementTrack>(null, "Joe Timeline Movement");
-            AddMovementClip(director, joeMovement, "Intro hold", 0d, 1d, references.GetMarker("Move_Start"), null, true, "Basic");
-            AddMovementClip(director, joeMovement, "Move", 1d, 4d, references.GetMarker("Move_Start"), references.GetMarker("Move_End"), true, "Basic");
-            AddMovementClip(director, joeMovement, "End hold", 5d, 1d, references.GetMarker("Move_End"), null, true, "Basic");
-
             var shadowAnimation = timeline.CreateTrack<AnimationTrack>(null, "Shadow Animation");
-            shadowAnimation.trackOffset = TrackOffset.Auto;
+            shadowAnimation.trackOffset = TrackOffset.ApplyTransformOffsets;
             AddAnimationClip(shadowAnimation, "Shadow ready hold", 0d, 1d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Breathing Idle.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Idle.fbx"));
@@ -319,12 +316,6 @@ namespace ChasingShadows.Editor
 
             var cueTrack = timeline.CreateTrack<JoeCueTrack>(null, "Joe Cues");
             AddCue(director, cueTrack, "Look", 0d, 6d, string.Empty, references.GetMarker("Look_Target"), null, null, 0.35f, 0f, 0.85f, "Basic");
-
-            var shadowTrack = timeline.CreateTrack<ActivationTrack>(null, "Shadow Active");
-            var activeClip = shadowTrack.CreateDefaultClip();
-            activeClip.displayName = "Shadow on";
-            activeClip.start = 0d;
-            activeClip.duration = 6d;
 
             timeline.durationMode = TimelineAsset.DurationMode.BasedOnClips;
             EditorUtility.SetDirty(timeline);
@@ -341,66 +332,40 @@ namespace ChasingShadows.Editor
             director.playableAsset = timeline;
 
             var cameraTrack = timeline.CreateTrack<CinemachineTrack>(null, "Camera");
-            AddCameraShot(director, cameraTrack, "Intro wide", 0d, 0.9d, references.GetCamera("CM_Chase_IntroWide"), "ChaseCamera");
-            AddCameraShot(director, cameraTrack, "Follow run", 0.9d, 2.3d, references.GetCamera("CM_Chase_Follow"), "ChaseCamera");
-            AddCameraShot(director, cameraTrack, "Side weave", 3.2d, 2d, references.GetCamera("CM_Chase_SideProfile"), "ChaseCamera");
-            AddCameraShot(director, cameraTrack, "Jump gap", 5.2d, 1d, references.GetCamera("CM_Chase_Jump"), "ChaseCamera");
-            AddCameraShot(director, cameraTrack, "Turn wall", 6.2d, 1.8d, references.GetCamera("CM_Chase_SideProfile"), "ChaseCamera");
-            AddCameraShot(director, cameraTrack, "Wall climb", 8d, 4.1d, references.GetCamera("CM_Chase_Climb"), "ChaseCamera");
-            AddCameraShot(director, cameraTrack, "Impact chain", 12.1d, 8d, references.GetCamera("CM_Chase_Impact"), "ChaseCamera");
-            AddCameraShot(director, cameraTrack, "Knockout", 20.1d, 2.9d, references.GetCamera("CM_Chase_Knockout"), "ChaseCamera");
+            AddCameraShot(director, cameraTrack, "Intro wide", 0d, 1d, references.GetCamera("CM_Chase_IntroWide"), "ChaseCamera");
+            AddCameraShot(director, cameraTrack, "Follow run", 1d, 5.2d, references.GetCamera("CM_Chase_Follow"), "ChaseCamera");
+            AddCameraShot(director, cameraTrack, "Jump gap", 4d, 3.2d, references.GetCamera("CM_Chase_Jump"), "ChaseCamera");
+            AddCameraShot(director, cameraTrack, "Vault", 7.2d, 7.8d, references.GetCamera("CM_Chase_SideProfile"), "ChaseCamera");
+            AddCameraShot(director, cameraTrack, "Wall climb", 15d, 7.4d, references.GetCamera("CM_Chase_Climb"), "ChaseCamera");
+            AddCameraShot(director, cameraTrack, "Fall chain", 22.4d, 4.6d, references.GetCamera("CM_Chase_Impact"), "ChaseCamera");
+            AddCameraShot(director, cameraTrack, "Knockout", 27d, 3d, references.GetCamera("CM_Chase_Knockout"), "ChaseCamera");
+
+            var joeMotion = CreateMotionTrack(timeline, "Joe Motion");
+            AddChaseMotionBeatClips(joeMotion, Vector3.zero);
+
+            var shadowMotion = CreateMotionTrack(timeline, "Shadow Motion");
+            AddChaseMotionBeatClips(shadowMotion, new Vector3(0f, 0f, 2.5f));
 
             var joeAnimation = timeline.CreateTrack<AnimationTrack>(null, "Joe Animation");
-            joeAnimation.trackOffset = TrackOffset.Auto;
+            joeAnimation.trackOffset = TrackOffset.ApplyTransformOffsets;
             AddChaseAnimationBeatClips(joeAnimation, string.Empty);
 
-            var joeMovement = timeline.CreateTrack<JoeMovementTrack>(null, "Joe Timeline Movement");
-            AddMovementClip(director, joeMovement, "Intro Hold", 0d, 0.9d, references.GetMarker("Move_Start"), null, true, "Chase");
-            AddMovementClip(director, joeMovement, "Alley Run", 0.9d, 1.5d, references.GetMarker("Move_Start"), references.GetMarker("Alley_Run_End"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Look Back", 2.4d, 0.8d, references.GetMarker("Alley_Run_End"), references.GetMarker("Look_Back_End"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Arc Left", 3.2d, 1d, references.GetMarker("Look_Back_End"), references.GetMarker("Arc_Left_End"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Arc Right", 4.2d, 1d, references.GetMarker("Arc_Left_End"), references.GetMarker("Arc_Right_End"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Jump Gap", 5.2d, 1d, references.GetMarker("Arc_Right_End"), references.GetMarker("Jump_End"), true, "Chase");
-            AddMovementClip(director, joeMovement, "About Face", 6.2d, 0.9d, references.GetMarker("Jump_End"), references.GetMarker("Turn_End"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Stop At Wall", 7.1d, 0.9d, references.GetMarker("Turn_End"), references.GetMarker("Wall_Base"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Catch Wall", 8d, 1.2d, references.GetMarker("Wall_Base"), references.GetMarker("Wall_Hang"), false, "Chase");
-            AddMovementClip(director, joeMovement, "Wall Climb", 9.2d, 2.1d, references.GetMarker("Wall_Hang"), references.GetMarker("Climb_Top"), false, "Chase");
-            AddMovementClip(director, joeMovement, "Drop", 11.3d, 0.8d, references.GetMarker("Climb_Top"), references.GetMarker("Drop_Land"), false, "Chase");
-            AddMovementClip(director, joeMovement, "Land Hold", 12.1d, 0.7d, references.GetMarker("Drop_Land"), null, true, "Chase");
-            AddMovementClip(director, joeMovement, "Final Sprint", 12.8d, 1.3d, references.GetMarker("Drop_Land"), references.GetMarker("Vault_Start"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Vault", 14.1d, 0.9d, references.GetMarker("Vault_Start"), references.GetMarker("Vault_End"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Vault Stumble", 15d, 0.8d, references.GetMarker("Vault_End"), references.GetMarker("Stumble_End"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Edge Slip", 15.8d, 0.9d, references.GetMarker("Stumble_End"), references.GetMarker("Slip_End"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Recovery Sprint", 16.7d, 1.5d, references.GetMarker("Slip_End"), references.GetMarker("Trip_Start"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Trip Roll", 18.2d, 1.2d, references.GetMarker("Trip_Start"), references.GetMarker("Impact_Point"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Impact Settle", 19.4d, 0.7d, references.GetMarker("Impact_Point"), references.GetMarker("Knockout_Point"), true, "Chase");
-            AddMovementClip(director, joeMovement, "Knockout Hold", 20.1d, 2.9d, references.GetMarker("Knockout_Point"), null, true, "Chase");
-
             var shadowAnimation = timeline.CreateTrack<AnimationTrack>(null, "Shadow Animation");
-            shadowAnimation.trackOffset = TrackOffset.Auto;
-            AddShadowChaseAnimationBeatClips(shadowAnimation);
+            shadowAnimation.trackOffset = TrackOffset.ApplyTransformOffsets;
+            AddChaseAnimationBeatClips(shadowAnimation, "Shadow");
 
             var cueTrack = timeline.CreateTrack<JoeCueTrack>(null, "Joe Cues");
-            AddCue(director, cueTrack, "Run Start", 0d, 0.9d, "RunStart", references.GetMarker("Look_Target"), null, null, 0.35f, 0f, 0.85f, "Chase");
-            AddCue(director, cueTrack, "Look Back", 2.4d, 0.8d, "LookBack", references.GetMarker("Look_Back_Target"), null, null, 0.8f, 0f, 0.85f, "Chase");
-            AddCue(director, cueTrack, "Jump", 5.2d, 1d, "Jump", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.85f, "Chase");
-            AddCue(director, cueTrack, "About Face", 6.2d, 0.9d, "AboutFace", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.85f, "Chase");
-            AddCue(director, cueTrack, "Stop At Wall", 7.1d, 0.9d, "StopAtWall", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.85f, "Chase");
-            AddCue(director, cueTrack, "Climb", 8d, 3.3d, "Climb", references.GetMarker("Look_Target"), references.GetMarker("Climb_LeftHand_Target"), references.GetMarker("Climb_RightHand_Target"), 0.55f, 0.75f, 0.55f, "Chase");
-            AddCue(director, cueTrack, "Drop", 11.3d, 0.8d, "Drop", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.35f, "Chase");
-            AddCue(director, cueTrack, "Land", 12.1d, 0.7d, "Land", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.85f, "Chase");
-            AddCue(director, cueTrack, "Vault", 14.1d, 0.9d, "Vault", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.85f, "Chase");
-            AddCue(director, cueTrack, "Vault Stumble", 15d, 0.8d, "VaultStumble", references.GetMarker("Look_Target"), null, null, 0.55f, 0f, 0.75f, "Chase");
-            AddCue(director, cueTrack, "Edge Slip", 15.8d, 0.9d, "EdgeSlip", references.GetMarker("Look_Target"), null, null, 0.55f, 0f, 0.75f, "Chase");
-            AddCue(director, cueTrack, "Stumble", 18.2d, 1.2d, "Stumble", references.GetMarker("Knockout_Look_Target"), null, null, 0.65f, 0f, 0.65f, "Chase");
-            AddCue(director, cueTrack, "Fall Impact", 19.4d, 0.7d, "FallImpact", references.GetMarker("Knockout_Look_Target"), null, null, 0.65f, 0f, 0.45f, "Chase");
-            AddCue(director, cueTrack, "Knockout", 20.1d, 2.9d, "Knockout", references.GetMarker("Knockout_Look_Target"), null, null, 0.45f, 0f, 0.35f, "Chase");
-
-            var shadowTrack = timeline.CreateTrack<ActivationTrack>(null, "Shadow Active");
-            var activeClip = shadowTrack.CreateDefaultClip();
-            activeClip.displayName = "Shadow on";
-            activeClip.start = 0d;
-            activeClip.duration = 23d;
+            AddCue(director, cueTrack, "Run Start", 0d, 1d, "RunStart", references.GetMarker("Look_Target"), null, null, 0.35f, 0f, 0.85f, "Chase");
+            AddCue(director, cueTrack, "Jump", 4d, 2.2d, "Jump", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.85f, "Chase");
+            AddCue(director, cueTrack, "Land", 6.2d, 1d, "Land", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.85f, "Chase");
+            AddCue(director, cueTrack, "Vault", 10d, 3.6d, "Vault", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.85f, "Chase");
+            AddCue(director, cueTrack, "Stop At Wall", 15d, 1.2d, "StopAtWall", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.85f, "Chase");
+            AddCue(director, cueTrack, "Climb", 16.2d, 4d, "Climb", references.GetMarker("Look_Target"), references.GetMarker("Climb_LeftHand_Target"), references.GetMarker("Climb_RightHand_Target"), 0.55f, 0.75f, 0.55f, "Chase");
+            AddCue(director, cueTrack, "Drop", 20.2d, 1.2d, "Drop", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.35f, "Chase");
+            AddCue(director, cueTrack, "Land Again", 21.4d, 1d, "Land", references.GetMarker("Look_Target"), null, null, 0.45f, 0f, 0.85f, "Chase");
+            AddCue(director, cueTrack, "Trip", 24.4d, 1.6d, "Stumble", references.GetMarker("Knockout_Look_Target"), null, null, 0.65f, 0f, 0.65f, "Chase");
+            AddCue(director, cueTrack, "Fall Impact", 26d, 1d, "FallImpact", references.GetMarker("Knockout_Look_Target"), null, null, 0.65f, 0f, 0.45f, "Chase");
+            AddCue(director, cueTrack, "Knockout", 27d, 3d, "Knockout", references.GetMarker("Knockout_Look_Target"), null, null, 0.45f, 0f, 0.35f, "Chase");
 
             timeline.durationMode = TimelineAsset.DurationMode.BasedOnClips;
             EditorUtility.SetDirty(timeline);
@@ -411,179 +376,85 @@ namespace ChasingShadows.Editor
         {
             var prefix = string.IsNullOrWhiteSpace(displayPrefix) ? string.Empty : displayPrefix + " ";
 
-            AddAnimationClip(track, prefix + "Run Start", 0d, 0.9d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Run Start", 0d, 1d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Idle To Sprint.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Adventure Run.fbx"));
-            AddAnimationClip(track, prefix + "Alley Run", 0.9d, 1.5d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Run To Gap", 1d, 3d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Adventure Run.fbx"));
-            AddAnimationClip(track, prefix + "Look Back", 2.4d, 0.8d, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Run Look Back.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx"));
-            AddAnimationClip(track, prefix + "Arc Left", 3.2d, 1d, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Left.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx"));
-            AddAnimationClip(track, prefix + "Arc Right", 4.2d, 1d, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Right.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx"));
-            AddAnimationClip(track, prefix + "Jump Gap", 5.2d, 1d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Jump Gap", 4d, 2.2d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Chase Jump.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Running Jump Up.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Jumping Up.fbx"));
-            AddAnimationClip(track, prefix + "About Face", 6.2d, 0.9d, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Running About Face.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Long Running About Face.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Left Sharp Turn.fbx"));
-            AddAnimationClip(track, prefix + "Stop At Wall", 7.1d, 0.9d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Land", 6.2d, 1d, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Hard Landing.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Heavy Hard Landing.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Falling To Landing.fbx"));
+            AddAnimationClip(track, prefix + "Run To Vault", 7.2d, 2.8d, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Right.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx"));
+            AddAnimationClip(track, prefix + "Vault", 10d, 3.6d, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Vault Over Box.fbx"));
+            AddAnimationClip(track, prefix + "Run To Wall", 13.6d, 1.4d, LoadAnimationClip(
+                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
+                "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx"));
+            AddAnimationClip(track, prefix + "Stop At Wall", 15d, 1.2d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Run To Stop At Wall.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Run To Stop.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Running Turn To Idle.fbx"));
-            AddAnimationClip(track, prefix + "Catch Wall", 8d, 1.2d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Catch Wall", 16.2d, 1.6d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Jump To Climb Wall.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Jump To Hang.fbx"));
-            AddAnimationClip(track, prefix + "Wall Climb", 9.2d, 2.1d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Climb Wall", 17.8d, 2.4d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Hanging Wall Ascend.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Sprint Climb Ascend.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Run Climb Ascend.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Climbing Up Wall.fbx"));
-            AddAnimationClip(track, prefix + "Drop", 11.3d, 0.8d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Drop", 20.2d, 1.2d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Dismount Jump From Wall.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Jumping Down.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Anxious Jump Down.fbx"));
-            AddAnimationClip(track, prefix + "Land", 12.1d, 0.7d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Land Again", 21.4d, 1d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Hard Landing.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Heavy Hard Landing.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Falling To Landing.fbx"));
-            AddAnimationClip(track, prefix + "Final Sprint", 12.8d, 1.3d, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Right.fbx",
+            AddAnimationClip(track, prefix + "Final Run", 22.4d, 2d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx"));
-            AddAnimationClip(track, prefix + "Vault", 14.1d, 0.9d, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Vault Over Box.fbx"));
-            AddAnimationClip(track, prefix + "Vault Stumble", 15d, 0.8d, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Vault Stumble.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Jogging Stumble.fbx"));
-            AddAnimationClip(track, prefix + "Edge Slip", 15.8d, 0.9d, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Edge Slip.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Jogging Stumble.fbx"));
-            AddAnimationClip(track, prefix + "Recovery Sprint", 16.7d, 1.5d, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Jogging Stumble.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx"));
-            AddAnimationClip(track, prefix + "Trip Roll", 18.2d, 1.2d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Trip Roll", 24.4d, 1.6d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Running Trip Roll Onto Side.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Walking Trip Onto Side.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Falling Roll.fbx"));
-            AddAnimationClip(track, prefix + "Impact", 19.4d, 0.7d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Impact", 26d, 1d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Falling Flat Impact.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Walking Trip Fall Flat.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Falling To Landing.fbx"));
-            AddAnimationClip(track, prefix + "Knocked Out Hold", 20.1d, 2.9d, LoadAnimationClip(
+            AddAnimationClip(track, prefix + "Knocked Out Hold", 27d, 3d, LoadAnimationClip(
                 "Assets/ChasingShadows/Animations/Joe/Sleep Idle.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Sleeping Restless.fbx",
                 "Assets/ChasingShadows/Animations/Joe/Sleeping Mild Cough.fbx"));
         }
 
-        // Shadow animation beats: more athletic/parkour alternatives to Joe's clips.
-        // Clips play at 1.15x speed and use sharper variants to reinforce the "agile shadow leading Joe" feel.
-        private static void AddShadowChaseAnimationBeatClips(AnimationTrack track)
+        private static void AddChaseMotionBeatClips(CinematicMotionTrack track, Vector3 offset)
         {
-            const double speed = 1.15;
-
-            AddAnimationClipScaled(track, "Shadow Run Start", 0d, 0.9d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Idle To Sprint.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Adventure Run.fbx"));
-            AddAnimationClipScaled(track, "Shadow Alley Run", 0.9d, 1.5d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Left.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx"));
-            AddAnimationClipScaled(track, "Shadow Look Back", 2.4d, 0.8d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Run Look Back.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx"));
-            AddAnimationClipScaled(track, "Shadow Arc Left", 3.2d, 1d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Left Sharp Turn.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Left.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx"));
-            AddAnimationClipScaled(track, "Shadow Arc Right", 4.2d, 1d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Right Sharp Turn.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Right.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx"));
-            AddAnimationClipScaled(track, "Shadow Jump Gap", 5.2d, 1d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Running Jump Up.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Chase Jump.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Jumping Up.fbx"));
-            AddAnimationClipScaled(track, "Shadow About Face", 6.2d, 0.9d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Long Running About Face.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running About Face.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Left Sharp Turn.fbx"));
-            AddAnimationClipScaled(track, "Shadow Stop At Wall", 7.1d, 0.9d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Running Turn To Idle.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Run To Stop At Wall.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Run To Stop.fbx"));
-            AddAnimationClipScaled(track, "Shadow Catch Wall", 8d, 1.2d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Sprint Climb Ascend.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Jump To Climb Wall.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Jump To Hang.fbx"));
-            AddAnimationClipScaled(track, "Shadow Wall Climb", 9.2d, 2.1d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Climbing Up Wall.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Sprint Climb Ascend.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Run Climb Ascend.fbx"));
-            AddAnimationClipScaled(track, "Shadow Drop", 11.3d, 0.8d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Anxious Jump Down.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Dismount Jump From Wall.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Jumping Down.fbx"));
-            AddAnimationClipScaled(track, "Shadow Land", 12.1d, 0.7d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Falling To Landing.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Hard Landing.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Heavy Hard Landing.fbx"));
-            AddAnimationClipScaled(track, "Shadow Final Sprint", 12.8d, 1.3d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Run Forward Arc Right.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx"));
-            AddAnimationClipScaled(track, "Shadow Vault", 14.1d, 0.9d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Vault Over Box.fbx"));
-            AddAnimationClipScaled(track, "Shadow Vault Stumble", 15d, 0.8d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Vault Stumble.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Jogging Stumble.fbx"));
-            AddAnimationClipScaled(track, "Shadow Edge Slip", 15.8d, 0.9d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Edge Slip.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Jogging Stumble.fbx"));
-            AddAnimationClipScaled(track, "Shadow Recovery Sprint", 16.7d, 1.5d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Running Forwards.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Steady Run.fbx"));
-            AddAnimationClipScaled(track, "Shadow Trip Roll", 18.2d, 1.2d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Falling Roll.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Running Trip Roll Onto Side.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Walking Trip Onto Side.fbx"));
-            AddAnimationClipScaled(track, "Shadow Impact", 19.4d, 0.7d, speed, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Falling Flat Impact.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Walking Trip Fall Flat.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Falling To Landing.fbx"));
-            AddAnimationClipScaled(track, "Shadow Knocked Out Hold", 20.1d, 2.9d, 1d, LoadAnimationClip(
-                "Assets/ChasingShadows/Animations/Joe/Sleep Idle.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Sleeping Restless.fbx",
-                "Assets/ChasingShadows/Animations/Joe/Sleeping Mild Cough.fbx"));
-        }
-
-        private static void AddAnimationClipScaled(AnimationTrack track, string name, double start, double duration, double timeScale, AnimationClip animationClip)
-        {
-            var clip = track.CreateClip<AnimationPlayableAsset>();
-            clip.displayName = name;
-            clip.start = start;
-            clip.duration = duration;
-            // Fit animation to window first, then apply the intended speed multiplier on top.
-            var fitScale = animationClip != null && animationClip.length > (float)duration + 0.05f
-                ? animationClip.length / duration
-                : 1.0;
-            clip.timeScale = fitScale * timeScale;
-            clip.easeInDuration = System.Math.Min(0.12, duration * 0.4);
-            clip.easeOutDuration = System.Math.Min(0.12, duration * 0.4);
-
-            if (clip.asset is AnimationPlayableAsset asset)
-            {
-                asset.clip = animationClip != null ? animationClip : LoadPlaceholderClip();
-                EditorUtility.SetDirty(asset);
-            }
+            AddMotionClip(track, "Run Start", 0d, 1d, offset + new Vector3(0f, 0f, 0f), offset + new Vector3(0f, 0f, 1.2f), Vector3.zero, Vector3.zero);
+            AddMotionClip(track, "Run To Gap", 1d, 3d, offset + new Vector3(0f, 0f, 1.2f), offset + new Vector3(0f, 0f, 7.4f), Vector3.zero, Vector3.zero);
+            AddMotionClip(track, "Jump Gap", 4d, 2.2d, offset + new Vector3(0f, 0f, 7.4f), offset + new Vector3(0f, 0f, 10.2f), Vector3.zero, Vector3.zero);
+            AddMotionClip(track, "Land", 6.2d, 1d, offset + new Vector3(0f, 0f, 10.2f), offset + new Vector3(0f, 0f, 10.8f), Vector3.zero, Vector3.zero);
+            AddMotionClip(track, "Run To Vault", 7.2d, 2.8d, offset + new Vector3(0f, 0f, 10.8f), offset + new Vector3(1.2f, 0f, 15.8f), Vector3.zero, new Vector3(0f, 12f, 0f));
+            AddMotionClip(track, "Vault", 10d, 3.6d, offset + new Vector3(1.2f, 0f, 15.8f), offset + new Vector3(1.6f, 0f, 18.6f), new Vector3(0f, 12f, 0f), new Vector3(0f, 8f, 0f));
+            AddMotionClip(track, "Run To Wall", 13.6d, 1.4d, offset + new Vector3(1.6f, 0f, 18.6f), offset + new Vector3(1.6f, 0f, 21.2f), new Vector3(0f, 8f, 0f), Vector3.zero);
+            AddMotionClip(track, "Stop At Wall", 15d, 1.2d, offset + new Vector3(1.6f, 0f, 21.2f), offset + new Vector3(1.6f, 0f, 22.1f), Vector3.zero, Vector3.zero);
+            AddMotionClip(track, "Catch Wall", 16.2d, 1.6d, offset + new Vector3(1.6f, 0f, 22.1f), offset + new Vector3(1.6f, 1.1f, 22.4f), Vector3.zero, Vector3.zero);
+            AddMotionClip(track, "Climb Wall", 17.8d, 2.4d, offset + new Vector3(1.6f, 1.1f, 22.4f), offset + new Vector3(1.6f, 2.6f, 22.7f), Vector3.zero, Vector3.zero);
+            AddMotionClip(track, "Drop", 20.2d, 1.2d, offset + new Vector3(1.6f, 2.6f, 22.7f), offset + new Vector3(1.6f, 0f, 24.1f), Vector3.zero, Vector3.zero);
+            AddMotionClip(track, "Land Again", 21.4d, 1d, offset + new Vector3(1.6f, 0f, 24.1f), offset + new Vector3(1.6f, 0f, 24.5f), Vector3.zero, Vector3.zero);
+            AddMotionClip(track, "Final Run", 22.4d, 2d, offset + new Vector3(1.6f, 0f, 24.5f), offset + new Vector3(1.6f, 0f, 28.6f), Vector3.zero, Vector3.zero);
+            AddMotionClip(track, "Trip Roll", 24.4d, 1.6d, offset + new Vector3(1.6f, 0f, 28.6f), offset + new Vector3(1.4f, 0f, 30.2f), Vector3.zero, new Vector3(0f, -18f, 0f));
+            AddMotionClip(track, "Impact", 26d, 1d, offset + new Vector3(1.4f, 0f, 30.2f), offset + new Vector3(1.4f, 0f, 30.6f), new Vector3(0f, -18f, 0f), new Vector3(0f, -18f, 0f));
+            AddMotionClip(track, "Knocked Out Hold", 27d, 3d, offset + new Vector3(1.4f, 0f, 30.6f), offset + new Vector3(1.4f, 0f, 30.6f), new Vector3(0f, -18f, 0f), new Vector3(0f, -18f, 0f));
         }
 
         private static void BindTimeline(PlayableDirector director, TimelineAsset timeline, TimelineReferences references)
@@ -595,11 +466,14 @@ namespace ChasingShadows.Editor
                     case "Camera":
                         director.SetGenericBinding(track, EnsureCinemachineBrain());
                         break;
+                    case "Joe Motion":
+                        director.SetGenericBinding(track, references.joeRoot);
+                        break;
+                    case "Shadow Motion":
+                        director.SetGenericBinding(track, references.shadowRoot);
+                        break;
                     case "Joe Animation":
                         director.SetGenericBinding(track, references.joeAnimator);
-                        break;
-                    case "Joe Timeline Movement":
-                        director.SetGenericBinding(track, references.joe);
                         break;
                     case "Shadow Animation":
                         director.SetGenericBinding(track, references.shadowAnimator);
@@ -607,10 +481,39 @@ namespace ChasingShadows.Editor
                     case "Joe Cues":
                         director.SetGenericBinding(track, references.joe);
                         break;
-                    case "Shadow Active":
-                        director.SetGenericBinding(track, references.shadow);
-                        break;
                 }
+            }
+        }
+
+        private static CinematicMotionTrack CreateMotionTrack(TimelineAsset timeline, string trackName)
+        {
+            return timeline.CreateTrack<CinematicMotionTrack>(null, trackName);
+        }
+
+        private static void AddMotionClip(CinematicMotionTrack track, string name, double start, double duration, Vector3 firstPosition, Vector3 lastPosition, Vector3 firstEuler, Vector3 lastEuler)
+        {
+            var clip = track.CreateClip<CinematicMotionClip>();
+            clip.displayName = name;
+            clip.start = start;
+            clip.duration = duration;
+            clip.easeInDuration = 0d;
+            clip.easeOutDuration = 0d;
+            clip.blendInDuration = 0d;
+            clip.blendOutDuration = 0d;
+
+            if (clip.asset is CinematicMotionClip motion)
+            {
+                motion.knots = new[]
+                {
+                    new CinematicMotionKnot(firstPosition, firstEuler),
+                    new CinematicMotionKnot(lastPosition, lastEuler)
+                };
+                motion.faceAlongSpline = false;
+                motion.rotationOffset = Vector3.zero;
+                motion.worldUp = Vector3.up;
+                motion.applyPosition = true;
+                motion.applyRotation = true;
+                EditorUtility.SetDirty(motion);
             }
         }
 
@@ -630,45 +533,32 @@ namespace ChasingShadows.Editor
             }
         }
 
-        private static void AddAnimationClip(AnimationTrack track, string name, double start, double duration, AnimationClip animationClip, double easeIn = 0.12, double easeOut = 0.12)
+        private static void AddAnimationClip(AnimationTrack track, string name, double start, double duration, AnimationClip animationClip)
         {
+            var previousClip = track.GetClips().OrderBy(clip => clip.start).LastOrDefault();
+            var blendDuration = 0d;
+            if (previousClip != null && start >= previousClip.end - 0.0001d)
+            {
+                blendDuration = System.Math.Min(AnimationBlendDuration, System.Math.Min(duration * 0.25d, previousClip.duration * 0.25d));
+                previousClip.duration += blendDuration;
+                previousClip.blendOutDuration = blendDuration;
+            }
+
             var clip = track.CreateClip<AnimationPlayableAsset>();
             clip.displayName = name;
             clip.start = start;
             clip.duration = duration;
-            // Cap ease durations so they never exceed 40% of clip length
-            clip.easeInDuration = System.Math.Min(easeIn, duration * 0.4);
-            clip.easeOutDuration = System.Math.Min(easeOut, duration * 0.4);
-            // Compress animations longer than the beat window so they complete fully within the slot.
-            // Locomotion clips shorter than the window play at 1x and loop naturally via loopTime.
-            if (animationClip != null && animationClip.length > (float)duration + 0.05f)
-            {
-                clip.timeScale = animationClip.length / duration;
-            }
+            clip.easeInDuration = 0d;
+            clip.easeOutDuration = 0d;
+            clip.blendInDuration = blendDuration;
+            clip.blendOutDuration = 0d;
 
             if (clip.asset is AnimationPlayableAsset asset)
             {
                 asset.clip = animationClip != null ? animationClip : LoadPlaceholderClip();
+                asset.removeStartOffset = true;
+                asset.applyFootIK = false;
                 EditorUtility.SetDirty(asset);
-            }
-        }
-
-        private static void AddMovementClip(PlayableDirector director, JoeMovementTrack track, string name, double start, double duration, Transform from, Transform to, bool projectToGround, string referenceNamespace)
-        {
-            var clip = track.CreateClip<JoeMovementTimelineClip>();
-            clip.displayName = name;
-            clip.start = start;
-            clip.duration = duration;
-
-            if (clip.asset is JoeMovementTimelineClip movement)
-            {
-                movement.mode = to == null ? JoeTimelineMotionMode.Hold : JoeTimelineMotionMode.MoveTo;
-                movement.projectToGround = projectToGround;
-                movement.faceMotion = to != null;
-                movement.smoothStep = true;
-                SetExposedReference(director, ref movement.start, from, $"{name}_Start", referenceNamespace);
-                SetExposedReference(director, ref movement.end, to, $"{name}_End", referenceNamespace);
-                EditorUtility.SetDirty(movement);
             }
         }
 
@@ -687,7 +577,7 @@ namespace ChasingShadows.Editor
                 cue.footWeight = footWeight;
                 cue.setRootMotion = false;
                 cue.clearHandsOnExit = true;
-                cue.clearRootMotionOnExit = true;
+                cue.clearRootMotionOnExit = false;
                 SetExposedReference(director, ref cue.lookTarget, look, $"{name}_Look", referenceNamespace);
                 SetExposedReference(director, ref cue.leftHandTarget, leftHand, $"{name}_LeftHand", referenceNamespace);
                 SetExposedReference(director, ref cue.rightHandTarget, rightHand, $"{name}_RightHand", referenceNamespace);
@@ -710,8 +600,17 @@ namespace ChasingShadows.Editor
 
         private static TimelineReferences BuildTimelineReferences(GameObject joeRig, GameObject markerSet, GameObject cameraRig)
         {
-            var joe = joeRig != null ? joeRig.GetComponentInChildren<JoeCinematicController>(true) : null;
-            var shadow = joe != null ? FindDeepChild(joe.transform, "Joe_Shadow")?.gameObject : null;
+            var joeObject = joeRig != null ? FindDeepChild(joeRig.transform, "Joe")?.gameObject : null;
+            var shadowObject = joeRig != null ? FindDeepChild(joeRig.transform, "Shadow")?.gameObject : null;
+            shadowObject ??= joeRig != null ? FindDeepChild(joeRig.transform, "Joe_Shadow")?.gameObject : null;
+            var joe = joeObject != null ? joeObject.GetComponent<JoeCinematicController>() : null;
+            var shadow = shadowObject != null ? shadowObject.GetComponent<JoeCinematicController>() : null;
+            var joeRoot = joeObject != null && joeObject.transform.parent != null ? joeObject.transform.parent : null;
+            var shadowRoot = shadowObject != null && shadowObject.transform.parent != null ? shadowObject.transform.parent : null;
+            if (shadow == null && shadowObject != null)
+            {
+                shadow = shadowObject.AddComponent<JoeCinematicController>();
+            }
             var markers = markerSet != null
                 ? markerSet.GetComponentsInChildren<Transform>(true).GroupBy(t => t.name).ToDictionary(g => g.Key, g => g.First())
                 : new Dictionary<string, Transform>();
@@ -722,60 +621,35 @@ namespace ChasingShadows.Editor
             return new TimelineReferences
             {
                 joe = joe,
+                joeRoot = joeRoot,
                 joeAnimator = joe != null ? joe.GetComponent<Animator>() : null,
                 shadow = shadow,
-                shadowAnimator = shadow != null ? shadow.GetComponent<Animator>() : null,
+                shadowRoot = shadowRoot,
+                shadowAnimator = shadowObject != null ? shadowObject.GetComponent<Animator>() : null,
                 markers = markers,
                 cameras = cameras
             };
         }
 
-        private static void ConfigureJoeAndShadow(JoeCinematicController joe, GameObject shadow)
+        private static void ConfigureJoeAndShadow(JoeCinematicController joe, JoeCinematicController shadow)
         {
             if (joe == null)
             {
                 return;
             }
 
-            joe.name = "Joe";
-            joe.enableBaseLocomotion = false;
-            joe.SetRootMotionEnabled(false);
-
-            var joeAnimator = joe.GetComponent<Animator>();
-            if (joeAnimator != null)
-            {
-                // Null the controller so the AnimationTrack is the sole animation driver in cinematic.
-                // Having the controller active while an AnimationTrack is bound causes the blend tree
-                // to compete with the timeline clips, producing wrong animations.
-                joeAnimator.runtimeAnimatorController = null;
-                joeAnimator.enabled = true;
-                joeAnimator.applyRootMotion = false;
-            }
+            var joeAnimator = ConfigureTimelineCharacter(joe, "Joe");
 
             if (shadow == null)
             {
                 return;
             }
 
-            shadow.name = "Joe_Shadow";
-            // Place shadow 2.5m ahead of Joe in local space — it's parented to Joe so this
-            // keeps it consistently in front regardless of Joe's world position or rotation.
-            shadow.transform.SetLocalPositionAndRotation(new Vector3(0f, 0f, 2.5f), Quaternion.identity);
-            shadow.transform.localScale = Vector3.one;
-
-            foreach (var controller in shadow.GetComponentsInChildren<JoeCinematicController>(true))
-            {
-                Object.DestroyImmediate(controller);
-            }
-
-            var shadowAnimator = shadow.GetComponent<Animator>();
+            var shadowAnimator = ConfigureTimelineCharacter(shadow, "Shadow");
             if (shadowAnimator != null && joeAnimator != null)
             {
                 shadowAnimator.avatar = joeAnimator.avatar;
-                // Shadow is also driven purely by its AnimationTrack — no controller needed.
-                shadowAnimator.runtimeAnimatorController = null;
-                shadowAnimator.applyRootMotion = false;
-                shadowAnimator.enabled = true;
+                PrefabUtility.RecordPrefabInstancePropertyModifications(shadowAnimator);
             }
 
             var shadowRenderers = new HashSet<Renderer>(shadow.GetComponentsInChildren<Renderer>(true));
@@ -792,6 +666,33 @@ namespace ChasingShadows.Editor
                 renderer.shadowCastingMode = ShadowCastingMode.ShadowsOnly;
                 renderer.receiveShadows = false;
             }
+        }
+
+        private static Animator ConfigureTimelineCharacter(JoeCinematicController character, string characterName)
+        {
+            if (character == null)
+            {
+                return null;
+            }
+
+            character.name = characterName;
+            character.enableBaseLocomotion = false;
+            character.projectTimelineMotionToGround = false;
+            character.finalIkEnabled = true;
+            character.SetRootMotionEnabled(false);
+            PrefabUtility.RecordPrefabInstancePropertyModifications(character);
+
+            var animator = character.GetComponent<Animator>();
+            if (animator == null)
+            {
+                return null;
+            }
+
+            animator.runtimeAnimatorController = null;
+            animator.enabled = true;
+            animator.applyRootMotion = false;
+            PrefabUtility.RecordPrefabInstancePropertyModifications(animator);
+            return animator;
         }
 
         private static GameObject RecreateRootFromPrefab(string prefabPath, string rootName, string undoLabel, params string[] extraRootNamesToDelete)
@@ -852,9 +753,33 @@ namespace ChasingShadows.Editor
             return instance;
         }
 
+        private static GameObject InstantiateCameraPrefab(CameraPrefabSpec spec, Transform parent)
+        {
+            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(CameraPrefabPath(spec.Name));
+            if (prefab == null)
+            {
+                Debug.LogWarning($"Cinematic camera prefab not found for {spec.Name}.");
+                return null;
+            }
+
+            var instance = PrefabUtility.InstantiatePrefab(prefab, parent) as GameObject;
+            if (instance == null)
+            {
+                return null;
+            }
+
+            instance.name = spec.Name;
+            instance.transform.SetLocalPositionAndRotation(spec.Position, Quaternion.Euler(spec.Euler));
+            instance.transform.localScale = Vector3.one;
+            return instance;
+        }
+
         private static void EnsureBaseCinematicPrefabKit()
         {
-            if (RequiredBasePrefabs.All(path => AssetDatabase.LoadAssetAtPath<GameObject>(path) != null))
+            var requiredCameraPrefabs = BasicCameraPrefabs.Concat(ChaseCameraPrefabs)
+                .Select(camera => CameraPrefabPath(camera.Name));
+
+            if (RequiredBasePrefabs.Concat(requiredCameraPrefabs).All(path => AssetDatabase.LoadAssetAtPath<GameObject>(path) != null))
             {
                 return;
             }
@@ -899,15 +824,6 @@ namespace ChasingShadows.Editor
         private static AnimationClip LoadAnimationClip(params string[] paths)
         {
             return JoeAnimationSetup.FindClip(paths) ?? LoadPlaceholderClip();
-        }
-
-        private static CinemachineCamera CreateSequenceCamera(Transform parent, string name, Vector3 position, Vector3 euler, float fieldOfView)
-        {
-            var cameraObject = CreateChild(parent, name);
-            cameraObject.transform.SetLocalPositionAndRotation(position, Quaternion.Euler(euler));
-            var camera = cameraObject.AddComponent<CinemachineCamera>();
-            camera.Lens.FieldOfView = fieldOfView;
-            return camera;
         }
 
         private static Transform CreateMarker(Transform parent, string name, Vector3 localPosition)
@@ -958,10 +874,15 @@ namespace ChasingShadows.Editor
 
         private static void FinishSetup(GameObject root, JoeCinematicController joe)
         {
-            joe?.Stop();
+            joe?.SetLookTarget(null, 0f);
+            joe?.SetHandTargets(null, null, 0f);
             Selection.activeGameObject = root;
-            EditorSceneManager.MarkSceneDirty(root.scene);
-            EditorSceneManager.SaveScene(root.scene);
+            if (root != null && root.scene.IsValid())
+            {
+                EditorSceneManager.MarkSceneDirty(root.scene);
+                EditorSceneManager.SaveScene(root.scene);
+            }
+
             AssetDatabase.SaveAssets();
         }
 
@@ -1027,11 +948,34 @@ namespace ChasingShadows.Editor
             return new string(value.Select(character => char.IsLetterOrDigit(character) ? character : '_').ToArray());
         }
 
+        private static string CameraPrefabPath(string cameraName)
+        {
+            return $"{BaseCameraPrefabFolder}/{cameraName}.prefab";
+        }
+
+        private readonly struct CameraPrefabSpec
+        {
+            public readonly string Name;
+            public readonly Vector3 Position;
+            public readonly Vector3 Euler;
+            public readonly float FieldOfView;
+
+            public CameraPrefabSpec(string name, Vector3 position, Vector3 euler, float fieldOfView)
+            {
+                Name = name;
+                Position = position;
+                Euler = euler;
+                FieldOfView = fieldOfView;
+            }
+        }
+
         private sealed class TimelineReferences
         {
             public JoeCinematicController joe;
+            public Transform joeRoot;
             public Animator joeAnimator;
-            public GameObject shadow;
+            public JoeCinematicController shadow;
+            public Transform shadowRoot;
             public Animator shadowAnimator;
             public Dictionary<string, Transform> markers = new Dictionary<string, Transform>();
             public Dictionary<string, CinemachineCamera> cameras = new Dictionary<string, CinemachineCamera>();

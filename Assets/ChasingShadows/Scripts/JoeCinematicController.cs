@@ -1,13 +1,9 @@
 using RootMotion;
 using RootMotion.FinalIK;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 namespace ChasingShadows.Characters
 {
-    [ExecuteAlways]
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Animator))]
     public sealed class JoeCinematicController : MonoBehaviour
@@ -65,21 +61,14 @@ namespace ChasingShadows.Characters
 
         [Header("Final IK")]
         public bool finalIkEnabled = true;
-        public bool disableIkInEditMode = true;
-        public bool forceBindPoseInEditMode = true;
         [Range(0f, 1f)] public float lookWeight = 0.75f;
         [Range(0f, 1f)] public float handIkWeight = 0f;
         [Range(0f, 1f)] public float footIkWeight = 0.85f;
         public float ikWeightSharpness = 8f;
         public float grounderMaxStep = 0.5f;
         public float grounderHeightOffset = 0.02f;
-        [Range(0f, 1f)] public float kneeBendGoalWeight = 0.85f;
-        public float kneeBendGoalForward = 0.42f;
-        public float kneeBendGoalUp = 0.04f;
-        public float kneeBendGoalSide = 0.06f;
 
         private bool finalIkReady;
-        private bool editPoseApplied;
         private float lookWeightCurrent;
         private float handWeightCurrent;
         private float footWeightCurrent;
@@ -93,11 +82,6 @@ namespace ChasingShadows.Characters
         private Vector3 previousPosition;
         private Vector3 previousVelocity;
         private Quaternion previousRotation;
-        private Transform leftKneeBendGoal;
-        private Transform rightKneeBendGoal;
-#if UNITY_EDITOR
-        private bool editPoseQueued;
-#endif
 
         private void Reset()
         {
@@ -110,12 +94,6 @@ namespace ChasingShadows.Characters
         private void Awake()
         {
             CacheReferences();
-            if (!Application.isPlaying)
-            {
-                QueueEditModePose();
-                return;
-            }
-
             RestorePlayModeComponents();
             EnsureFinalIkComponents();
             previousPosition = transform.position;
@@ -126,12 +104,6 @@ namespace ChasingShadows.Characters
         private void OnEnable()
         {
             CacheReferences();
-            if (!Application.isPlaying)
-            {
-                QueueEditModePose();
-                return;
-            }
-
             RestorePlayModeComponents();
             EnsureFinalIkComponents();
             previousPosition = transform.position;
@@ -153,23 +125,14 @@ namespace ChasingShadows.Characters
             movementDeadZone = Mathf.Clamp01(movementDeadZone);
             turnDeadZone = Mathf.Clamp01(turnDeadZone);
             maxLean = Mathf.Max(0f, maxLean);
-            kneeBendGoalForward = Mathf.Max(0.01f, kneeBendGoalForward);
             CacheReferences();
-            if (!Application.isPlaying)
-            {
-                QueueEditModePose();
-            }
-            else
-            {
-                SyncAnimatorRootMotion();
-            }
+            SyncAnimatorRootMotion();
         }
 
         private void Update()
         {
             if (!Application.isPlaying)
             {
-                ApplyEditModePose();
                 return;
             }
 
@@ -194,7 +157,7 @@ namespace ChasingShadows.Characters
                 nextPosition = ProjectToGround(nextPosition);
             }
 
-            transform.SetPositionAndRotation(nextPosition, animator.deltaRotation * transform.rotation);
+            transform.SetPositionAndRotation(nextPosition, transform.rotation * animator.deltaRotation);
         }
 
         public void SetTimelinePose(Vector3 position, Quaternion rotation, bool useRotation, bool projectToGround)
@@ -361,7 +324,8 @@ namespace ChasingShadows.Characters
             var targetLook = finalIkEnabled && lookTarget != null ? lookWeight : 0f;
             var targetHands = finalIkEnabled ? handIkWeight : 0f;
             var targetFeet = finalIkEnabled ? footIkWeight : 0f;
-            var blend = 1f - Mathf.Exp(-ikWeightSharpness * Time.deltaTime);
+            var deltaTime = Application.isPlaying ? Time.deltaTime : 1f / 60f;
+            var blend = 1f - Mathf.Exp(-ikWeightSharpness * deltaTime);
 
             lookWeightCurrent = Mathf.Lerp(lookWeightCurrent, targetLook, blend);
             handWeightCurrent = Mathf.Lerp(handWeightCurrent, targetHands, blend);
@@ -369,14 +333,9 @@ namespace ChasingShadows.Characters
 
             if (bipedIk != null && finalIkReady)
             {
-                UpdateKneeBendGoals();
                 bipedIk.SetLookAtWeight(0f, 0f, 0f, 0f, 0.5f, 0.7f, 0.5f);
                 ApplyBipedHand(AvatarIKGoal.LeftHand, leftHandTarget);
                 ApplyBipedHand(AvatarIKGoal.RightHand, rightHandTarget);
-                bipedIk.SetIKPositionWeight(AvatarIKGoal.LeftFoot, footWeightCurrent);
-                bipedIk.SetIKRotationWeight(AvatarIKGoal.LeftFoot, footWeightCurrent);
-                bipedIk.SetIKPositionWeight(AvatarIKGoal.RightFoot, footWeightCurrent);
-                bipedIk.SetIKRotationWeight(AvatarIKGoal.RightFoot, footWeightCurrent);
             }
 
             if (lookAtIk != null && finalIkReady)
@@ -428,22 +387,17 @@ namespace ChasingShadows.Characters
                 grounder = GetComponent<GrounderBipedIK>();
             }
 
-            if (!Application.isPlaying)
-            {
-                return;
-            }
-
-            if (bipedIk == null)
+            if (Application.isPlaying && bipedIk == null)
             {
                 bipedIk = gameObject.AddComponent<BipedIK>();
             }
 
-            if (lookAtIk == null)
+            if (Application.isPlaying && lookAtIk == null)
             {
                 lookAtIk = gameObject.AddComponent<LookAtIK>();
             }
 
-            if (grounder == null)
+            if (Application.isPlaying && grounder == null)
             {
                 grounder = gameObject.AddComponent<GrounderBipedIK>();
             }
@@ -491,8 +445,6 @@ namespace ChasingShadows.Characters
                 lookAtIk.enabled = finalIkEnabled;
                 lookAtIk.solver.SetChain(bipedIk.references.spine, bipedIk.references.head, bipedIk.references.eyes, transform);
             }
-
-            ConfigureKneeBendSolvers();
         }
 
         private Vector2 ReadMovementInput()
@@ -594,146 +546,8 @@ namespace ChasingShadows.Characters
             return Vector3.SignedAngle(previousRotation * Vector3.forward, transform.forward, Vector3.up) / Time.deltaTime;
         }
 
-        private void ConfigureKneeBendSolvers()
-        {
-            if (bipedIk?.solvers == null)
-            {
-                return;
-            }
-
-            EnsureKneeBendGoal(ref leftKneeBendGoal, "Joe_LeftKnee_BendGoal");
-            EnsureKneeBendGoal(ref rightKneeBendGoal, "Joe_RightKnee_BendGoal");
-
-            ConfigureLegBendSolver(bipedIk.solvers.leftFoot, leftKneeBendGoal);
-            ConfigureLegBendSolver(bipedIk.solvers.rightFoot, rightKneeBendGoal);
-        }
-
-        private void ConfigureLegBendSolver(IKSolverLimb solver, Transform bendGoal)
-        {
-            if (solver == null)
-            {
-                return;
-            }
-
-            solver.bendModifier = IKSolverLimb.BendModifier.Goal;
-            solver.bendModifierWeight = kneeBendGoalWeight;
-            solver.bendGoal = bendGoal;
-            solver.maintainRotationWeight = Mathf.Max(solver.maintainRotationWeight, 0.45f);
-        }
-
-        private void UpdateKneeBendGoals()
-        {
-            if (bipedIk?.references == null)
-            {
-                return;
-            }
-
-            PositionKneeBendGoal(leftKneeBendGoal, bipedIk.references.leftThigh, bipedIk.references.leftCalf, -1f);
-            PositionKneeBendGoal(rightKneeBendGoal, bipedIk.references.rightThigh, bipedIk.references.rightCalf, 1f);
-        }
-
-        private void PositionKneeBendGoal(Transform bendGoal, Transform thigh, Transform calf, float sideSign)
-        {
-            if (bendGoal == null || thigh == null || calf == null)
-            {
-                return;
-            }
-
-            bendGoal.position = calf.position
-                + (transform.forward * kneeBendGoalForward)
-                + (transform.up * kneeBendGoalUp)
-                + (transform.right * kneeBendGoalSide * sideSign);
-        }
-
-        private void EnsureKneeBendGoal(ref Transform bendGoal, string name)
-        {
-            if (bendGoal != null)
-            {
-                return;
-            }
-
-            var existing = transform.Find(name);
-            if (existing != null)
-            {
-                bendGoal = existing;
-                return;
-            }
-
-            var goal = new GameObject(name);
-            goal.hideFlags = HideFlags.HideInHierarchy;
-            goal.transform.SetParent(transform, false);
-            bendGoal = goal.transform;
-        }
-
-        private void ApplyEditModePose()
-        {
-            if (Application.isPlaying)
-            {
-                return;
-            }
-
-            if (disableIkInEditMode)
-            {
-                SetFinalIkComponentsEnabled(false);
-            }
-
-            if (animator == null || !forceBindPoseInEditMode || editPoseApplied)
-            {
-                return;
-            }
-
-            if (!gameObject.activeInHierarchy)
-            {
-                return;
-            }
-
-            animator.applyRootMotion = false;
-            animator.enabled = true;
-            animator.Rebind();
-            animator.Update(0f);
-            editPoseApplied = true;
-        }
-
-        private void QueueEditModePose()
-        {
-            if (Application.isPlaying)
-            {
-                return;
-            }
-
-            if (disableIkInEditMode)
-            {
-                SetFinalIkComponentsEnabled(false);
-            }
-
-            editPoseApplied = false;
-#if UNITY_EDITOR
-            if (editPoseQueued)
-            {
-                return;
-            }
-
-            editPoseQueued = true;
-            EditorApplication.delayCall += ApplyQueuedEditModePose;
-#endif
-        }
-
-#if UNITY_EDITOR
-        private void ApplyQueuedEditModePose()
-        {
-            editPoseQueued = false;
-            if (this == null || Application.isPlaying)
-            {
-                return;
-            }
-
-            ApplyEditModePose();
-        }
-#endif
-
         private void RestorePlayModeComponents()
         {
-            editPoseApplied = false;
             if (animator != null)
             {
                 animator.enabled = true;
@@ -772,7 +586,6 @@ namespace ChasingShadows.Characters
                 return Vector3.zero;
             }
 
-            delta.y = 0f;
             return delta.sqrMagnitude > maxRootMotionStep * maxRootMotionStep ? delta.normalized * maxRootMotionStep : delta;
         }
 
