@@ -1844,7 +1844,7 @@ GameObject:
   - component: {fileID: 123526065}
   - component: {fileID: 123526064}
   m_Layer: 0
-  m_Name: CM_Shot2JoeSmackingHisCamera
+  m_Name: CM_JoeSmackingCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2653,7 +2653,7 @@ GameObject:
   - component: {fileID: 557605291}
   - component: {fileID: 557605290}
   m_Layer: 0
-  m_Name: Joe_MonotonousLifeBedroom
+  m_Name: Shot1MonotonousLife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3628,8 +3628,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594089659}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.02180234, y: -0.17633508, z: -0.0041370695, w: -0.98408}
-  m_LocalPosition: {x: 1.2242799, y: 0.61355805, z: 0.8511753}
+  m_LocalRotation: {x: -0.02398777, y: 0.6962786, z: -0.023099065, w: -0.71699876}
+  m_LocalPosition: {x: 0.23928642, y: 1.3613205, z: 0.2565946}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3894,7 +3894,7 @@ GameObject:
   - component: {fileID: 1665621253}
   - component: {fileID: 1665621251}
   m_Layer: 0
-  m_Name: CM_Shot3JoeStretching
+  m_Name: CM_JoeStretching
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3920,7 +3920,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 800643918}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -3951,8 +3951,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665621250}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.02246624, y: 0.6984448, z: 0.021632025, w: -0.71498406}
-  m_LocalPosition: {x: 0.54820824, y: 1.1840887, z: 0.06666893}
+  m_LocalRotation: {x: -0.02398777, y: 0.6962786, z: -0.023099065, w: -0.71699876}
+  m_LocalPosition: {x: 0.23928642, y: 1.3613205, z: 0.2565946}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4111,7 +4111,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750000219}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
