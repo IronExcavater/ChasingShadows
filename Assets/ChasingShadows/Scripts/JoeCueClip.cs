@@ -15,7 +15,7 @@ namespace ChasingShadows.Characters
         [Range(0f, 1f)] public float footWeight = 0.85f;
         public bool setRootMotion;
         public bool rootMotionEnabled;
-        public bool clearRootMotionOnExit = true;
+        public bool clearRootMotionOnExit;
         public bool clearHandsOnExit = true;
 
         public ClipCaps clipCaps => ClipCaps.Blending | ClipCaps.Extrapolation;
