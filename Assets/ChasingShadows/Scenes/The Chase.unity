@@ -82936,6 +82936,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5772394895034857548, guid: e63ff9b25df4f0a43a9a89dcc3fcef23, type: 3}
+      propertyPath: m_InitialState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5772394895034857548, guid: e63ff9b25df4f0a43a9a89dcc3fcef23, type: 3}
       propertyPath: m_PlayableAsset
       value: 
       objectReference: {fileID: 11400000, guid: d3700e9eaaf1627428795d1c4594d318, type: 2}
