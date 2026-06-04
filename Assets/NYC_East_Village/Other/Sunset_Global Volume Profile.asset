@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: 1.1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.12
+    m_Value: 0.87
   scatter:
     m_OverrideState: 1
     m_Value: 0.5
@@ -30,7 +30,7 @@ MonoBehaviour:
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.92, b: 0.75, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
     m_OverrideState: 1
     m_Value: 1
@@ -71,7 +71,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.387
   smoothness:
     m_OverrideState: 1
     m_Value: 0.5
@@ -152,13 +152,13 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.98, y: 0.98, z: 1.03, w: -0.01}
+    m_Value: {x: 0.95145637, y: 0.95145637, z: 1, w: -0.01}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1.0, y: 0.99, z: 0.95, w: 0.0}
+    m_Value: {x: 1, y: 0.99, z: 0.95, w: 0}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1.05, y: 0.96, z: 0.82, w: 0.02}
+    m_Value: {x: 0.9761585, y: 1, z: 0.97140837, w: 0.02}
 --- !u!114 &-210202758105731438
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -206,3 +206,50 @@ MonoBehaviour:
   - {fileID: -8926833440954341646}
   - {fileID: -3848923875424814730}
   - {fileID: -210202758105731438}
+  - {fileID: 7295477253039070335}
+--- !u!114 &7295477253039070335
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DepthOfField
+  active: 1
+  mode:
+    m_OverrideState: 1
+    m_Value: 1
+  gaussianStart:
+    m_OverrideState: 1
+    m_Value: 5
+  gaussianEnd:
+    m_OverrideState: 1
+    m_Value: 20
+  gaussianMaxRadius:
+    m_OverrideState: 0
+    m_Value: 1
+  highQualitySampling:
+    m_OverrideState: 0
+    m_Value: 0
+  focusDistance:
+    m_OverrideState: 0
+    m_Value: 10
+  aperture:
+    m_OverrideState: 0
+    m_Value: 5.6
+  focalLength:
+    m_OverrideState: 0
+    m_Value: 50
+  bladeCount:
+    m_OverrideState: 0
+    m_Value: 5
+  bladeCurvature:
+    m_OverrideState: 0
+    m_Value: 1
+  bladeRotation:
+    m_OverrideState: 0
+    m_Value: 0
